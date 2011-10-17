@@ -1,2 +1,342 @@
-/* Primary styles
----------------------------------------- */
+/* 1.0 Special Classes
+___________________________________________________________*/
+.orange {
+	color:#FF6633;
+}
+	
+.blue {
+	color:#5399CC;
+}
+
+.green {
+	color:#CCCC66;
+}
+
+.clearboth {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;	
+}
+
+.floatleft {
+	float:left;
+}
+
+.floatright {
+	float:right;
+}
+
+.video-container { /* Wrap around iFrame and SWF embeds for responsive sizing */
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed, {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+img a {
+	border: none;
+	text-decoration:none;
+}
+
+/* 2.0 Containers
+----------------------------------- */
+/* 2.1 Header Container
+----------------------------------- */
+#container-head {
+	width:100%;
+	background:rgba(51,51,51,0.82); /* FF3.6+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1333333', endColorstr='#d1333333',GradientType=0 ); /* IE6-9 */
+}
+
+#header {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display:block;
+}
+
+#header-left {
+	width: 38.541666666666667%; /* 370px / 960px */
+	min-width: 175px;
+	float:left;
+}
+
+#header-right {
+	width: 61.458333333333333%; /* 590px / 960px */
+	float:right;
+}
+
+/* 2.2 Content Container
+----------------------------------- */
+#container-mid {
+	width:100%;
+}
+
+#main {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+}
+
+#sidebar-right {
+	width: 25%; /* 240px / 960px */
+	background: rgba(255,255,255,0.5); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+	float:right;
+}
+
+#content {
+	width: 72.916666666666667%; /* 700px / 960px */
+	margin: 0 1.428571428571429%; /* 10px / 700px */
+	background: rgba(255,255,255,0.5); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+	float: left;
+}
+
+
+/* 2.3 Footer Container
+----------------------------------- */
+#container-foot {
+	background: #a9aaa4 url('../img/footer_repeat.png') repeat-x left top;
+	width:100%;
+}
+
+#footer {
+	width:100%;
+	background: #a9aaa4 url('../img/footer_bg.png') no-repeat center bottom;
+	max-width: 960px;
+	height:179px;
+	margin: 0 auto;
+	display: block;
+	clear: both;
+}
+
+#footer-left {
+	width: 75%; /* 720px / 960px */
+	float: left;
+}
+
+#footer-right {
+	width: 25%; /* 240px / 960px */
+	float:right;
+}
+
+/* 3.0 Footer Content
+----------------------------------- */
+/* 3.1 Copyright
+----------------------------------- */
+#footer p {
+	margin:0;
+}
+
+#footer p a {
+	color: #444;
+	font-size:.8em;
+}
+	
+/* 3.1 Social Media
+----------------------------------- */
+#social-media {
+	list-style:none;
+	display:inline;
+	height:32px;
+	float:right;
+}
+
+#social-media li {
+	display: block;
+	float:left;
+}
+
+#social-media .facebook {
+	background: url('../img/facebook.png') no-repeat 0 0;
+	height:32px;
+	width:35px;
+}
+
+#social-media .vimeo {
+	background: url('../img/vimeo.png') no-repeat 0 0;
+	height:31px;
+	width:35px;
+}
+
+#social-media .rss {
+	background: url('../img/rss.png') no-repeat 0 0;
+	height:31px;
+	width:35px;
+}
+
+#social-media .facebook:hover,
+#social-media .youtube:hover,
+#social-media .rss:hover {
+	background-position:0 -32px;
+}
+
+#social-media .facebook span,
+#social-media .youtube span,
+#social-media .rss span {
+	position:absolute;
+	top:-999em;
+}
+
+/* 4.0 Nav
+---------------------------------------------*/
+/* 4.1 Nav - Main Menu
+---------------------------------------------*/
+#nav a {
+	color:#CCC;
+}
+
+#nav ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#nav ul li {
+	margin-right: 10px; /* 35px / 960px */
+
+}
+ 
+#nav ul li a {
+	display: block;
+		padding-top: 83px;
+	padding-bottom:25px;
+	padding-left:10px;
+	padding-right:10px;
+}
+ 
+#nav li { /* all list items */
+	float: left;
+}
+
+#nav li.current_page_item,
+#nav ul li a:hover {
+	background: #0099ff;
+}
+
+/* 5.0 Header Content
+---------------------------------------------*/
+/* 5.1 Logo
+---------------------------------------------*/
+#logo {
+	float:right;
+	min-width: 175px;
+}
+
+#logo img {
+	margin:0;
+}
+
+/* 5.2 Search Bar and Search Results
+___________________________________________________________*/
+.searchbar {
+    float:right;
+    position:relative;
+    width: 150px;
+    margin-top: 8px;
+
+}
+.searchbar input {
+    background-color: #b9b9b9;
+    color: #999999;
+    border:none;
+    -moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	width:150px
+}
+
+.searchbar input[type="submit"] {
+    background: url('../img/search.png');
+    border:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:25px;
+    width: 25px;
+    text-indent: -9999px;
+}
+
+/* 6.0 Homepage
+----------------------------------*/
+#homepage {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+	
+}
+
+#issue {
+	width: 72.916666666666667%; /* 700px / 960px */
+	margin-right:1.428571428571429%; /* 10px / 700px */
+	background: rgba(255,255,255,0.5); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+	float: left;
+	padding-bottom:100px;
+}
+
+.homearticle {
+	width: 32.857142857142857%;
+	float:left;
+	height:70px;	
+}
+
+.homethumb {
+	float:left;
+	padding-right: 5px;
+	padding-left:10px;
+}
+.homearticle p {
+	font-size: 0.625em; /*10px*/
+	line-height:1;
+	color:#666666;
+	padding-right: 30px;
+	
+}
+
+.homearticle h5 {
+	margin-bottom: 0;
+	line-height: 1.2;
+	padding-right: 30px;
+}
+.homearticle h5 a {
+	color:#5399cc;
+}
+.title-wrapper {
+	background: url(../img/leftwrap.png) no-repeat 0 0;
+	margin-top:15px;
+	margin-left:-1.571428571428571%; /* 10px / 700px */
+	padding-bottom:20px;
+	color:#ffffff;
+	}
+
+#issue h4 {
+	background: #666666;
+	margin-top:3px;
+	margin-left:35px; /* 10px / 700px */
+	margin-bottom:10px;
+	padding-left: 5px;
+	height:33px;
+}
+
+.dean {
+	background: url(../img/dean.png) no-repeat left bottom;
+}
