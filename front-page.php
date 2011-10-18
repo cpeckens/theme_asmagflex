@@ -14,8 +14,8 @@
         	</a>
         	<div class="text-back"></div>
         	<div class="text">
-        		<h3>Neon Dichotomy</h3>
-        		Author: Josh Liba. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elite
+        		<h3>Green Horizons</h3>
+        		<p>A dozen reasons to find hope at Hopkins for a more sustainable future.</p>
         	</div>
         		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_07_strip.jpg">
         </div>
@@ -26,8 +26,8 @@
         		</a>
         		<div class="text-back"></div>
         		<div class="text">
-        		<h3>Times Square shots</h3>
-        		Author: Josh Liba. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        		<h3>Real Science</h3>
+        		<p>Up-ending the "cookbook" approach to teaching&mdash;and learning.</p>
         		</div>
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_09_strip.jpg">
         	</div>
@@ -38,8 +38,8 @@
         		</a>
         		<div class="text-back"></div>
         		<div class="text">
-        			<h3>Breakdancers in the Big Apple!</h3>
-        			Author: Josh Liba. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        			<h3>Teachers for Tomorrow</h3>
+        			<p>This spring's Teach for America grads are all over the map.</p>
         		</div>
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_10_strip.jpg">
         	</div>
@@ -50,8 +50,8 @@
         		</a>
         		<div class="text-back"></div>
         		<div class="text" >
-        			<h3>Chevy Chase</h3>
-        			Author: Josh Liba. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        			<h3>A Hopkins Professor in the Spanish Civil War</h3>
+        			<p>Jose Robles' tragic disappearance left a hole in the hearts of many.</p>
         		</div>
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_11_strip.jpg">
         	</div>
@@ -63,7 +63,7 @@
 	    
 	    <div id="issue">
 <!--*************************** News Section ********************************************* --> 
-  			<div class="title-wrapper"><h4>NEWS: The latest from the school of Arts and Sciences</h4></div>
+  			<div class="title-wrapper"><h4><span class="title">NEWS: The latest from the school of Arts and Sciences</span></h4></div>
 	<?php $asmag_news_query = new WP_Query(array(
 		'cat' => '4',
 		'volume' => 'v8n2',
@@ -74,12 +74,10 @@
 			
 	    			<div class="homearticle">
 	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    	<div class="homethumb">
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" align="left" /></a>
-	    			    	</div> <!--end thumbnail-->
+	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
@@ -91,7 +89,7 @@
 <!--*************************** Insights Section ********************************************* --> 	    			
 <div class="clearboth"></div> <!--to have background work properly -->
 
-	<div class="title-wrapper"><h4>INSIGHTS: From the classroom to the laboratory</h4></div>
+	<div class="title-wrapper"><h4><span class="title">INSIGHTS: From the classroom to the laboratory</span></h4></div>
 	<?php $asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
 		'volume' => 'v8n2',
@@ -102,12 +100,10 @@
 			
 	    			<div class="homearticle">
 	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    	<div class="homethumb">
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" align="left" /></a>
-	    			    	</div> <!--end thumbnail-->
+	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
@@ -118,7 +114,7 @@
 	    			
 <!--*************************** Alumni Section ********************************************* --> 	    	
 <div class="clearboth"></div> <!--to have background work properly -->
-	<div class="title-wrapper"><h4>ALUMNI: Arts and Sciences grads on the move</h4></div>
+	<div class="title-wrapper"><h4><span class="title">ALUMNI: Arts and Sciences grads on the move</span></h4></div>
 	<?php $asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
 		'volume' => 'v8n2',
@@ -127,14 +123,12 @@
 		
 		<?php while ($asmag_alumni_query->have_posts()) : $asmag_alumni_query->the_post(); ?>
 			
-	    			<div class="homearticle">
+	    			<div class="alumarticle">
 	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    	<div class="homethumb">
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" /></a>
-	    			    	</div> <!--end thumbnail-->
+	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
@@ -147,7 +141,7 @@
 <!--*************************** Sidebar Section ********************************************* --> 	    	
 	
 <div id="sidebar-right">
-	<div class="title-wrapper"><h4>WEB EXCLUSIVES</h4></div>
+	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
 		'volume' => 'v8n2',
@@ -156,17 +150,15 @@
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
 			
-	    			<div class="homearticle">
+	    			<div class="webarticle">
 	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    	<div class="homethumb">
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" /></a>
-	    			    	</div> <!--end thumbnail-->
+	    			    						$image_url = wp_get_attachment_image_src($image_id,'exclusive', true);
+	    			    						echo $image_url[0];  ?>" align="left" class="webthumb" /></a>
 	    			    <?php	} ?>
-	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
+	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a></div>
 	    			
 	    			</div><!--End snippet -->
 	    				

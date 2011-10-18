@@ -95,7 +95,7 @@ img a {
 
 #sidebar-right {
 	width: 25%; /* 240px / 960px */
-	background: rgba(255,255,255,0.5); 
+	background: rgba(255,255,255,0.7); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
 	float:right;
 }
@@ -103,7 +103,7 @@ img a {
 #content {
 	width: 72.916666666666667%; /* 700px / 960px */
 	margin: 0 1.428571428571429%; /* 10px / 700px */
-	background: rgba(255,255,255,0.5); 
+	background: rgba(255,255,255,0.7); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
 	float: left;
 }
@@ -181,14 +181,8 @@ img a {
 	width:35px;
 }
 
-#social-media .facebook:hover,
-#social-media .youtube:hover,
-#social-media .rss:hover {
-	background-position:0 -32px;
-}
-
 #social-media .facebook span,
-#social-media .youtube span,
+#social-media .vimeo span,
 #social-media .rss span {
 	position:absolute;
 	top:-999em;
@@ -210,15 +204,20 @@ img a {
 
 #nav ul li {
 	margin-right: 10px; /* 35px / 960px */
+	font-weight: bold;
+	letter-spacing: -5;
+	text-transform: uppercase;
 
 }
  
 #nav ul li a {
 	display: block;
-		padding-top: 83px;
+	padding-top: 83px;
 	padding-bottom:25px;
 	padding-left:10px;
 	padding-right:10px;
+	color: #fff;
+
 }
  
 #nav li { /* all list items */
@@ -287,39 +286,14 @@ ___________________________________________________________*/
 #issue {
 	width: 72.916666666666667%; /* 700px / 960px */
 	margin-right:1.428571428571429%; /* 10px / 700px */
-	background: rgba(255,255,255,0.5); 
+	background: rgba(255,255,255,0.7); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
 	float: left;
 	padding-bottom:100px;
 }
 
-.homearticle {
-	width: 32.857142857142857%;
-	float:left;
-	height:70px;	
-}
-
-.homethumb {
-	float:left;
-	padding-right: 5px;
-	padding-left:10px;
-}
-.homearticle p {
-	font-size: 0.625em; /*10px*/
-	line-height:1;
-	color:#666666;
-	padding-right: 30px;
-	
-}
-
-.homearticle h5 {
-	margin-bottom: 0;
-	line-height: 1.2;
-	padding-right: 30px;
-}
-.homearticle h5 a {
-	color:#5399cc;
-}
+/* 6.1 Homepage Headers
+----------------------------------*/
 .title-wrapper {
 	background: url(../img/leftwrap.png) no-repeat 0 0;
 	margin-top:15px;
@@ -328,15 +302,101 @@ ___________________________________________________________*/
 	color:#ffffff;
 	}
 
-#issue h4 {
-	background: #666666;
-	margin-top:3px;
-	margin-left:35px; /* 10px / 700px */
-	margin-bottom:10px;
-	padding-left: 5px;
-	height:33px;
+.web-wrapper {
+	background: url(../img/rightwrap.png) no-repeat 0 0;
+	margin-top:15px;
+	margin-left:-4.166666666666667%; /* 10px / 240px */
+	padding-bottom:20px;
+	color:#ffffff;
+	}
+
+.title-wrapper h4 {
+	padding-top:6px;
 }
 
+.title {
+	background: #666666;
+	margin-left:35px; /* 10px / 700px */
+	margin-bottom:0px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom:7px;
+	padding-right:15px;
+}
+
+.web-wrapper h5 {
+	padding-top:4px;}
+
+.web {
+	background: #666666;
+	padding-top:7px;
+	margin-left:25px; /* 10px / 700px */
+	margin-bottom:0px;
+	padding-left: 5px;
+	padding-right:15px;
+	padding-bottom:5px;
+
+}
+
+/* 6.2 News & Insights
+----------------------------------*/
+.homearticle {
+	width: 30%; /* 210px / 700px */
+	padding: 10px 1.428571428571429%; /*10px / 700px */
+	float:left;
+}
+
+.homethumb {
+	float:left;
+	padding-right: 2.380952380952381%; /* 5px / 210px */
+	margin:0;
+}
+
+.homearticle p {
+	font-size: 0.625em; /*10px*/
+	line-height:1;
+	color:#666666;
+	margin:0;
+}
+
+.homearticle h5 {
+	margin: 0;
+	line-height: 1.2;
+}
+
+.homearticle h5 a {
+	color:#5399cc;
+}
+
+/* 6.3 Alumni
+----------------------------------*/
+.alumarticle {
+	width: 21.428571428571429%; /*150px /700px */
+	padding: 10px 1.428571428571429%; /*10px / 700px */
+	float:left;
+
+}
+.alumthumb{
+	margin:0;
+}
+
+/* 6.4 Sidebar
+----------------------------------*/
+.webarticle {
+	margin: 4.166666666666667%;
+	background: #333333;
+}
+
+.webthumb {
+	margin:0;
+}
+.webtext {
+	padding:4.545454545454545%;
+	}
+
 .dean {
+	position: relative;
+	bottom: 0;
+	right:0;
 	background: url(../img/dean.png) no-repeat left bottom;
 }

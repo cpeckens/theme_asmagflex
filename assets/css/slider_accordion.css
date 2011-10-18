@@ -71,6 +71,9 @@ img {
 }
 
 #accordion-container .slide h3 {
+	font-family: Georgia, serif;
+	font-size: 3em;
+	font-weight: normal;
     margin-top:8px;
     margin-bottom:4px;
 }
