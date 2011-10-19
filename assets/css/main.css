@@ -109,7 +109,8 @@ h5 {
 }
 
 h6 {
-	font-size: 0.625em; /*10px*/
+	font-size: 0.688em; /*11px*/
+	text-transform: uppercase;
 }
 
 small {

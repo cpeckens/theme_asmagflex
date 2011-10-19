@@ -10,50 +10,50 @@
 	<div id="accordion-container">
         <div id="as10" class="slide">
         	<a id="slideimg10" class="image async-img">
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_07.jpg">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1.jpg">
         	</a>
         	<div class="text-back"></div>
         	<div class="text">
         		<h3>Green Horizons</h3>
         		<p>A dozen reasons to find hope at Hopkins for a more sustainable future.</p>
         	</div>
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_07_strip.jpg">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1strip.jpg">
         </div>
         
         <div id="as11" class="slide">
         		<a id="slideimg11" class="image async-img">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_09_acc.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2.jpg">
         		</a>
         		<div class="text-back"></div>
         		<div class="text">
         		<h3>Real Science</h3>
         		<p>Up-ending the "cookbook" approach to teaching&mdash;and learning.</p>
         		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_09_strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2strip.jpg">
         	</div>
         	
         	<div id="as12" class="slide">
         		<a id="slideimg12" class="image async-img" >
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_10_acc.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3.jpg">
         		</a>
         		<div class="text-back"></div>
         		<div class="text">
         			<h3>Teachers for Tomorrow</h3>
         			<p>This spring's Teach for America grads are all over the map.</p>
         		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_10_strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3strip.jpg">
         	</div>
         	
         	<div id="as13" class="slide">
         		<a id="slideimg13" class="image async-img">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_11_acc.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4.jpg">
         		</a>
         		<div class="text-back"></div>
         		<div class="text" >
         			<h3>A Hopkins Professor in the Spanish Civil War</h3>
         			<p>Jose Robles' tragic disappearance left a hole in the hearts of many.</p>
         		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/JoshLiba_11_strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4strip.jpg">
         	</div>
         </div> <!-- accordion-container -->
 	</div> <!-- accordion-container-wrapper --> 
@@ -79,8 +79,10 @@
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
 	    			    <?php	} ?>
-	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
+	    			    <?php the_tags( '<h6 class="orange"', ', ', '</h6>' ); ?>
+	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
+	    			    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_excerpt() ?></a>
 	    			
 	    			</div><!--End snippet -->
 	    				
@@ -105,7 +107,7 @@
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
 	    			    <?php	} ?>
-	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
 	    			
 	    			</div><!--End snippet -->
@@ -130,7 +132,7 @@
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
 	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
 	    			    <?php	} ?>
-	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
 	    			
 	    			</div><!--End snippet -->
@@ -157,20 +159,23 @@
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'exclusive', true);
 	    			    						echo $image_url[0];  ?>" align="left" class="webthumb" /></a>
 	    			    <?php	} ?>
-	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="green"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a></div>
 	    			
 	    			</div><!--End snippet -->
 	    				
 	    			<?php endwhile; //End loop ?>	    					    		
 
-	    	<div class="dean">
-	    	<h5>Headline for the Article</h5>
-	    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-	    	</div>
+	    	
  </div> <!--End sidebar-right -->
- 
+ 	    		
+
 	    		<div class="clearboth"></div> <!--to have background work properly -->
+	    		<div class="dean">
+	    		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
+	    	<div class="deantext"><h5 class="green">Headline for the Article</h5>
+	    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p></div>
+	    	</div>
 	    	</div> <!--End homepage -->
 	    		
 		</div> <!--End container-mid -->
