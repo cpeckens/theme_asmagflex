@@ -6,7 +6,7 @@
 //register menus
 	function asmag_register_my_menus() {
   		register_nav_menus(
-    		array( 'header-menu' => __( 'Header Menu' ), 'mobile-menu' => __( 'Mobile Menu' ))
+    		array( 'header-menu' => __( 'Header Menu' ),'v8n2-menu' => __( 'V8N2 Menu' ), 'mobile-menu' => __( 'Mobile Menu' ))
   		);
 	}
 	
@@ -92,7 +92,6 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 			'marginwidth' => '0',
 			'allowtransparency' => 'true',
 			'id' => '',
-			'class' => 'iframe-class',
 			'same_height_as' => ''
 		), $atts));
 		$src_cut = substr($src, 0, 35);
@@ -107,7 +106,7 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 		}else{
 			$id_text = '';
 		}
-		$return .= '<div class="video-container"><iframe '.$id_text.'class="'.$class.'" width="'.$width.'" height="'.$height.'" src="'.$src.$google_map_fix.'" frameborder="'.$frameborder.'" scrolling="'.$scrolling.'" marginheight="'.$marginheight.'" marginwidth="'.$marginwidth.'" allowtransparency="'.$allowtransparency.'" webkitAllowFullScreen allowFullScreen></iframe></div>';
+		$return .= '<div class="video-container"><iframe '.$id_text.' width="'.$width.'" height="'.$height.'" src="'.$src.$google_map_fix.'?wmode=transparent" frameborder="'.$frameborder.'" scrolling="'.$scrolling.'" marginheight="'.$marginheight.'" marginwidth="'.$marginwidth.'" allowtransparency="'.$allowtransparency.'" webkitAllowFullScreen allowFullScreen  wmode="transparent"></iframe></div>';
 		// &amp;output=embed
 		return $return;
 	}
@@ -116,9 +115,60 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 
 //Add Volume/Issue Taxonomy
 function create_my_taxonomies() {
-	register_taxonomy('volume', 'post', array( 'hierarchical' => true, 'label' => 'Volume/Issue', 'query_var' => true, 'rewrite' => true));
+	register_taxonomy('volume', array( 'post', 'page' ), array( 'hierarchical' => true, 'label' => 'Volume/Issue', 'query_var' => true, 'rewrite' => true));
 } 
 
 add_action('init', 'create_my_taxonomies', 0);
+
+//Find Templates for each volume
+/**
+* Define a constant path to our single template folder
+*/
+
+/**
+* Filter the single_template with our custom function
+*/
+add_filter('single_template', 'my_single_template');
+
+/**
+* Single template function which will choose our template
+*/
+function my_single_template($single) {
+global $wp_query, $post;
+
+/**
+* Checks for single template by term
+* Check by term slug and ID
+*/
+foreach((array)get_the_terms($post->ID, 'volume') as $term) :
+
+if(file_exists(TEMPLATEPATH . '/single/single-term-' . $term->slug . '.php'))
+return TEMPLATEPATH . '/single/single-term-' . $term->slug . '.php';
+
+elseif(file_exists(TEMPLATEPATH . '/single/single-term-' . $term->term_id . '.php'))
+return TEMPLATEPATH . '/single/single-term-' . $term->term_id . '.php';
+
+endforeach; }
+
+//Custom comment display
+function asmag_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+?>
+	<div <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+		<div id="comment-<?php comment_ID(); ?>">
+			<div class="comment-author">
+				<?php printf(__('%1$s'), get_comment_date()) ?><?php printf(__(' by <cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+			</div>
+
+			<?php comment_text() ?>
+
+			<div class="reply">
+				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+			</div>
+		</div>
+<?php
+}
+
+include_once (TEMPLATEPATH . '/assets/functions/metaboxes.php');
 
 ?>

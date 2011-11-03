@@ -20,7 +20,6 @@
 	
 	
 	<div id="article-right">
-	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article'); ?> | <?php next_post_link('%link', 'next article &raquo;'); ?></p></div>
 	
 	<div class="otherstories">
 		<h4>Current Feature Stories</h4>

@@ -3,17 +3,146 @@
 
 /* The media queries included in here are only placeholder. Modify them as your content requires */
 
-@media only screen and (min-width: 480px) {
-	/* Wide mobile (480px+) styles go here */
+@media only screen and (max-width: 950px) {
+
+#nav ul li {
+	margin-right: 0.375em; 
 }
 
-@media only screen and (min-width: 768px) { 
-	/* Tablets/netbooks (768px+) styles go here */
+ #nav ul li a {
+ 	margin-top: 3.75em;
+	padding-top: 1.438em;
 }
 
-@media only screen and (min-width: 1024px) { 
-	/* Desktops (1024px+) styles go here */
+#subheader-left,
+#header-left {
+	width:0;
+	position: relative;
+	}
+
+#logosub,
+#logo {
+position: absolute;
+left:0;
+top:0;
 }
+
+#subheader-right,
+#header-right {
+	width: 100%;
+}
+
+#subheader-right #nav {
+	margin-left: 335px;
+}
+
+#header-right #nav {
+	margin-left: 365px;
+	}
+
+}
+
+
+@media only screen and (max-width: 800px) {
+	.homearticle {
+		width:45%;
+		}
+}
+@media only screen and (max-width: 750px) {
+#nav ul li {
+	margin-right: 0.438em; /* 35px / 960px */
+}
+ 
+	#header-right #nav {
+		margin-left: 0;
+	}
+	#header-right #nav ul li {
+		margin-top: 125px;
+		}
+	#header-right #nav ul li a {
+	display: block;
+	padding-top: 0.75em;
+	padding-bottom:1.25em;
+	padding-left:0.438em;
+	padding-right:0.438em;
+	}
+	
+	#header-right #nav ul li a {
+ 	margin-top: 0;
+}
+
+}
+@media only screen and (max-width: 630px) {
+	#sidebar-right {
+		display:none;
+		}
+	.dean {
+		display:none;
+		}
+	#issue {
+		width:100%;
+		}
+	
+	#subheader-right #nav {
+		margin-left: 0;
+	}
+	#subheader-right #nav ul li {
+		margin-top: 50px;
+		}
+	#subheader-right #nav ul li a {
+	display: block;
+	padding-top: 0.75em;
+	padding-bottom:1.25em;
+	padding-left:0.438em;
+	padding-right:0.438em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#article-right {
+		display:none;
+		}
+	
+	#article {
+		width:100%; 
+	}
+	
+	.searchbar {
+		display: none;
+	}
+	
+	.helpbarleft {
+		width:100%;
+		}
+	.helpbar-right {
+		width:0;
+	}
+	
+		.homearticle {
+		width:90%;
+		}
+	
+}
+
+@media only screen and (max-width: 400px) {
+
+	#nav ul li,
+	#homepage h4 {
+		font-size: 0.875em;
+		}
+	
+	.title-wrapper h4 {
+		padding-top: 8px; }
+	
+	.title {
+		padding-top:12px;
+		padding-bottom: 8px;
+		margin-left:38px;
+		}
+		
+
+}
+
 
 
 

@@ -57,7 +57,7 @@ body {
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
 	font: 1em/1.5 'Helvetica CY', Helvetica W01 Cn, sans serif;
-	color: #222; /* Full black on white is too much contrast, #222 is a better default */
+	color: #333; /* Full black on white is too much contrast, #222 is a better default */
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 }
 
@@ -172,12 +172,12 @@ tr:nth-child(even) {
 		border-radius: 2px;
 		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
-		margin: 0;
-		width: 210px;
+		margin-right:30px;
+		width:75%;
 		max-width: 100%;
-		display: block;
-		margin-bottom: 20px;
-		background: #fff; }
+		background: #f5f4f1;
+		float:right;
+		 }
 	select { 
 		padding: 0; }
 	input[type="text"]:focus,
@@ -193,9 +193,12 @@ tr:nth-child(even) {
 		min-height: 60px; }
 	label,
 	legend { 
-		display: block;
 		font-weight: bold;
-		font-size: 13px;  }
+		font-size: 1em;
+		margin-right: 10px;
+		text-align: right;
+		padding-top:4px;
+		  }
 	select { 
 		width: 220px; }
 	input[type="checkbox"] {
@@ -203,7 +206,7 @@ tr:nth-child(even) {
 	label span,
 	legend span {
 		font-weight: normal;
-		font-size: 13px;
+		font-size: 1em;
 		color: #444; }
 
 /* #Buttons
@@ -329,7 +332,6 @@ dl dd {
 
 a, a:visited {
 	text-decoration: none;
-	color: #06c;
 }
 
 a:focus {

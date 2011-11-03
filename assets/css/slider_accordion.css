@@ -77,3 +77,50 @@ img {
     margin-top:8px;
     margin-bottom:4px;
 }
+
+@media only screen and (max-width: 750px) {
+	#accordion-container .slide h3 {
+		font-size: 2em;
+		}
+	
+	#accordion-container .slide .text-back {
+		height: 48%;
+		}
+	#accordion-container .slide .text {
+		height: 45.5%;
+	}
+}
+
+@media only screen and (max-width: 625px) {
+
+	#accordion-container .slide .text-back {
+		height: 58%;
+		}
+	#accordion-container .slide .text {
+		height: 55.5%;
+	}
+	
+	#accordion-container .slide .text p {
+		display:none;}
+}
+
+
+@media only screen and (max-width: 550px) {
+	#accordion-container .slide h3 {
+		font-size: 1.25em;
+		}
+	
+	#accordion-container .slide .text {
+		height: 57.5%;
+	}
+}
+	
+@media only screen and (max-width: 420px) {
+	
+	#accordion-container .slide .text-back {
+		height: 68%;
+		}
+	#accordion-container .slide .text {
+		height: 68.5%;
+	}
+}

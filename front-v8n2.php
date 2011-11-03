@@ -1,4 +1,9 @@
-<?php get_header() ?>
+<?php
+/*
+Template Name: Vol 8 No 2
+*/
+?>	
+<?php get_template_part( 'header', 'v8n2' ); ?>
 	
 	<script type="text/javascript"> //Setup accordion
 		var $j = jQuery.noConflict();
