@@ -5,9 +5,13 @@ Template Name: Vol 8 No 2 Feature
 ?>
 <?php get_template_part( 'header', 'v8n2feature' ); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+	<style>
+	#feature-head {
+		background-image: url(<?php echo get_post_meta($post->ID, 'header_background', true); ?>);
+		}
+	<?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style> <!--Add features custom CSS-->
 	
-	<div id="feature-head" style="background: url('<?php echo get_post_meta($post->ID, 'header_background', true); ?>') top center;">
+	<div id="feature-head">
 		<div class="intro-container">
 		<div class="feature-intro">
 		<div class="nonbackground"><?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>

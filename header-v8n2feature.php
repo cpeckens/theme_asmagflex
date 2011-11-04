@@ -33,7 +33,7 @@
 
 <body>
 <!--Pulled the subheader template file-->
-<body style="background: url('<?php echo get_post_meta($post->ID, 'feature_background', true); ?>') left top repeat;">
+<body style="background: url('<?php echo get_post_meta($post->ID, 'feature_background', true); ?>')">
 <div class="helpbarcontainer">
 	<div class="helpbar">
 		<div class="helpbarleft">
