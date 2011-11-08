@@ -39,6 +39,13 @@ img a {
 	text-decoration:none;
 }
 
+.dropcap {
+	float: left;
+	font-size: 3.5em; 
+	margin-top: 5px; 
+	padding-right: 3px; 
+	padding-bottom: 1px; 
+}
 /* 2.0 Containers
 ----------------------------------- */
 /* 2.1 Header Container
@@ -954,5 +961,6 @@ li#view_comments {
 }
 
 .share {
+	clear:both;
 	margin-left: 1em;
 	}

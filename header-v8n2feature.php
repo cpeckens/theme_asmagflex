@@ -14,7 +14,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/v8n2feature.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
 		<?php if (is_front_page() || is_page_template( 'front-v8n2.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
@@ -33,7 +33,7 @@
 
 <body>
 <!--Pulled the subheader template file-->
-<body style="background: url('<?php echo get_post_meta($post->ID, 'feature_background', true); ?>')">
+<body style="background: url('<?php echo get_post_meta($post->ID, 'feature_background', true); ?>') top left repeat;">
 <div class="helpbarcontainer">
 	<div class="helpbar">
 		<div class="helpbarleft">
@@ -49,6 +49,7 @@
 		
 						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
 						<?php $asmag_v8n2_query = new WP_Query(array(
+							'post_type' => 'post',
 							'volume' => 'v8n2',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>

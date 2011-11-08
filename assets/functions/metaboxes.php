@@ -10,9 +10,9 @@ function create_feature_meta_boxes(){
 
 //Add AJAX file upload capability
 //Save image via AJAX
-add_action('wp_ajax_ksas_ajax_upload', 'ksas_ajax_upload'); //Add support for AJAX save
+add_action('wp_ajax_asmag_ajax_upload', 'asmag_ajax_upload'); //Add support for AJAX save
 
-function ksas_ajax_upload(){
+function asmag_ajax_upload(){
 	
 	global $wpdb; //Now WP database can be accessed
 	
@@ -36,9 +36,9 @@ function ksas_ajax_upload(){
 
 }
 // Add meta box stylesheet and WYSIWYG JAvascript
-	add_action("admin_head", "ksas_admin_stylesheet");
+	add_action("admin_head", "asmag_admin_stylesheet");
 	
-	function ksas_admin_stylesheet () {
+	function asmag_admin_stylesheet () {
 		echo '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/assets/css/meta.css" type="text/css" media="screen" />';
 		echo '<script language="javascript" type="text/javascript" src="'.get_bloginfo('template_url').'/assets/js/tiny_mce/tiny_mce.js"></script>';
 	}
@@ -84,7 +84,7 @@ function feature_uploads() {
                 name: image_id,
                 // Additional data
                 data: {
-                    action: 'ksas_ajax_upload',
+                    action: 'asmag_ajax_upload',
                     data: image_id
                 },
                 autoSubmit: true,
@@ -132,7 +132,7 @@ function feature_uploads() {
 
                 // Additional data
                 data: {
-                    action: 'ksas_ajax_upload',
+                    action: 'asmag_ajax_upload',
                     data: image_id
                 },
 

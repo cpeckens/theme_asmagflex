@@ -1,0 +1,375 @@
+/*--------------Green Horizons - V8N2 - Feature 1 -------------*/
+#feature {
+	background: -moz-linear-gradient(top,  rgba(241,248,248,1) 0%, rgba(241,248,248,1) 70%, rgba(241,248,248,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,248,248,1)), color-stop(70%,rgba(241,248,248,1)), color-stop(100%,rgba(241,248,248,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f8f8', endColorstr='#00f1f8f8',GradientType=0 ); /* IE6-9 */
+}
+
+#feature-head {
+	height:740px;
+	background-position: top;
+}
+
+.feature-intro {
+	color: #ffffff;
+	background: none;
+	width: 68%;
+	max-width: 560px;
+	float:right;
+}
+
+.feature-intro h3 {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-size: 4em;
+	margin-top:0.8em;
+	margin-bottom: 0;
+}
+
+.feature-intro h4 {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-size: 1.25em;
+	margin-bottom: 0;
+}
+
+.introcopy {
+	background: rgba(0,0,0, 0.6);
+	padding-bottom:1em;
+}
+
+p.credit {
+	font-size: 1.125em;
+	margin-bottom: 1em;
+}
+
+p.othercredits {
+	font-size: 0.875em;
+	margin-bottom: 0.625em
+}
+	
+.pullquote {
+	padding:1em;
+	font-size:1em;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+
+.dropcap {
+	float: left; 
+	font-size: 4.5em; 
+	line-height: 60px; 
+	padding-top: 0; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: 'MuseoSlab900', Georgia, serif;
+}
+
+#feature h2 {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-size:1.875em;
+	font-weight:bold;
+	margin-bottom:1em;
+}
+
+.nonbackground {
+	display: none;
+}
+
+#feature .postmaterial img.floatleft {
+	margin-left:-8%;
+}
+	
+#feature .postmaterial img.floatright {
+	margin-right:-10%;
+}
+
+#feature .postmaterial img {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+/*--------------Real Science - V8N2 - Feature 2 -------------*/
+#feature {
+	background: rgba(241, 248, 248, 0.65);
+}
+
+.nonbackground {
+	float:left; 
+	padding-right: 1em;
+	width: 64%;
+}
+
+p.credit {
+	font-size: 1.125em;
+	margin-bottom: 1em;
+	}
+
+p.othercredits {
+	font-size: 0.875em;
+	margin-bottom: 0.625em
+	
+	}
+	
+.pullquote {
+	padding:1em;
+	font-size:1em;
+	line-height: 1.5em;
+	font-weight: bold;
+	}
+
+.dropcap {
+	color:#efbd53;
+	float: left; 
+	font-size: 4.5em; 
+	line-height: 60px; 
+	padding-top: 0; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: 'MuseoSlab900', Georgia, serif;
+}
+
+h4.tagline {
+	display:none;
+}
+
+#feature-head {
+	height:519px;
+}
+
+.feature-intro {
+	color: #ffffff;
+	background: none;
+	width: 100%;
+	max-width: 820px;
+	float:right;
+}
+
+.feature-intro h3 {
+	font-family: 'MuseoSlab300', Georgia, serif;
+	font-size: 2em;
+	margin-bottom: 0;
+	margin-top:2em;
+	color: #efbd53;
+}
+
+
+
+.aside {
+	margin: 10px auto;
+	width:70%;
+	padding:1em;
+	background: rgba(239, 189, 83, 0.1);
+}
+
+.aside h3 {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	color: #efbd53;
+}
+
+.wysiwyg-read-more-link {
+	font-family: 'MuseoSlab300', Georgia, serif;
+}
+
+.imageblockleft {
+	background: rgba(239, 189, 83, 0.1);
+}
+
+.imageblockright {
+	background: rgba(239, 189, 83, 0.1);
+}
+
+p.quote {
+	color:#efbd53;
+	}
+
+/*--------------Teach for America - V8N2 - Feature 3 -------------*/
+
+
+#feature .postmaterial img {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#feature-head {
+	height:1075px;
+	}
+
+
+.headerbreak,
+h4.tagline,
+.feature-intro h3 {
+	display:none;
+	}
+
+.feature-intro {
+	background: rgba(255, 255, 255, 0.7);
+}
+	
+p.credit {
+	text-align: center;
+	color: #339999;
+	font-size: 1.125em;
+	font-weight: bold;
+	margin:0;
+	}
+
+p.othercredits {
+	text-align: center;
+	color: #339999;
+	font-weight: bold;
+	font-size: .75em;
+	margin:0;
+	padding-bottom:20px;
+}
+
+.introcopy {
+	padding: 0 15% 4.8em;
+	}
+	
+.pullquote {
+	font-size: 1.125em;
+	line-height: 2.5em;
+	color:#333;
+	font-weight:bold;
+	}
+
+.tfa {
+	clear:both;
+	}
+
+p.callout {
+	color:#339999;
+	font-size: 1.125em;
+	line-height: 1.625em;
+	font-family: 'MuseoSlab900', Georgia, serif;
+	padding-top:6em;
+}
+
+.dropcap {
+	color:#339999;
+	font-size: 6.25em;
+	margin-top:13px;
+	font-family: 'MuseoSlab900', Georgia, serif;
+	}
+	
+.postmaterial {
+	padding: 3em 15%;
+}
+
+#feature {background: rgba(255, 255, 255, 0.7);}
+
+#container-mid {
+	background: #2b7976 url('http://magazine.krieger.dev/files/2011/11/bgrepeat1.png') top left repeat-x;
+}
+/*--------------Spanish Civil War - V8N2 - Feature 4 -------------*/
+#feature {
+background: -moz-linear-gradient(top,  rgba(197,192,180,1) 0%, rgba(197,192,180,1) 70%, rgba(197,192,180,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(197,192,180,1)), color-stop(70%,rgba(197,192,180,1)), color-stop(100%,rgba(197,192,180,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(197,192,180,1) 0%,rgba(197,192,180,1) 70%,rgba(197,192,180,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(197,192,180,1) 0%,rgba(197,192,180,1) 70%,rgba(197,192,180,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(197,192,180,1) 0%,rgba(197,192,180,1) 70%,rgba(197,192,180,0) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(197,192,180,1) 0%,rgba(197,192,180,1) 70%,rgba(197,192,180,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5c0b4', endColorstr='#00c5c0b4',GradientType=0 ); /* IE6-9 */
+}
+
+.nonbackground {
+	display:none;
+}
+
+.intro-container {
+	max-width:100%;
+	background: rgba(0, 0, 0, 0.7);
+	position:absolute;
+	bottom:0;
+	}
+#feature-head {
+	height:725px;
+	position: relative;
+	}
+
+.feature-intro {
+	max-width:820px;
+	margin: 0 auto;
+	}
+	
+.feature-intro h3 {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-size: 4em;
+	line-height:1.313em;
+	margin-left:5%;
+	margin-right: 18.292682926829268%;
+	margin-bottom: 0;
+	color: #e5b82c;
+	font-variant: small-caps;
+}
+
+.feature-intro h4 {
+	margin-left:5%;
+	margin-right: 28%;
+	color:#f3e7e7;
+	font-size: 1.875em;
+	margin-bottom: 10px;
+}
+p.credit {
+	display:none;
+}
+
+.creditbox {
+	font-style:normal;
+	padding:8px;
+	background-color:#e5b82c;
+	margin-left:5%;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top:1em;
+	margin-bottom:15px;
+}
+
+p.othercredits {
+	margin-bottom: .5em;
+}
+
+.headerbreak {
+	display: none;
+}
+
+.dropcap {
+	color: #493210; 
+	font-family: 'MuseoSlab900', Georgia, serif;
+}
+
+.postmaterial {
+	padding: 3em 5%;
+}
+
+.letters {
+	background: #897d68;
+	max-height: 560px;
+	width:111.5%;
+	margin-left:-5.75%;
+	margin-bottom:100px;
+	margin-top:90px;
+	}
+	
+.letters img {
+	padding:0;
+	background:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	max-width:130%;
+	margin-left:-12%;
+	margin-top:-200px;
+}
+
+.letters p {
+	width:25%;
+	margin-left:5%;
+	padding-top: 20px;
+}

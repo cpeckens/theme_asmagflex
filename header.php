@@ -20,7 +20,7 @@
 		<![endif]-->
 	<?php if (is_front_page()) { ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
 	<?php } ?>
 		<!--Wordpress Neccessities -->
 		<?php wp_enqueue_script('jquery'); ?> 
@@ -31,7 +31,7 @@
 		<![endif]-->
 	</head>
 
-<body class="fall2011">
+<body class="spring2011">
 		<div id="container-head">
 			
 			<div id="header">
