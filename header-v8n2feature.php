@@ -48,11 +48,6 @@
 						'posts_per_page' => '-1')); ?>
 		
 						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
-						<?php $asmag_v8n2_query = new WP_Query(array(
-							'post_type' => 'post',
-							'volume' => 'v8n2',
-							'order' => 'ASC',
-							'posts_per_page' => '-1')); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail()) { ?> 

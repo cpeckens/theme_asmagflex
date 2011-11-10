@@ -46,6 +46,12 @@ img a {
 	padding-right: 3px; 
 	padding-bottom: 1px; 
 }
+
+.smallcap {
+	font-variant:small-caps;
+	font-size:90%;
+}
+
 /* 2.0 Containers
 ----------------------------------- */
 /* 2.1 Header Container
@@ -378,11 +384,12 @@ ___________________________________________________________*/
 	width: 30%; /* 210px / 700px */
 	margin: 0.625em 1.428571428571429%; /*10px / 700px */
 	float:left;
+	height:90px;
 }
 
 .homethumb {
 	margin-right: 2.380952380952381%; /* 5px / 210px */
-	margin-bottom:0;
+	margin-bottom:20px;
 	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.64);
 	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.64);
 	box-shadow:         1px 1px 3px rgba(50, 50, 50, 0.64);

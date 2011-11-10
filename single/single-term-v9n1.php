@@ -6,9 +6,15 @@
 	    
 	    <div id="article">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+	<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+
 		<div class="postmaterial">
 		<h3><?php the_title(); ?></h3>
-		
+		<p class="author">By&nbsp;<?php the_author(); ?></p>
+		<p class="othercredits"><?php if ( get_post_meta($post->ID, 'other_credits', true) ) : ?>  <?php echo get_post_meta($post->ID, 'other_credits', true); ?><?php endif; ?></p>
+
+		<?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
+		<div class="topimage"><img src="<?php echo $image; ?>" class="floatleft"></div>
 		<?php the_content(); ?>
 		
 		</div><!--End postmaterial -->
@@ -16,21 +22,28 @@
 	<?php endwhile; ?>
 
 	<?php endif; ?>
+	<div class="share">
+	<span  class="st_twitter_large"></span>
+	<span  class="st_facebook_large"></span>
+	<span  class="st_email_large"></span>
+	<span  class="st_sharethis_large"></span>
+	</div>
+	<?php comments_template( '/comments.php' ); ?> 
 	</div> <!--article -->
 	
 	
 	<div id="article-right">
+	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article'); ?> | <?php next_post_link('%link', 'next article &raquo;'); ?></p></div>
 	
 	<div class="otherstories">
-		<h4>Current Feature Stories</h4>
-				<?php $features_query = new WP_Query(array(
-						'post_type' => 'page',
-						'volume' => 'v9n1',
-						'order' => 'ASC',
-						'posts_per_page' => '-1')); ?>
-		
-						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
-
+		<h4>Other Stories in this Section</h4>
+			<?php
+	global $post;
+	$categories = get_the_category();
+	$thiscat = $categories[0]->cat_ID;
+?>
+<?php query_posts('showposts=3&orderby=rand&cat=' . $thiscat); ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	    		<div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
 	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
@@ -43,13 +56,14 @@
 	    				</div><!-- End subtext -->
 
 
-   			<?php endwhile; ?>
+   			<?php endwhile; endif; ?>
 	
 	</div> <!--End otherstories -->
 
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
+		'volume' => 'v9n1',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		

@@ -198,4 +198,4 @@ Template Name: Vol 8 No 2
 	    		
 		</div> <!--End container-mid -->
 
-<?php get_footer() ?>
+<?php get_footer('v8n2') ?>

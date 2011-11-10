@@ -66,7 +66,7 @@
   			<div class="title-wrapper"><h4><span class="title">NEWS: The latest from the school of Arts and Sciences</span></h4></div>
 	<?php $asmag_news_query = new WP_Query(array(
 		'cat' => '4',
-		'volume' => 'v8n2',
+		'volume' => 'v9n1',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -96,7 +96,7 @@
 	<div class="title-wrapper"><h4><span class="title">INSIGHTS: From the classroom to the laboratory</span></h4></div>
 	<?php $asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
-		'volume' => 'v8n2',
+		'volume' => 'v9n1',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -128,7 +128,7 @@
 	<div class="title-wrapper"><h4><span class="title">ALUMNI: Arts and Sciences grads on the move</span></h4></div>
 	<?php $asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
-		'volume' => 'v8n2',
+		'volume' => 'v9n1',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -159,7 +159,7 @@
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'volume' => 'v8n2',
+		'volume' => 'v9n1',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		

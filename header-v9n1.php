@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
-		<?php if (is_front_page() || is_page_template( 'front-v8n2.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
+		<?php if (is_front_page() || is_page_template( 'front-v9n1.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<![endif]-->
@@ -37,11 +37,11 @@
 		<div class="helpbarleft">
 		<div class="home"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/home.png" alt="Home" /></a></div>
 				<div class="dropdown">
-					<div class="toc"><a href="#" title="Table of Contents"><img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" /></a><h3><span class="highlight">Spring 2011</span> <span class="articlename"><?php wp_title(); ?></span></h3></div>
+					<div class="toc"><a href="#" title="Table of Contents"><img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" /></a><h3><span class="highlight">Fall 2011</span> <span class="articlename"><?php wp_title(); ?></span></h3></div>
 					<ul class="menu_options">
 				<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
-						'volume' => 'v8n2',
+						'volume' => 'v9n1',
 						'order' => 'ASC',
 						'posts_per_page' => '-1')); ?>
 		
@@ -58,13 +58,13 @@
 						</div></li>									
 						<?php endwhile; //End loop ?>
 
-						<?php $asmag_v8n2_query = new WP_Query(array(
+						<?php $asmag_v9n1_query = new WP_Query(array(
 							'post_type' => 'post',
-							'volume' => 'v8n2',
+							'volume' => 'v9n1',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>
 		
-						<?php while ($asmag_v8n2_query->have_posts()) : $asmag_v8n2_query->the_post(); ?>
+						<?php while ($asmag_v9n1_query->have_posts()) : $asmag_v9n1_query->the_post(); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail()) { ?> 
