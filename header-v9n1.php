@@ -14,7 +14,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
 		<?php if (is_front_page() || is_page_template( 'front-v9n1.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
 		<!--[if lte IE 8]>
@@ -102,7 +102,7 @@
 			<div id="header">
 				
 				<div id="subheader-left">
-				<div id="logosub"><a href="http://krieger.jhu.edu/magazine" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
+				<div id="logosub"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="subheader-right">									

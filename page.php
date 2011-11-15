@@ -6,6 +6,8 @@
 	    
 	    <div id="article">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+		<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+
 		<div class="postmaterial">
 		<h3><?php the_title(); ?></h3>
 		
@@ -76,4 +78,4 @@
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-mid -->
 
-<?php get_footer(); ?>
+<?php get_footer('v9n1'); ?>

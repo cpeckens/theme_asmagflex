@@ -1,4 +1,4 @@
-<?php get_template_part( 'header', 'v8n2' ); ?>
+<?php get_template_part( 'header', 'v9n1' ); ?>
 
 <!--Pulled the taxonomy template-->
 	<div id="container-mid">
@@ -6,6 +6,8 @@
 	    
 	    <div id="article">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+		<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+
 		<div class="postmaterial">
 		<h3><?php the_title(); ?></h3>
 		
@@ -20,12 +22,17 @@
 	
 	
 	<div id="article-right">
-	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article'); ?> | <?php next_post_link('%link', 'next article &raquo;'); ?></p></div>
 	
 	<div class="otherstories">
 		<h4>Current Feature Stories</h4>
-<?php query_posts('showposts=4&orderby=rand&cat=29'); ?>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php $features_query = new WP_Query(array(
+						'post_type' => 'page',
+						'volume' => 'v9n1',
+						'order' => 'ASC',
+						'posts_per_page' => '-1')); ?>
+		
+						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
+
 	    		<div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
 	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
@@ -38,7 +45,7 @@
 	    				</div><!-- End subtext -->
 
 
-   			<?php endwhile; endif; ?>
+   			<?php endwhile; ?>
 	
 	</div> <!--End otherstories -->
 
@@ -71,4 +78,4 @@
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-mid -->
 
-<?php get_footer(); ?>
+<?php get_footer('v9n1'); ?>

@@ -20,7 +20,7 @@
 		<![endif]-->
 	<?php if (is_front_page()) { ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
 	<?php } ?>
 		<!--Wordpress Neccessities -->
 		<?php wp_enqueue_script('jquery'); ?> 
@@ -37,7 +37,7 @@
 			<div id="header">
 				
 				<div id="header-left">
-				<div id="logo"><a href="http://krieger.jhu.edu/magazine" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
+				<div id="logo"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">

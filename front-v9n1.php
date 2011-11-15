@@ -1,4 +1,9 @@
-<?php get_header() ?>
+<?php
+/*
+Template Name: Vol 9 No 1 Homepage
+*/
+?>	
+<?php get_header(); ?>
 	
 	<script type="text/javascript"> //Setup accordion
 		var $j = jQuery.noConflict();
@@ -159,9 +164,8 @@
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'volume' => 'v9n1',
 		'order' => 'ASC',
-		'posts_per_page' => '-1')); ?>
+		'posts_per_page' => '5')); ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
 			
@@ -185,12 +189,12 @@
 
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 	    		<div class="dean">
-	    		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
-	    	<div class="deantext"><h5>Professors and Students Pursue Paths to Accomplishment</h5>
+	    		<a href="/2011/11/baltimore-engaging-a-city/"><img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
+	    	<div class="deantext"><h5>Baltimore: Engaging a City</h5></a>
 	    	<!-- <p>Pellentesque habitant morbi tristique</p> --></div>
 	    	</div>
 	    	</div> <!--End homepage -->
 	    		
 		</div> <!--End container-mid -->
 
-<?php get_footer() ?>
+<?php get_footer('v9n1'); ?>

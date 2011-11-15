@@ -35,6 +35,7 @@ img {
     border-left: 0px solid #AAA; 
     width:100%; 
     max-height:422px;
+    color:#FFF;
 }    
 
 #accordion-container .slide .image img {
@@ -76,6 +77,15 @@ img {
 	font-weight: normal;
     margin-top:8px;
     margin-bottom:4px;
+}
+
+#accordion-container .slide .text h3 a,
+#accordion-container .slide .text h3 a:visited,
+#accordion-container .slide .text h3 a:hover,
+#accordion-container .slide .text p a,
+#accordion-container .slide .text p a:visited,
+#accordion-container .slide .text p a:hover {
+	color:#FFFFFF;
 }
 
 @media only screen and (max-width: 750px) {

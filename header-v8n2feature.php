@@ -15,10 +15,8 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/spring2011.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/v8n2feature.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
 		<?php if (is_front_page() || is_page_template( 'front-v8n2.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
-
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<![endif]-->
@@ -41,7 +39,7 @@
 				<div class="dropdown">
 					<div class="toc"><a href="#" title="Table of Contents"><img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" /></a><h3><span class="highlight">Spring 2011</span> <span class="articlename"><?php wp_title(); ?></span></h3></div>
 					<ul class="menu_options">
-					<?php $features_query = new WP_Query(array(
+				<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
 						'volume' => 'v8n2',
 						'order' => 'ASC',
@@ -60,6 +58,12 @@
 						</div></li>									
 						<?php endwhile; //End loop ?>
 
+						<?php $asmag_v8n2_query = new WP_Query(array(
+							'post_type' => 'post',
+							'volume' => 'v8n2',
+							'order' => 'ASC',
+							'posts_per_page' => '-1')); ?>
+		
 						<?php while ($asmag_v8n2_query->have_posts()) : $asmag_v8n2_query->the_post(); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
@@ -98,7 +102,7 @@
 			<div id="header">
 				
 				<div id="subheader-left">
-				<div id="logosub"><a href="http://krieger.jhu.edu/magazine" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
+				<div id="logosub"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="subheader-right">									
@@ -112,5 +116,5 @@
 			</div> <!-- End header -->
 			
 		</div> <!-- End container-head-->
-	
+		
 		<div id="nav-break"></div>

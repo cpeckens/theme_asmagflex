@@ -18,16 +18,17 @@
 		<?php the_content(); ?>
 		
 		</div><!--End postmaterial -->
-	
+		<div class="share">
+	<span class="st_twitter_large" st_url="<?php the_permalink(); ?>" st_title="<?php the_title(); ?>" st_image="<?php echo $image; ?>" st_summary="<?php the_excerpt(); ?>"></span>
+	<span class="st_facebook_large" st_url="<?php the_permalink(); ?>" st_title="<?php the_title(); ?>" st_image="<?php echo $image; ?>" st_summary="<?php the_excerpt(); ?>"></span>
+	<span class="st_email_large"></span>
+	<span class="st_sharethis_large"></span>
+	<span class="st_fblike_vcount"></span>
+	</div>
 	<?php endwhile; ?>
 
 	<?php endif; ?>
-	<div class="share">
-	<span  class="st_twitter_large"></span>
-	<span  class="st_facebook_large"></span>
-	<span  class="st_email_large"></span>
-	<span  class="st_sharethis_large"></span>
-	</div>
+
 	<?php comments_template( '/comments.php' ); ?> 
 	</div> <!--article -->
 	
@@ -63,9 +64,8 @@
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'volume' => 'v9n1',
 		'order' => 'ASC',
-		'posts_per_page' => '-1')); ?>
+		'posts_per_page' => '5')); ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
 			
@@ -90,4 +90,4 @@
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-mid -->
 
-<?php get_footer(); ?>
+<?php get_footer('v9n1'); ?>

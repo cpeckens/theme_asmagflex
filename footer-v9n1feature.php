@@ -5,8 +5,8 @@
 			<div id="footer-feature">
 				
 				<div id="footer-left">
-					<p><a href="/archive/spring-2011-volume-8-number-2/">Table of Contents</a> | 
-					<a href="/2011/11/editors-note-spring2011/">Editor's Note</a> | 
+					<p><a href="/">Table of Contents</a> | 
+					<a href="/2011/11/editors-note-fall2011/">Editor's Note</a> | 
 					<a href="/category/exclusive/">Web Exclusives</a> | 
 					<a href="/archive/">Archive</a> | <a href="/letters/">Letters to the Editor</a> | 
 					<a href="/contact/">Contact</a><br>&copy; <a href="http://www.jhu.edu">Johns Hopkins University</a>. All rights reserved.</p>					

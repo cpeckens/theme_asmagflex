@@ -1,9 +1,9 @@
 <?php
 /*
-Template Name: Vol 8 No 2 Feature
+Template Name: Vol 9 No 1 Feature
 */
 ?>
-<?php get_template_part( 'header', 'v8n2feature' ); ?>
+<?php get_header('v9n1feature'); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 	<style>
 	#feature-head {
@@ -59,7 +59,7 @@ Template Name: Vol 8 No 2 Feature
 
 					<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
-						'volume' => 'v8n2',
+						'volume' => 'v9n1',
 						'order' => 'ASC',
 						'posts_per_page' => '-1')); ?>
 		
@@ -81,4 +81,4 @@ Template Name: Vol 8 No 2 Feature
 			</div>
 
 			</div>
-<?php get_template_part( 'footer', 'v8n2feature' ); ?>
+<?php get_footer('v9n1feature'); ?>
