@@ -80,10 +80,14 @@ p.othercredits {
 
 #feature .postmaterial img.floatleft {
 	margin-left:-8%;
+	position: relative;
+	zoom:1;
 }
 	
 #feature .postmaterial img.floatright {
 	margin-right:-10%;
+	position: relative;
+	zoom:1;
 }
 
 #feature .postmaterial img {
@@ -269,6 +273,7 @@ p.callout {
 }
 /*--------------Spanish Civil War - V8N2 - Feature 4 -------------*/
 #feature {
+background: #c5c0b4;
 background: -moz-linear-gradient(top,  rgba(197,192,180,1) 0%, rgba(197,192,180,1) 70%, rgba(197,192,180,0) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(197,192,180,1)), color-stop(70%,rgba(197,192,180,1)), color-stop(100%,rgba(197,192,180,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  rgba(197,192,180,1) 0%,rgba(197,192,180,1) 70%,rgba(197,192,180,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -366,6 +371,8 @@ p.othercredits {
 	max-width:130%;
 	margin-left:-12%;
 	margin-top:-200px;
+	position:relative;
+	zoom:1;
 }
 
 .letters p {
@@ -373,3 +380,292 @@ p.othercredits {
 	margin-left:5%;
 	padding-top: 20px;
 }
+/*--------------Thanks for the memories - V9N1 - Feature 2 -------------*/
+#feature-head {
+	height:703px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #090514;
+	border-bottom: #333366 15px solid;
+}
+
+.feature-intro {
+	width: 60%;
+	height:703px;
+	float:right;
+	background: rgba(35,46,55,0.5);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F232E37,endColorstr=#7F232E37)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F232E37,endColorstr=#7F232E37);   /* IE6 & 7 */
+	}
+
+.textblock {
+	margin: 1.5em 25% 1.5em 3%;
+	color:#FFFFFF;
+	}
+
+.textblock h3 {
+	font-family: 'MuseoSlab500', Georgia, serif;
+	font-size: 4.5em;
+	line-height: .83em;
+	margin-bottom:.5em;
+	}
+
+h4.tagline {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-size: 1.125em;
+	line-height: 1.67em;
+	margin-bottom:10px;
+	font-weight: normal;
+}
+
+p.credit {
+	font-family: 'MuseoSlab500', Georgia, serif;
+	font-size: 1.5em;
+	font-variant: small-caps;
+	margin-bottom:0;
+}
+
+
+p.othercredits {
+	font-family: 'MuseoSlab500', Georgia, serif;
+	font-size: 0.875em;
+	text-transform: uppercase;
+	margin-bottom:0;
+	font-style: normal;
+}
+
+.pullquote	{
+	float:right;
+	font-family: 'MuseoSlab900', Georgia, serif;
+	text-transform: uppercase;
+	margin-right:15px;
+	margin-top:40px;
+}
+
+.pullquote a {
+	color: #FFF;
+}
+.pullquote a img {
+	padding-right:10px;
+}
+
+p.opener {
+	font-size: 1.125em;
+	line-height: 2em;
+	}
+
+.dropcap {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	color:#06c;
+	font-size:5.5em;
+	margin-top:10px;
+}
+
+#feature {
+	background: none;
+}
+
+#feature .postmaterial {
+	border-top: #06c 15px solid;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(20%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 )"; /* IE6-9 */
+	position:relative;
+	margin-top:-140px;
+	zoom:1;
+	line-height:1.5em;
+	}
+
+#feature .postmaterial h3 {
+	color:#06c;
+	font-family: 'MuseoSlab500', Georgia, serif;
+	font-size: 1.5em;
+	margin: 0;
+}
+
+#feature .postmaterial img {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	max-width: none;
+	padding: 0;
+}
+
+#feature .postmaterial img.floatleft {
+	margin-bottom:0;
+}
+
+.imagesection1,
+.imagesection2 {
+	position:relative;
+	width:112%
+}
+
+.imagesection2 .imageholder,
+.imagesection3 {
+	position:relative;
+	width:300%;
+	background-color:#c1c9d1;
+	margin-left:-150%;
+	zoom:1;
+}
+
+.imagesection3 .listen {
+	width:33%;
+	margin-left:50%;
+}
+
+.imagesection3 .listen .left {
+	float:left;
+	width: 35%;
+}
+
+.imagesection3 .listen .right {
+	float:right;
+	width:62%;
+}
+
+#feature .postmaterial .imagesection3 .listen .right h3 {
+	font-family: Georgia, serif;
+	font-size: 1.5em;
+	color:#333;
+	margin-top:20px;
+}
+
+.right p {
+	font-family:'Helvetica W01 Roman';
+}
+
+.left h4 {
+	margin-top:20px;
+	color: #06c;
+	font-family: 'MuseoSlab900', Georgia, serif;
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+.imagesection1 img {
+	position:relative;
+	max-width: none;
+	width:195%;
+	margin-left:-50%;
+	zoom:1;
+}
+
+.imagesection2 img {
+	position:relative;
+	max-width: none;
+	width:39%;
+	margin-left:44%;
+	padding: 0;
+}
+
+.imagesection1 .caption {
+	position: relative;
+	background-color: #636;
+	width:250px;
+	float:right;
+	margin-top:-36px;
+	zoom:1;
+	margin-left:15px;
+	}
+	
+.imagesection2 .caption {
+	position: relative;
+	background-color: #636;
+	width:250px;
+	float:right;
+	margin-top:0px;
+	zoom:1;
+	margin-left:15px;
+	}
+	
+.imagesection1 .caption p,
+.imagesection2 .caption p {
+	font-family: 'MuseoSlab500', Georgia, serif;
+	font-size: 1.125em;
+	line-height:2em;
+	color: #fff;
+	margin:15px;
+}
+
+.nonbackground,
+.headerbreak {
+	display:none;
+}
+
+.tagline img {
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+/*--------------Great Wall of Waverly - V9N1 - Feature 3 -------------*/
+
+#feature-head {
+	margin-top: 230px;
+	height:930px;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.titlesection {
+	position:relative;
+	margin-top:-265px;
+	zoom:1;
+}
+
+h3.title,
+p.author {
+	display:none;
+}
+
+.dropcap {
+	color:#ffcc33;
+	font-family: 'MuseoSlab900', Georgia, serif;
+}
+
+.fancytitle {
+	opacity: 0.8;
+}
+
+.fancytitle h3 {
+	font-family: 'MuseoSlab300', Georgia, serif;
+	padding:0;
+	margin:0;
+	color:#ffffff;
+	font-size: 7em;
+	letter-spacing: -10px;
+}
+
+h3.floatright {
+	float: right;
+}
+.large {
+	font-family: 'MuseoSlab900', Georgia, serif;
+}
+
+.overlay {
+	color:#11376a;
+	font-family: serif;
+	}
+	
+.introcopy {
+	width:30%;
+	background:rgba(51,51,51,0.82); /* FF3.6+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1333333', endColorstr='#d1333333',GradientType=0 ); /* IE6-9 */
+}
+
+.pullquote ul li a {
+	color: #ffcc33;
+}
+
+
+
+
+

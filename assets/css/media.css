@@ -200,3 +200,20 @@ top:0;
 		page-break-after: avoid;
 	}
 }
+
+/* Firefox only styles
+---------------------------------------- */
+@-moz-document url-prefix(http://krieger2.jhu.edu/magazine/), url-prefix(http://krieger.jhu.edu/magazine/) {
+
+h1, h2, h3, h4, h5, h6,
+#nav ul li,
+.extranames,
+.helpbarleft h3,
+.dropdown ul,
+p.author,
+.storynav p,
+.otherstories h4,
+ul.tabs li a {
+	font-family: Helvetica W01 Cn, sans serif;	
+	}
+}

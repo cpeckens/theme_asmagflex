@@ -12,3 +12,11 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'MuseoSlab500';
+	src: url('../fonts/museo_slab_500-webfont.eot');
+	src: local('?'), url('../fonts/museo_slab_500-webfont.woff') format('woff'), url('../fonts/museo_slab_500-webfont.ttf') format('truetype'), url('../fonts/museo_slab_500-webfont.svg#webfont46ajzzu9') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

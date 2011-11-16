@@ -15,7 +15,7 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
-		<!--[if lte IE 8]>
+		<!--[if lt IE 9]>		
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<![endif]-->
 	<?php if (is_front_page()) { ?>
