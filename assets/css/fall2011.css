@@ -1,10 +1,10 @@
 /* 1.0 Background Images
 ___________________________________________________________*/
-body.spring2011 {
-	background: url(../img/clouds_bg.jpg) repeat 0 0 ;
+body.fall2011 {
+	background: url(../img/brick_bg.jpg) repeat 0 0 ;
 }
 
-body.spring2011sub {
+body.fall2011sub {
 	background: #dbeded url(../img/clouds_sub.jpg) repeat-x 0 0;
 }
 
@@ -159,18 +159,21 @@ margin-bottom: 1em;
 }
 
 .featurelisting h5 {
-	font-size: 1.125em;
-	line-height: 1.5em;
+	font-size: 0.875em;
+	line-height: 1.2em;
 	margin-bottom:0;
 	}
 
 .featurelisting p {
 	color: #333;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
-	font-size: 0.688em;
-	line-height: 0.813em;
-	
+	font-family:  Helvetica W01 Cn, sans serif;
+	font-size: 0.625em; /*10px*/
+	line-height:1;	
 	}
+
+.featurelisting p img {
+	display:none;
+}
 
 .headerbreak {
 	position: relative;
@@ -182,3 +185,10 @@ margin-bottom: 1em;
 	zoom:1;
 	}
 
+#accordion-container .slide .text {
+	width:80%;
+}
+
+#accordion-container .slide h3 {
+	font-size:2.4em;
+}

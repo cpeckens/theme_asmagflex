@@ -159,17 +159,16 @@ margin-bottom: 1em;
 }
 
 .featurelisting h5 {
-	font-size: 1.125em;
-	line-height: 1.5em;
+	font-size: 0.875em;
+	line-height: 1.2em;
 	margin-bottom:0;
 	}
 
 .featurelisting p {
 	color: #333;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
-	font-size: 0.688em;
-	line-height: 0.813em;
-	
+	font-family:  Helvetica W01 Cn, sans serif;
+	font-size: 0.625em; /*10px*/
+	line-height:1;	
 	}
 
 .headerbreak {

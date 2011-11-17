@@ -70,7 +70,7 @@ Template Name: Vol 8 No 2 Feature
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?><p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p> <?php endif; ?>

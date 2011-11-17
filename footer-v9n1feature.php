@@ -37,6 +37,7 @@
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/flyoutscroll.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/zoom.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/smoothscroll.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/comment-reply.js"></script>
 
 		<?php if (is_front_page() || is_page_template( 'v8n2-front.php' ) ){ ?>

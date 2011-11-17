@@ -14,51 +14,51 @@ Template Name: Vol 9 No 1 Homepage
 	<div id="accordion-container-wrapper">
 	<div id="accordion-container">
         <div id="as10" class="slide">
-        	<a id="slideimg10" class="image async-img">
+        	<a id="slideimg10" class="image async-img" href="/fall-2011/interns-make-an-impact/">
         		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1.jpg">
-        	</a>
+        	
         	<div class="text-back"></div>
         	<div class="text">
-        		<h3>Green Horizons</h3>
-        		<p>A dozen reasons to find hope at Hopkins for a more sustainable future.</p>
-        	</div>
+        		<h3>Toward a Better Baltimore</h3>
+        		<p>Last summer, 25 student interns made their mark in the city's neediest neighborhoods.</p>
+        	</div></a>
         		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1strip.jpg">
         </div>
         
         <div id="as11" class="slide">
-        		<a id="slideimg11" class="image async-img">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2.jpg">
-        		</a>
+        		<a id="slideimg11" class="image async-img" href="/fall-2011/thanks-for-the-memories/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature2.jpg">
+        		
         		<div class="text-back"></div>
         		<div class="text">
-        		<h3>Real Science</h3>
-        		<p>Up-ending the "cookbook" approach to teaching&mdash;and learning.</p>
-        		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2strip.jpg">
+        		<h3>Thanks for the Memories</h3>
+        		<p>Mike Yassa is making great strides in memory research, and taking his students along with him.</p>
+        		</div></a>
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature2strip.jpg">
         	</div>
         	
         	<div id="as12" class="slide">
-        		<a id="slideimg12" class="image async-img" >
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3.jpg">
-        		</a>
+        		<a id="slideimg12" class="image async-img" href="/fall-2011/the-great-wall-of-waverly/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature3.jpg">
+        		
         		<div class="text-back"></div>
         		<div class="text">
-        			<h3>Teachers for Tomorrow</h3>
-        			<p>This spring's Teach for America grads are all over the map.</p>
-        		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3strip.jpg">
+        			<h3>The Great Wall of Waverly</h3>
+        			<p>Hopkins artists, led by Tom Chalkley, have created a striking tribute to a vibrant community.</p>
+        		</div></a>
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature3strip.jpg">
         	</div>
         	
         	<div id="as13" class="slide">
-        		<a id="slideimg13" class="image async-img">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4.jpg">
-        		</a>
+        		<a id="slideimg13" class="image async-img" href="/fall-2011/a-poem-lovely-as-a-smartphone/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature4.jpg">
+        		
         		<div class="text-back"></div>
         		<div class="text" >
-        			<h3>Spanish Civil War</h3>
-        			<p>Hopkins professor's tragic disappearance left a hole in the hearts of many.</p>
-        		</div>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4strip.jpg">
+        			<h3>A poem lovely as &hellip; a smartphone?</h3>
+        			<p>Is there a place for poetry in today's high-tech world? Absolutely, says Mary Jo Salter.</p>
+        		</div></a>
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature4strip.jpg">
         	</div>
         </div> <!-- accordion-container -->
 	</div> <!-- accordion-container-wrapper --> 
@@ -144,7 +144,7 @@ Template Name: Vol 9 No 1 Homepage
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>

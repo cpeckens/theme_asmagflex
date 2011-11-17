@@ -144,7 +144,7 @@ Template Name: Vol 8 No 2 Homepage
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>

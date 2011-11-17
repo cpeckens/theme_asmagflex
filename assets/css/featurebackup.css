@@ -391,7 +391,7 @@ p.othercredits {
 
 .feature-intro {
 	width: 60%;
-	height:703px;
+	height:615px;
 	float:right;
 	background: rgba(35,46,55,0.5);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F232E37,endColorstr=#7F232E37)"; /* IE8 */
@@ -507,6 +507,10 @@ p.opener {
 	width:112%
 }
 
+.imagesection2 {
+	margin-bottom: 15px;
+}
+
 .imagesection2 .imageholder,
 .imagesection3 {
 	position:relative;
@@ -607,8 +611,12 @@ p.opener {
 
 /*--------------Great Wall of Waverly - V9N1 - Feature 3 -------------*/
 
+#feature {
+	background: rgba(51, 51, 51, 0.8);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6333333', endColorstr='#e6333333',GradientType=0 );
+	}
+
 #feature-head {
-	margin-top: 230px;
 	height:930px;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -616,12 +624,12 @@ p.opener {
 
 .titlesection {
 	position:relative;
-	margin-top:-265px;
-	zoom:1;
+	margin: 15px auto 0;
+	max-width: 820px;
 }
 
 h3.title,
-p.author {
+p.credit {
 	display:none;
 }
 
@@ -641,6 +649,7 @@ p.author {
 	color:#ffffff;
 	font-size: 7em;
 	letter-spacing: -10px;
+	line-height:.75;
 }
 
 h3.floatright {
@@ -651,8 +660,15 @@ h3.floatright {
 }
 
 .overlay {
+	font-size: 85px;
 	color:#11376a;
-	font-family: serif;
+	font-family: Palatino, serif;
+	font-style: italic;
+	margin-right:-20px;
+	position: relative;
+	zoom:1;
+	z-index: 3;
+	
 	}
 	
 .introcopy {
@@ -661,11 +677,224 @@ h3.floatright {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1333333', endColorstr='#d1333333',GradientType=0 ); /* IE6-9 */
 }
 
+.pullquote {
+	padding:1em;
+	color: #ffcc33;
+}
+
 .pullquote ul li a {
 	color: #ffcc33;
+	font-family: 'Helvetica W01 Cn', sans serif;
+}
+
+h4.tagline,
+p.othercredits {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	color: #003366;
+	font-size: 1em;
+}
+
+h4.tagline {
+	line-height: 2em;
+	padding-top:1em;
+	padding-right:1em;
+
+}
+
+p.othercredits {
+	float:right;
+	margin-right:40px;
+	line-height: 0;
+	position: relative;
+	margin-top:-35px;
+	zoom: 1;
+}
+
+.postmaterial p {
+	font-family: Helvetica W01 Cn, sans serif;
+	color:#ffffff;
+	font-size: 1.125em;
+	line-height: 1.875em;
+}
+
+.postmaterial h3 {
+	color:#FC3;
+	font-family: 'MuseoSlab900', Georgia, serif;
+	}
+
+.postmaterial img {
+	max-width: none;
+}
+
+.mygallery #gallery-1 img  {
+max-width: 125px;
 }
 
 
 
+/*--------------A poem as lovely - V9N1 - Feature 4 -------------*/
 
+.nonbackground,
+h3.title,
+.headerbreak {
+	display: none;
+}
 
+#feature-head {
+	height:1082px;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.textblock {
+	width: 73%;
+	float:right;
+}
+
+h3.italic {
+	font-family: Palatino, serif;
+	font-style: italic;
+	color: #ffffff;
+	margin-bottom: 0;
+	font-size: 3em;
+	margin-top:30px;
+
+}
+
+h3.large {
+	font-family: 'MuseoSlab900', Georgia, serif;
+	color: #f5f073;
+	font-size: 4.5em;
+	float: right;
+}
+
+h4.tagline,
+p.credit,
+p.othercredits {
+	font-family:  Helvetica W01 Bd Cn, sans serif;
+	color:#ffff66;
+	margin-left:60%;
+	text-shadow: 0px 0px 6px #333;
+}
+
+h4.tagline,
+p.credit {
+	font-size: 1.375em;
+	line-height: 1.35em;
+}
+
+p.othercredits {
+	font-size: 1.125em;
+}
+
+h4.tagline {
+	margin-bottom: 100px;
+}
+
+#feature {
+	background: none;
+	background-color:#bfe3d4;
+	position:relative;
+	margin-top:-210px;
+	zoom:1;
+}
+
+.dropcap {
+	font-family: Helvetica W01 Cn, sans serif;
+	-webkit-border-radius: 90px;
+	-moz-border-radius: 90px;
+	border-radius: 90px;
+	background: #ffff66;
+	padding:19px;
+	margin-right:-24px;
+	margin-top:-38px;
+	zoom: 1;
+}
+
+p.opener {
+	font-family: Helvetica W01 Cn, sans serif;
+	font-size: 1.5em;
+	line-height: 2.5em;
+	margin-top:-25px;
+	position: relative;
+	zoom: 1;
+}
+
+p.question {
+	font-weight: bold;
+	margin-bottom:0;
+}
+
+li.red {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/red.png) no-repeat 0px .2em; 
+	padding-left:30px;
+}
+
+li.yellow {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/yellow.png) no-repeat 0px .2em; 
+	padding-left:30px;
+}
+
+li.purple {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/blue.png) no-repeat 0px .2em; 
+	padding-left:30px;
+}
+
+li.black {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/black.png) no-repeat 0px .2em; 
+	padding-left:30px;
+}
+
+li.redright {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/red.png) no-repeat 45% .2em; 
+	padding-left:30px;
+}
+
+li.yellowright {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/yellow.png) no-repeat 45% .2em; 
+	padding-left:30px;
+}
+
+li.purpleright {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/blue.png) no-repeat 45% .2em; 
+	padding-left:30px;
+}
+
+li.blackright {
+	list-style:none;
+	background:url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/bullets/black.png) no-repeat 45% .2em; 
+	padding-left:30px;
+}
+
+.imageblockleft {
+	background:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	margin-left: -15%;
+	position: relative;
+	zoom: 1;
+	margin-right:40px;
+}
+
+.imageblockleft .caption {
+	color: #381577;
+	width:75%;
+	padding-left:30px;
+	padding-top: 15px;
+	background: url(http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/img/quote-mark.png) no-repeat left top;
+	font-size: 1.063em;
+	line-height: 2em;
+	font-weight:bold;
+	float:right;
+	margin-bottom: -80px;
+	position: relative;
+	zoom:1;
+	}

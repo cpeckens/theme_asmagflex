@@ -14,10 +14,9 @@ Template Name: Vol 9 No 1 Feature
 	<div id="feature-head">
 		<div class="intro-container">
 		<div class="feature-intro">
-		<div class="nonbackground"><?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
-			<img src="<?php echo $image; ?>"></div>
 			<div class="textblock">
-				<h3><?php the_title(); ?></h3>
+				<?php if ( get_post_meta($post->ID, 'fancy_title', true) ) : ?><div class="fancytitle"><?php echo get_post_meta($post->ID, 'fancy_title', true); ?></div><?php endif; ?>
+				<h3 class="featuretitle"><?php the_title(); ?></h3>
 				<h4 class="tagline"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?>  <?php echo get_post_meta($post->ID, 'tagline', true); ?><?php endif; ?></h4>
 				<p class="credit">By&nbsp;<?php the_author(); ?></p>
 				<p class="othercredits"><?php if ( get_post_meta($post->ID, 'other_credits', true) ) : ?>  <?php echo get_post_meta($post->ID, 'other_credits', true); ?><?php endif; ?></p>
@@ -71,7 +70,7 @@ Template Name: Vol 9 No 1 Feature
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="alumthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?><p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p> <?php endif; ?>

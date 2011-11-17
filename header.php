@@ -31,7 +31,7 @@
 		<![endif]-->
 	</head>
 
-<body class="spring2011">
+<body class="fall2011">
 		<div id="container-head">
 			
 			<div id="header">
