@@ -79,6 +79,10 @@ img {
     margin-bottom:4px;
 }
 
+#accordion-container .slide .text {
+	font-family: Helvetica W01 Cn, sans serif;
+}
+
 #accordion-container .slide .text h3 a,
 #accordion-container .slide .text h3 a:visited,
 #accordion-container .slide .text h3 a:hover,

@@ -150,7 +150,7 @@ img a {
 #footer-feature p,
 #footer-feature a {
 	margin-bottom: 0.938em;
-	font-size: 0.625em
+	font-size: 0.85em
 }
 	
 /* 3.1 Social Media
@@ -388,7 +388,12 @@ ___________________________________________________________*/
 	padding-top:2px;
 	font-size: 0.625em;
 	font-family:  Helvetica W01 Bd Cn, sans serif;
+	margin-left: 65px;
 	}
+
+.alumarticle .extranames {
+	margin-left:0;
+}	
 
 /* 6.2 News & Insights
 ----------------------------------*/
@@ -396,7 +401,7 @@ ___________________________________________________________*/
 	width: 30%; /* 210px / 700px */
 	margin: 0.625em 1.428571428571429%; /*10px / 700px */
 	float:left;
-	height:90px;
+	height:100px;
 }
 
 .homethumb {
@@ -532,7 +537,12 @@ ___________________________________________________________*/
 
 .toc { 
 	position:relative;
+	zoom:1;
 }
+
+.toc a {
+	width:24px;
+	height: 24px;}
 
 .snippet {
 	margin-left: 2.5%; /* 10px / 400px */
@@ -554,9 +564,11 @@ ul.menu_options{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6333333', endColorstr='#e6333333',GradientType=0 );
     zoom: 1;
 	padding:0;
+	z-index:300;
 }
 
-.menu_options li{
+ul.menu_options li{
+	position:relative;
     list-style:none;
     padding:5px;
 	opacity: 1;
@@ -583,12 +595,16 @@ ul.menu_options{
     padding:5px 5px 20px 5px;
 }
 
-.menu_options a:hover{
+.menu_options a:hover {
     background:#44a2e2;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
 }
 
+ul.menu_options li a {
+	position: relative;
+	z-index:2000;
+	}
 
 .dropdown { 
 	width:90%; 
@@ -606,7 +622,8 @@ ul.dropdown a:hover {
 }
 
 .dropdown ul {
-	position: absolute; 
+	position: relative;
+	z-index:2000;
 	background: rgba(51, 51, 51, 0.9);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6333333', endColorstr='#e6333333',GradientType=0 );
 	zoom: 1;
@@ -703,8 +720,6 @@ p.othercredits {
 }
 
 .postmaterial img {
-	padding: 8px;
-	background: #f5f4f1;
 	margin: 0;
 	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.64);
 	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.64);
@@ -715,6 +730,10 @@ p.othercredits {
 .postmaterial img.floatleft {
 	margin-right: 10px;
 	margin-bottom: 10px;
+}
+
+.postmaterial img.fullbleed {
+	max-width:100%;
 }
 
 .imageblockleft {

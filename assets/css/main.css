@@ -56,7 +56,7 @@ body {
 
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
-	font: 1em/1.5  Helvetica W01 Cn, sans serif;
+	font: 1em/1.5  Helvetica W01 Roman, sans serif;
 	color: #333; /* Full black on white is too much contrast, #222 is a better default */
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	font-smooth:always;

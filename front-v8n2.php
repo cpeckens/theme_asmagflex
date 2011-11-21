@@ -3,7 +3,7 @@
 Template Name: Vol 8 No 2 Homepage
 */
 ?>	
-<?php get_template_part( 'header', 'v8n2' ); ?>
+<?php get_template_part( 'header', 'v8n2front' ); ?>
 	
 	<script type="text/javascript"> //Setup accordion
 		var $j = jQuery.noConflict();

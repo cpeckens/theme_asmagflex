@@ -1,14 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
-
-body, button, input, select, textarea,
-p.othercredits,
-.explore
- {
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-weight: 400;
-}
-
-
 h1, h2, h3, h4, h5, h6,
 #nav ul li,
 .extranames,
@@ -19,6 +8,31 @@ p.author,
 .otherstories h4,
 ul.tabs li a
  {
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-weight: 700;
+	font-family: 'Helvetica W01 Cn', Arial sans serif;	
+}
+
+img.tocbutton,
+ul.menu_options,
+.dropdown ul {
+	display:none;
+	visibility: hidden;
+	
+}
+
+.fall2011 .dean {
+	margin-top:0;
+	bottom:75px;
+
+}
+
+.spring2011 .dean {
+	bottom:60px;
+}
+
+.postmaterial,
+#article-right,
+.homearticle,
+.alumarticle
+ {
+	font-size:115%;
 }

@@ -14,8 +14,8 @@
 				<div id="footer-right">
 						<ul id="social-media">
 							<a href="http://www.facebook.com/JHUKSAS"><li class="facebook"><span>Facebook</span></li></a>
-							<a href="http://vimeo.com/jhuksas"><li class="vimeo"><span>Vimeo</span</li></a>
-							<a href="/feed/"></a><li class="rss"><span>RSS</span></li>
+							<a href="http://vimeo.com/jhuksas"><li class="vimeo"><span>Vimeo</span></li></a>
+							<a href="/feed/"><li class="rss"><span>RSS</span></li></a>
 						</ul>
 				
 				</div>

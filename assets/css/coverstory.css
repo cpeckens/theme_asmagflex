@@ -1,0 +1,267 @@
+#feature-head {
+	min-height:675px;
+	background-position: top;
+}
+
+.intro-container {
+	max-width:880px;
+	}
+
+h3.thin {
+	font-size: 4.875em;
+	color:#fff;
+	font-family: Helvetica W01 Roman, sans-serif;
+	padding-top:40px;
+	margin-bottom:0;
+	}
+
+h3.impact {
+	float:right;
+	font-size: 13em;
+	color:#fc0;
+	margin-top:0;
+	margin-bottom:20px;
+	font-family: Helvetica W01 Roman, sans-serif;
+	font-weight: bold;
+	line-height: .65em;
+
+	}
+
+.pullquote p,
+p.credit,
+p.othercredits {
+	color:#FFF;
+	font-family: Helvetica W01 Roman, sans-serif;
+	text-align: justify;
+	font-weight: bold;
+
+}
+
+.pullquote p {
+	font-size: 1.5em;
+	line-height: 2em;
+	margin-bottom: 30px;
+	clear:right;
+	}
+
+p.credit {
+	font-size: 1.125em;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+p.othercredits {
+	font-size:0.875em;
+	text-transform: uppercase;
+	text-align: center;
+	font-style: normal;
+}
+
+/* ------- Coverstory NAV ------- */
+#nav_area {   
+position:fixed;   
+left: 0px;   
+bottom: 0px;   
+height: 155px;   
+width: 100%;   
+padding: 0px 0 20px 0;   
+background: #FC0;   
+z-index: 9999;
+}
+
+#navcover { 	
+max-width: 880px; 
+margin: 0 auto; 
+}
+
+#navcover ul {
+list-style: none;
+margin-left:100px;
+}
+
+#navcover li {
+	float:left;
+	margin-right:7%;
+}
+
+#navcover a:link, #nav a:active, #nav a:visited { 
+filter:alpha(opacity=80); 
+-moz-opacity: 0.8; 
+-khtml-opacity: 0.8; 
+opacity: 0.8; 
+}
+
+#navcover a:hover {
+filter:alpha(opacity=100); 
+-moz-opacity: 1.0; 
+-khtml-opacity: 1.0; 
+opacity: 1.0;
+}
+
+#navcover a:hover img{ 
+-moz-box-shadow: 0px 0px 15px #ffff00;
+  -webkit-box-shadow: 0px 0px 15px #ffff00;
+  box-shadow: 0px 0px 15px #ffff00;
+  	-webkit-border-radius: 90px;
+	-moz-border-radius: 90px;
+	border-radius: 90px;
+
+} 
+
+#nav_tab {   
+position: fixed;   
+bottom: 175px; /*width: 100%;*/   
+left:75%;
+background: rgba(255, 255, 255, 0.5);
+-webkit-border-top-left-radius: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-topleft: 20px;
+-moz-border-radius-topright: 20px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+}
+
+#nav_tab p { 	
+font-family: Helevetica W01 Roman; 	
+text-align: center;	
+padding: 2px 20px 2px; 	
+color: #003366;
+font-size: 0.875em;
+margin-bottom:0;
+margin-top: 5px;	
+}
+
+
+
+
+#feature {
+	background: rgba(255,255,255,0.9);
+}
+
+.footmaterial {
+	max-width: 820px;
+}
+
+.postmaterial {
+	padding:0;
+}
+
+.postmaterial h3 {
+	background: #fc0;
+	padding: 15px;
+	color: #003366;
+	font-family: Georgia, serif;
+	font-size: 1.875em;
+	}
+
+.postmaterial p {
+	margin-left:15px;
+	width: 75%;
+	font-size: 0.75em;
+	line-height: 1.5em;
+}
+
+.sidequote {
+	background: #FFF;
+	float: right;
+	width: 35%;
+	padding-top:15px;
+	margin-left:15px;
+	margin-bottom:10px;
+}
+
+.sidequote p {
+	font-family: Helvetica W01 Bd Cn, sans-serif;
+	color: #003366;
+	border-left: 15px solid #fc0;
+	padding:15px;
+	font-size: 0.875em;
+	line-height: 2em;
+}
+
+#intern1,
+#intern1foot,
+#intern2,
+#intern2foot,
+#intern3,
+#intern3foot,
+#intern4,
+#intern4foot {
+	width:100%;
+	margin: 0 auto;
+}
+
+#intern1 {
+	background: url('../img/fall11/intern1.jpg') no-repeat center top;
+	padding-top:850px;
+	margin-top:-20px;
+}
+
+#intern2 {
+	background: url('../img/fall11/intern2.jpg') no-repeat center top;
+	padding-top: 1200px;
+}
+
+#intern3 {
+	background: url('../img/fall11/intern3.jpg') no-repeat center top;
+	padding-top: 950px;
+}
+
+#intern4 {
+	background: url('../img/fall11/intern4.jpg') no-repeat center top;
+	padding-top: 850px;
+}
+
+#intern1foot {
+	background: #000;
+}
+
+#intern2foot {
+	background: #CC9933;
+}
+
+#intern3foot {
+	background: #EAA6A1;
+}
+
+#intern4foot {
+	background: #663333;
+}
+
+.footmaterial {
+	padding-top: 20px;
+	padding-bottom:30px;
+	font-family: Helvetica W01 Bd Cn, sans-serif;
+	margin: 0 auto;
+}
+
+.footmaterial .caption {
+	width:35%;
+	float:left;
+}
+
+.footmaterial .caption img {
+	padding-top:10px;
+	padding-right:10px;
+}
+
+.footmaterial .video {
+	width:60%;
+	float:right;
+}
+
+.footmaterial .video iframe {
+	float:right;
+}
+.footmaterial h5 {
+	font-size: 1.875em;
+	color:#FFF;
+	margin-bottom:0;
+}
+
+.footmaterial p {
+	color: #FFF;
+	font-size: 0.875em;
+}
+

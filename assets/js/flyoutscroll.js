@@ -1,32 +1,7 @@
  var $t = jQuery.noConflict();
- var viewportwidth;
- var maxHeight;
+ var viewportwidth = window.innerWidth;
+ var maxHeight = window.innerHeight;
   
- // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
-  
- if (typeof window.innerWidth != 'undefined')
- {
-      viewportwidth = window.innerWidth,
-      maxHeight = window.innerHeight
- }
-  
-// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
- 
- else if (typeof document.documentElement != 'undefined'
-     && typeof document.documentElement.clientWidth !=
-     'undefined' && document.documentElement.clientWidth != 0)
- {
-       viewportwidth = document.documentElement.clientWidth,
-       maxHeight = document.documentElement.clientHeight
- }
-  
- // older versions of IE
-  
- else
- {
-       viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
-       maxHeight = document.getElementsByTagName('body')[0].clientHeight
- }
 
 
 $t(function(){
@@ -35,7 +10,7 @@ $t(function(){
 
          var $container = $t(this),
              $list = $container.find("ul"),
-             $anchor = $container.find("a"),
+             $anchor = $container.find(".toc"),
              height = $list.height() * 1.1,       // make sure there is enough room at the bottom
              multiplier = height / maxHeight;     // needs to move faster if list is taller
 
@@ -49,7 +24,6 @@ $t(function(){
         $list
             .show()
             .css({
-                marginTop: $container.data("origHeight"),
                 paddingTop: $container.data("origHeight")
             });
 
@@ -60,7 +34,7 @@ $t(function(){
                     height: maxHeight,
                     overflow: "hidden"
                 })
-                .mousemove(function(e) {
+                .mouseover(function(e) {
                     var offset = $container.offset();
                     var relativeY = ((e.pageY - offset.top) * multiplier) - ($container.data("origHeight") * multiplier);
                     if (relativeY > $container.data("origHeight")) {

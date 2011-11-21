@@ -1,3 +1,4 @@
+
 <?php get_template_part( 'header', 'v9n1' ); ?>
 
 <!--Pulled the taxonomy template-->

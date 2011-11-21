@@ -37,7 +37,11 @@
 		<div class="helpbarleft">
 		<div class="home"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/home.png" alt="Home" /></a></div>
 				<div class="dropdown">
-					<div class="toc"><a href="#" title="Table of Contents"><img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" /></a><h3><span class="highlight">Spring 2011</span> <span class="articlename"><?php wp_title(); ?></span></h3></div>
+					<div class="toc">
+						<a href="#" title="Table of Contents">
+						<img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" class="tocbutton" /></a>
+						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight">Fall 2011</span></a> <span class="articlename"><?php wp_title(); ?></span></h3>
+					</div>
 					<ul class="menu_options">
 				<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
