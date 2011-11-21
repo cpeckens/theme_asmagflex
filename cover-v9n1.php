@@ -1,8 +1,10 @@
 <div id="intern1">
+	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>Gaining Their Trust<a href="#intern1story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
+
 	<div id="feature">
+		<a id="intern1story" name="intern1story"></a>
 		<div class="postmaterial">
-			<h3>Gaining Their Trust</h3>
-			<p>With its pastel-striped paint job and dusty vinyl seats, the Baltimore City Public Health Department’s Needle Exchange van feels more like a camper you’d take to a state park than a pioneering site for HIV research and prevention.</p>
+			<p><span class="dropcap">W</span>ith its pastel-striped paint job and dusty vinyl seats, the Baltimore City Public Health Department’s Needle Exchange van feels more like a camper you’d take to a state park than a pioneering site for HIV research and prevention.</p>
 			
 			<p>Inside, the air conditioning runs full blast, the white noise of the fan all but obscuring the retro rhythm and blues songs on the radio. Outside, several men and women carrying plastic bags linger near the unmarked van, parked as it is every Monday morning next to the Monroe Street United Methodist Church. Across the street sits a string of rowhouses whose front sidewalks are littered with weeds, a pile of old tires, a baby carriage—the everyday urban detritus that makes this patch of Southwest Baltimore look no different than any of the city’s other underserved neighborhoods.</p>
 			
@@ -56,10 +58,11 @@
 
 
 <div id="intern2">
+	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>A Teacher Is Born<a href="#intern2story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
+		<a id="intern2story" name="intern2story"></a>
 		<div class="postmaterial">
-			<h3>A Teacher Is Born</h3>
-			<p>At Edgecombe Circle Elementary, a stone&#39;s throw from Sinai Hospital in Northwest Baltimore, Johns Hopkins sophomore Frank Molina leads a group of rising fifth&#8209; graders in a round&#8209;robin reading of Joyce Hansen&#39;s <em>The Gift&#8209;Giver</em>.</p>
+			<p><span class="dropcap">A</span>t Edgecombe Circle Elementary, a stone&#39;s throw from Sinai Hospital in Northwest Baltimore, Johns Hopkins sophomore Frank Molina leads a group of rising fifth&#8209; graders in a round&#8209;robin reading of Joyce Hansen&#39;s <em>The Gift&#8209;Giver</em>.</p>
 
 			<p>An intern with the Higher Achievement Program, Molina is assisting with the program&#39;s Summer Academy. The classroom has no air conditioning, and is so warm and dark that even the fish are sluggish in their murky aquarium, but the students willingly read aloud. Some falter, stumbling over simple contractions like &#8220;it&#39;s,&#8221; while others add swagger and emotion to the passages that capture the conversations of the young people in the book.</p>
 			
@@ -108,10 +111,11 @@
 </div>
 
 <div id="intern3">
+	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>Taking Time to Talk &hellip; Skip, and Jump<a href="#intern3story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
+		<a id="intern3story" name="intern3story"></a>
 		<div class="postmaterial">
-			<h3>Taking Time to Talk &hellip; Skip, and Jump</h3>
-<p>&#8220;You probably think you know how to skip,&#8221; says Joanna Craig to the 12 little girls in multicolored leotards and ballet slippers circled around her, &#8220;but you&#39;ve never done a ballet skip.&#8221;</p>
+<p><span class="dropcap">&#8220;Y</span>ou probably think you know how to skip,&#8221; says Joanna Craig to the 12 little girls in multicolored leotards and ballet slippers circled around her, &#8220;but you&#39;ve never done a ballet skip.&#8221;</p>
 
 <p>Craig gracefully demonstrates the step before sending the girls skipping, arms extended, across the blonde wood studio floor of the Harris&#8209;Marcus Center on Pennsylvania Avenue in West Baltimore. The center is home to Jubilee Arts, a community organization that provides arts classes at little or no cost to low&#8209;income residents of the Sandtown&#8209;Winchester and Upton communities. Classes are available for both children and adults, but it&#39;s hard to imagine the adults embracing the music and the movement with as much freedom and joy as these young girls do. Even the formal rules of ballet have a liberating effect that television or computers can&#39;t begin to match.</p>
 
@@ -161,10 +165,11 @@
 </div>
 
 <div id="intern4">
+	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>&#8220;Addiction Is Real&#8221;<a href="#intern4story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
+		<a id="intern4story" name="intern4story"></a>
 		<div class="postmaterial">
-			<h3>&#8220;Addiction Is Real&#8221;</h3>
-			<p>Inside Martha&#39;s Place, the scent of spaghetti and garlic bread hangs in the air. While the home&#39;s residents, women in the beginning stages of recovery from drug and alcohol addiction, begin to gather in the oblong dining room&#8212;a space made warm by windows, exposed brick, and wood floors&#8212;Dominique Duval crosses her legs at a desk in the front office and looks out onto Pennsylvania Avenue. She candidly admits her initial hesitation over working here.</p>
+			<p><span class="dropcap">I</span>nside Martha&#39;s Place, the scent of spaghetti and garlic bread hangs in the air. While the home&#39;s residents, women in the beginning stages of recovery from drug and alcohol addiction, begin to gather in the oblong dining room&#8212;a space made warm by windows, exposed brick, and wood floors&#8212;Dominique Duval crosses her legs at a desk in the front office and looks out onto Pennsylvania Avenue. She candidly admits her initial hesitation over working here.</p>
 			
 			<p>&#8220;The first time I [came] over, I wasn&#39;t too sure about the site, but I&#39;m really happy I&#39;m here [now],&#8221; says the 20&#8209;year&#8209; old, who is majoring in public health with a minor in Africana studies.</p>
 			

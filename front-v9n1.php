@@ -86,7 +86,9 @@ Template Name: Vol 9 No 1 Homepage
 	    			    <?php	} ?>
 	    			    <?php the_tags( '<h6>', ', ', '</h6>' ); ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
@@ -116,7 +118,8 @@ Template Name: Vol 9 No 1 Homepage
 	    			    <?php	} ?>
 	    			    <?php the_tags( '<h6>', ', ', '</h6>' ); ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
@@ -147,7 +150,8 @@ Template Name: Vol 9 No 1 Homepage
 	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <?php else : the_excerpt(); endif; ?></a>
 	    				 <div class="extranames">
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
@@ -177,7 +181,8 @@ Template Name: Vol 9 No 1 Homepage
 	    			    						echo $image_url[0];  ?>" align="left" class="webthumb" /></a>
 	    			    <?php	} ?>
 	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a></div>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <?php else : the_excerpt(); endif; ?></a></div>
 	    			
 	    			</div><!--End snippet -->
 	    				

@@ -672,10 +672,10 @@ ul.dropdown a:hover {
 }
 
 .postmaterial {
-	font-family: "Georgia", serif;
+	font-family: 'Georgia', serif;
 	padding: 2em 2.272727272727273%;
-	font-size: 0.875em;
-	line-height: 1.25em;
+	font-size: 1em;
+	line-height: 1.6em;
 }
 
 .postmaterial ul {
@@ -772,7 +772,8 @@ p.othercredits {
 }
 
 p.caption {
-	font-size: 0.75em;
+	font-size: 0.9em;
+	line-height: 1.2em;
 	padding-left: 10px;
 	margin:0;
 	}
@@ -785,7 +786,8 @@ p.quote {
 	}
 	
 p.photocredit {
-	font-size: 0.625em;
+	float:right;
+	font-size: 0.8em;
 	font-style: italic;
 	padding-left: 10px;
 	margin:0;
@@ -850,7 +852,7 @@ p.photocredit {
 #article-right p,
 .snippet h4 {
 	margin:0;
-	line-height: 1.2em;
+	line-height: 1.6em;
 }
 
 #article-right p {
