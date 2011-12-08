@@ -5,19 +5,30 @@
 	<div id="content">
 	    
 	    <div id="article">
+	    <div class="postmaterial">
+	    <h3><?php single_cat_title() ?></h3>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-		<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
-
-		<div class="postmaterial">
-		<h3><?php the_title(); ?></h3>
-		
-		<?php the_content(); ?>
-		
-		</div><!--End postmaterial -->
+	    			<div class="catarticle">
+	    			    <?php if ( has_post_thumbnail()) { ?> 
+	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
+	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
+	    			    						echo $image_url[0];  ?>" class="floatleft" /></a>
+	    			    <?php	} ?>
+	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <?php else : the_excerpt(); endif; ?></a>
+	    				 <div class="extranames">
+	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
+	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
+	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
+	    				</div><!--End extranames -->
+	    			</div><!--End snippet -->
 	
 	<?php endwhile; ?>
 
 	<?php endif; ?>
+	</div>
 	</div> <!--article -->
 	
 	

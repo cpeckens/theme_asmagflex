@@ -5,15 +5,15 @@ body.fall2011 {
 }
 
 body.fall2011sub {
-	background: #A6CBDF url(../img/fall/brick_fade.png) repeat-x 0 0;
+	background: #A6CBDF url(../img/fall11/brick_fade.png) repeat-x 0 0;
 }
 
 #container-foot {
-	background: #a9aaa4 url('../img/footer_repeat.png') repeat-x left top;
+	background: #0069a1 url('../img/footer_repeat.png') repeat-x left top;
 }
 
 #footer {
-	background: #a9aaa4 url('../img/footer_bg.png') no-repeat center bottom;
+	background: #0069a1;
 }
 
 /* 2.0 Font Colors
@@ -30,7 +30,8 @@ a:visited {
 #issue h6 a,
 #issue h6 a:hover,
 #issue h6 a:visited,
-.otherstories h4
+.otherstories h4,
+p.author
 {
 	color:#B9501B;
 }

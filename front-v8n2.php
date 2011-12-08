@@ -14,7 +14,7 @@ Template Name: Vol 8 No 2 Homepage
 	<div id="accordion-container-wrapper">
 	<div id="accordion-container">
         <div id="as10" class="slide">
-        	<a id="slideimg10" class="image async-img" href="/archive/spring-2011-volume-8-number-2/green-horizons/">
+        	<a id="slideimg10" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/green-horizons/">
         		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1.jpg">
         	
         	<div class="text-back"></div>
@@ -26,7 +26,7 @@ Template Name: Vol 8 No 2 Homepage
         </div>
         
         <div id="as11" class="slide">
-        		<a id="slideimg11" class="image async-img" href="/archive/spring-2011-volume-8-number-2/real-science/">
+        		<a id="slideimg11" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/real-science/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2.jpg">
         		
         		<div class="text-back"></div>
@@ -38,7 +38,7 @@ Template Name: Vol 8 No 2 Homepage
         	</div>
         	
         	<div id="as12" class="slide">
-        		<a id="slideimg12" class="image async-img" href="/archive/spring-2011-volume-8-number-2/teach-for-america/">
+        		<a id="slideimg12" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/teach-for-america/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3.jpg">
         		
         		<div class="text-back"></div>
@@ -50,7 +50,7 @@ Template Name: Vol 8 No 2 Homepage
         	</div>
         	
         	<div id="as13" class="slide">
-        		<a id="slideimg13" class="image async-img" href="/archive/spring-2011-volume-8-number-2/spanish-civil-war/">
+        		<a id="slideimg13" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/spanish-civil-war/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4.jpg">
         		
         		<div class="text-back"></div>
@@ -72,7 +72,8 @@ Template Name: Vol 8 No 2 Homepage
 	<?php $asmag_news_query = new WP_Query(array(
 		'cat' => '4',
 		'volume' => 'v8n2',
-		'order' => 'ASC',
+		'orderby' => 'date',
+		'order' => 'DESC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_news_query->have_posts()) : $asmag_news_query->the_post(); ?>
@@ -103,7 +104,8 @@ Template Name: Vol 8 No 2 Homepage
 	<?php $asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
 		'volume' => 'v8n2',
-		'order' => 'ASC',
+		'orderby' => 'date',
+		'order' => 'DESC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_insights_query->have_posts()) : $asmag_insights_query->the_post(); ?>
@@ -136,7 +138,8 @@ Template Name: Vol 8 No 2 Homepage
 	<?php $asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
 		'volume' => 'v8n2',
-		'order' => 'ASC',
+		'orderby' => 'date',
+		'order' => 'DESC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_alumni_query->have_posts()) : $asmag_alumni_query->the_post(); ?>
@@ -167,7 +170,8 @@ Template Name: Vol 8 No 2 Homepage
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'order' => 'ASC',
+		'orderby' => 'date',
+		'order' => 'DESC',
 		'posts_per_page' => '5')); ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
@@ -177,7 +181,7 @@ Template Name: Vol 8 No 2 Homepage
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'exclusive', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="webthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="webthumb" /></a>
 	    			    <?php	} ?>
 	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>

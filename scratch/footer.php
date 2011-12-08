@@ -3,7 +3,7 @@
 			<div id="footer">
 				
 				<div id="footer-left">
-					<p><a href="<?php echo get_home_url(); ?>">Table of Contents</a> | <a href="/2011/11/editors-note-fall2011/">Editor's Note</a> | <a href="/category/exclusive/">Web Exclusives</a> | <a href="/archive/">Archive</a> | <a href="/contact/">Contact</a><br>&copy; <a href="http://www.jhu.edu">Johns Hopkins University</a>. All rights reserved.</p>
+					<p><a href="<?php echo get_home_url(); ?>">Table of Contents</a> | <a href="/2011/10/editors-note-fall2011/">Editor's Note</a> | <a href="/category/exclusive/">Web Exclusives</a> | <a href="/archive/">Archive</a> | <a href="/contact/">Contact</a><br>&copy; <a href="http://www.jhu.edu">Johns Hopkins University</a>. All rights reserved.</p>
 					<img src="<?php bloginfo('template_url'); ?>/assets/img/footlogo.png" alt="Johns Hopkins University" />
 				</div>
 				

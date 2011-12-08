@@ -14,19 +14,19 @@ Template Name: Vol 9 No 1 Homepage
 	<div id="accordion-container-wrapper">
 	<div id="accordion-container">
         <div id="as10" class="slide">
-        	<a id="slideimg10" class="image async-img" href="/fall-2011/interns-make-an-impact/">
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1.jpg">
+        	<a id="slideimg10" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/interns-make-an-impact/">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature1.jpg">
         	
         	<div class="text-back"></div>
         	<div class="text">
         		<h3>Toward a Better Baltimore</h3>
         		<p>Last summer, 25 student interns made their mark in the city's neediest neighborhoods.</p>
         	</div></a>
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1strip.jpg">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature1strip.jpg">
         </div>
         
         <div id="as11" class="slide">
-        		<a id="slideimg11" class="image async-img" href="/fall-2011/thanks-for-the-memories/">
+        		<a id="slideimg11" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/thanks-for-the-memories/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature2.jpg">
         		
         		<div class="text-back"></div>
@@ -38,7 +38,7 @@ Template Name: Vol 9 No 1 Homepage
         	</div>
         	
         	<div id="as12" class="slide">
-        		<a id="slideimg12" class="image async-img" href="/fall-2011/the-great-wall-of-waverly/">
+        		<a id="slideimg12" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/the-great-wall-of-waverly/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature3.jpg">
         		
         		<div class="text-back"></div>
@@ -50,7 +50,7 @@ Template Name: Vol 9 No 1 Homepage
         	</div>
         	
         	<div id="as13" class="slide">
-        		<a id="slideimg13" class="image async-img" href="/fall-2011/a-poem-lovely-as-a-smartphone/">
+        		<a id="slideimg13" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/a-poem-lovely-as-a-smartphone/">
         			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature4.jpg">
         		
         		<div class="text-back"></div>
@@ -72,6 +72,7 @@ Template Name: Vol 9 No 1 Homepage
 	<?php $asmag_news_query = new WP_Query(array(
 		'cat' => '4',
 		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -104,6 +105,7 @@ Template Name: Vol 9 No 1 Homepage
 	<?php $asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
 		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -137,6 +139,7 @@ Template Name: Vol 9 No 1 Homepage
 	<?php $asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
 		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
@@ -168,6 +171,7 @@ Template Name: Vol 9 No 1 Homepage
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
+		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '5')); ?>
 		
@@ -178,7 +182,7 @@ Template Name: Vol 9 No 1 Homepage
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
 	    			    						$image_url = wp_get_attachment_image_src($image_id,'exclusive', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="webthumb" /></a>
+	    			    						echo $image_url[0];  ?>" class="webthumb" /></a>
 	    			    <?php	} ?>
 	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
@@ -194,7 +198,7 @@ Template Name: Vol 9 No 1 Homepage
 
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 	    		<div class="dean">
-	    		<a href="/2011/11/baltimore-engaging-a-city/"><img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
+	    		<a href="<?php echo get_home_url(); ?>/2011/10/baltimore-engaging-a-city/"><img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
 	    	<div class="deantext"><h5>Baltimore: Engaging a City</h5></a>
 	    	<!-- <p>Pellentesque habitant morbi tristique</p> --></div>
 	    	</div>

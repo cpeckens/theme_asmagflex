@@ -391,7 +391,8 @@ ___________________________________________________________*/
 	margin-left: 65px;
 	}
 
-.alumarticle .extranames {
+.alumarticle .extranames,
+.subtext .extranames {
 	margin-left:0;
 }	
 
@@ -707,7 +708,6 @@ ul.dropdown a:hover {
 }
 
 p.author {
-	color:#F63;
 	font-family:  Helvetica W01 Bd Cn, sans serif;
 	letter-spacing: .3em;
 	text-transform: uppercase;
@@ -736,10 +736,13 @@ p.othercredits {
 	max-width:100%;
 }
 
+.fullbleedcaption {
+	margin-bottom:50px;
+}
+
 .imageblockleft {
 	float:left;
 	width: 55%;
-	padding-right: 16px;
 	background: #f5f4f1;
 	margin-right: 1em;
 	margin-bottom: 5px;
@@ -752,7 +755,6 @@ p.othercredits {
 .imageblockright {
 	float:right;
 	width: 55%;
-	padding-right: 16px;
 	background: #f5f4f1;
 	margin-left: 1em;
 	margin-bottom: 5px;
@@ -821,8 +823,8 @@ p.photocredit {
 	width: 80px;
 	clear: both;
 	margin: 0 0 18px;
-	background: url('../img/icon_more_less.gif') no-repeat 0px 3px;
-	padding-left: 17px;
+	background: url('../img/fall11/arrowdown.gif') no-repeat 0px 0px;
+	padding-left: 25px;
 }
 #article-right .web-wrapper {
 	margin-left: -2.413793103448276%;
@@ -857,7 +859,7 @@ p.photocredit {
 
 #article-right p {
 	font-size: 0.625em;
-	line-height: 1em;
+	line-height: 1.6em;
 }
 
 .subarticle {
@@ -1026,3 +1028,27 @@ h4.letters {
 	margin-bottom: .8em;
 }
 
+
+.catarticle {
+	width:90%;
+	float:left;
+	padding: 15px;
+}
+
+.catarticle img {
+	margin-right:15px;
+}
+
+.catarticle h5 {
+	font-size: 1.25em;
+	margin-bottom: 0;
+}
+
+.catarticle a p{
+	color: #333;
+}
+
+.subtext p img,
+.catarticle p img {
+	display:none;
+}

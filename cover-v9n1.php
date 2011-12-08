@@ -1,5 +1,9 @@
+	<style>
+	<?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style> <!--Add features custom CSS-->
+	
+	
 <div id="intern1">
-	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>Gaining Their Trust<a href="#intern1story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
+	<div class="interntitle"><img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrowblue.png" class="floatright"><h3>Gaining Their Trust<a href="#intern1story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 
 	<div id="feature">
 		<a id="intern1story" name="intern1story"></a>
@@ -58,7 +62,7 @@
 
 
 <div id="intern2">
-	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>A Teacher Is Born<a href="#intern2story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
+	<div class="interntitle"><img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrowblue.png" class="floatright"><h3>A Teacher Is Born<a href="#intern2story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
 		<a id="intern2story" name="intern2story"></a>
 		<div class="postmaterial">
@@ -99,19 +103,34 @@
 	<div class="footmaterial">
 		<div class="caption">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrow.png" align="left" />
-			<h5>Video</h5>
-			<p>This is the video description</p>
+			<h5>Image Gallery</h5>
 		</div>
 		
 		<div class="video">
-			<div class="videocontainer"><iframe src="http://player.vimeo.com/video/30906216?title=0&amp;byline=0&amp;portrait=0?wmode=transparent" width="100%" height="295" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen> </iframe></div>
-		</div>
+			<div id="gallery-1" class="gallery galleryid-849 gallery-columns-3 gallery-size-thumbnail"><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/1-DSC_26581.jpg" title="1-DSC_2658" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/1-DSC_26581-150x150.jpg" class="attachment-thumbnail" alt="1-DSC_2658" title="1-DSC_2658"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/2-DSC_27221.jpg" title="2-DSC_2722" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/2-DSC_27221-150x150.jpg" class="attachment-thumbnail" alt="2-DSC_2722" title="2-DSC_2722"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/3-DSC_26031.jpg" title="3-DSC_2603" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/3-DSC_26031-150x150.jpg" class="attachment-thumbnail" alt="3-DSC_2603" title="3-DSC_2603"></a>
+			</dt></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/4-DSC_28081.jpg" title="4-DSC_2808" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/4-DSC_28081-150x150.jpg" class="attachment-thumbnail" alt="4-DSC_2808" title="4-DSC_2808"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/5-DSC_27071.jpg" title="5-DSC_2707" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/5-DSC_27071-150x150.jpg" class="attachment-thumbnail" alt="5-DSC_2707" title="5-DSC_2707"></a>
+			</dt></dl>
+			<br style="clear: both;">
+		</div>		</div>
 		<div class="clearboth"></div>
 	</div>
 </div>
 
 <div id="intern3">
-	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>Taking Time to Talk &hellip; Skip, and Jump<a href="#intern3story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
+	<div class="interntitle"><img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrowblue.png" class="floatright"><h3>Taking Time to Talk &hellip; Skip, and Jump<a href="#intern3story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
 		<a id="intern3story" name="intern3story"></a>
 		<div class="postmaterial">
@@ -165,7 +184,7 @@
 </div>
 
 <div id="intern4">
-	<div class="interntitle"><img src="/wp-content/themes/asmagflex/assets/img/fall11/arrowblue.png" class="floatright"><h3>&#8220;Addiction Is Real&#8221;<a href="#intern4story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
+	<div class="interntitle"><img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrowblue.png" class="floatright"><h3>&#8220;Addiction Is Real&#8221;<a href="#intern4story"><span class="storyjump">JUMP TO STORY</span></a></h3> </div>
 	<div id="feature">
 		<a id="intern4story" name="intern4story"></a>
 		<div class="postmaterial">
@@ -207,6 +226,128 @@
 	<div class="footmaterial">
 		<div class="caption">
 			<img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrow.png" align="left" />
+			<h5>Image Gallery</h5>
+		</div>
+		
+		<div class="video">
+<div id="gallery-2" class="gallery galleryid-861 gallery-columns-3 gallery-size-thumbnail"><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2885.jpg" title="DSC_2885" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2885-150x150.jpg" class="attachment-thumbnail" alt="DSC_2885" title="DSC_2885"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2910.jpg" title="DSC_2910" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2910-150x150.jpg" class="attachment-thumbnail" alt="DSC_2910" title="DSC_2910"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2933.jpg" title="DSC_2933" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2933-150x150.jpg" class="attachment-thumbnail" alt="DSC_2933" title="DSC_2933"></a>
+			</dt></dl><br style="clear: both"><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2978.jpg" title="DSC_2978" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_2978-150x150.jpg" class="attachment-thumbnail" alt="DSC_2978" title="DSC_2978"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_3034.jpg" title="DSC_3034" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_3034-150x150.jpg" class="attachment-thumbnail" alt="DSC_3034" title="DSC_3034"></a>
+			</dt></dl><dl class="gallery-item">
+			<dt class="gallery-icon">
+				<a href="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_3072.jpg" title="DSC_3072" class="cboxElement"><img width="100" height="100" src="http://krieger.jhu.edu/magazine/wp-content/uploads/2011/11/DSC_3072-150x150.jpg" class="attachment-thumbnail" alt="DSC_3072" title="DSC_3072"></a>
+			</dt></dl><br style="clear: both">
+			<br style="clear: both;">
+		</div>		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+<div id="intern5">
+	<div id="feature">
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/abby.jpg" align="left" />
+				<h4>Q<span class="smaller">&amp;</span>A</h4>
+				<h5>Abby Neyenhouse</h5>
+				<h6>Assistant Director for Community and Nonprofit Internships</h6>
+				<div class="pullquote"><p>Abby Neyenhouse, assistant director of community and nonprofit internships, began her tenure one month after the application deadline for the inaugural Community Impact Internship program for which she’s had primary responsibility. Six months later, Neyenhouse is proud of the way the first year unfolded. “It was excellent,” she says, “a huge success that honestly surpassed all my expectations.” </p></div>
+
+		<div class="postmaterial">
+								<div class="sidequote">
+					<div class="wysiwyg-more-less">
+						<div class="wysiwyg-more-less-top">
+							<h3>Where they Served</h3>
+							<p>Here are the locations where the 25 Community Impact Interns worked last summer:</p>
+						</div>
+				
+						<div class="wysiwyg-more-less-toggle" style="display: none;">
+							<ul>
+								<li>Office of the Public Defender</li>
+								<li>ACLU of Maryland</li>
+								<li>Baltimore City Health Department
+									<ul>
+										<li>Mi Espacio Program</li>
+										<li>Risk Reduction Services</li>
+									</ul></li>
+								<li>Higher Achievement</li>
+								<li>Incentive Mentoring Program
+									<ul>
+										<li>(2 students)</li>
+									</ul></li>
+								<li>Jubilee Arts</li>
+								<li>Baltimore Green Space</li>
+								<li>Blue Water Baltimore</li>
+								<li>Free Farm, Free School Free Store</li>
+								<li>Parks and People Foundation</li>
+								<li>Jobs Housing Recovery Baltimore</li>
+								<li>Maryland Office for Refugees and Asylees/Baltimore Medical Systems</li>
+								<li>Mayor's Office of Human Serivces</li>
+								<li>People's Community Health Clinic</li>
+								<li>Shepherd's Clinic</li>
+								<li>Central Baltimore Partnership</li>
+								<li>Citizens Planning and Housing Association, Inc.</li>
+								<li>Greater Homewood Community Corp.</li>
+								<li>Martha's Place</li>
+								<li>My Sister's Place</li>
+								<li>Power Inside</li>
+								<li>Finding Our Wings Community Documentary Collective</li>
+								<li>The Samaritan Women</li>
+							</ul>
+						</div>
+						
+						<p class="noborder"><a class="wysiwyg-read-more-link" href="#">Read More</a></p>
+					</div>
+				</div>
+
+				<p class="question"><span class="dropcap">Q: </span>How many applicants did you have, and how did you cull that number down to 25? </p>
+
+<p><span class="dropcap">A: </span>We had 200 students apply. I read all 200 applications, and cut that number in half. The staff of the Center for Social Concern (where the internship program resides) reviewed them and narrowed them down to 70, and I personally interviewed those students. It was one of the hardest parts of the job. While I was interviewing, I tried to keep in mind what the potential internship sites were. I’d ask students what they would like to do and what they were looking for. We chose 25 students and matched them with agencies based on their interest in one of seven categories: education, local government, criminal justice, environment and sustainability, healthcare and health policy, neighborhood and community improvement, and women, children and family issues.</p> 
+
+<p class="question"><span class="dropcap">Q: </span>How were the students prepared to encounter urban challenges such as poverty, drug abuse, and lack of resources? </p>
+
+<p><span class="dropcap">A: </span>Comprehensive orientation days were a big part of it. We did a lot of work on diversity and community-building to prepare them for potential things they might encounter. </p>
+
+
+<p class="question"><span class="dropcap">Q: </span>These internships sound like they involved much more than just filing or clerical duties. Can you talk about that? And how did you match the student to the organization? </p>
+
+<p><span class="dropcap">A: </span>When I met with our community partners, I stressed how this program was designed to have a sustainable impact on their organizations, and that I wanted interns to work on existing or new programs or projects. I also stipulated that interns would not do more than 15% clerical work. Some clerical work might be part of the job, but the point was to have students work in the community at the grassroots level and interact with community members.</p>
+ 
+<p class="question"><span class="dropcap">Q: </span>How did you keep tabs on the 25 students to make sure they were doing ok? </p>
+
+<p><span class="dropcap">A: </span>We had mandatory reflection sessions. I made site visits. We also had an evaluation process in place for students and supervisors. Through the evaluations we found out how efficiently and quickly students were getting their work done. </p>
+
+<p class="question"><span class="dropcap">Q: </span>Did anything happen during the program that surprised you or that you didn’t expect? </p>
+
+<p><span class="dropcap">A: </span>One thing that surprised me was how some of the students who had grown up in Baltimore really grew to understand the city in a different way. I hadn’t expected to see [hometown students] affected in such a strong way.</p>
+
+<p>Close to half of the students are also continuing to volunteer at their sites. In an extraordinary move, Jobs Housing Recovery Baltimore fundraised in order to offer a paid position to their intern, Lauren Pennachio, so she could stay on through the completion of an event she planned for the organization.</p>
+		<div class="share">
+		<span  class="st_twitter_large"></span>
+		<span  class="st_facebook_large"></span>
+		<span  class="st_email_large"></span>
+		<span  class="st_sharethis_large"></span>
+	</div><!--end share-->
+	
+	<?php comments_template( '/comments.php' ); ?> 
+	</div> <!--end feature -->
+
+</div>
+</div>
+</div>
+<div id="intern5foot">
+	<div class="footmaterial">
+		<div class="caption">
+			<img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/arrow.png" align="left" />
 			<h5>Video</h5>
 			<p>This is the video description</p>
 		</div>
@@ -214,6 +355,7 @@
 		<div class="video">
 			<div class="videocontainer"><iframe src="http://player.vimeo.com/video/30906216?title=0&amp;byline=0&amp;portrait=0?wmode=transparent" width="100%" height="295" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen> </iframe></div>
 		</div>
+
 		<div class="clearboth"></div>
 	</div>
 </div>
@@ -221,7 +363,7 @@
 <div id="nav_area">   <!-- <div id="nav_area" onclick="AppearEffect(this);"> -->        
     	        <div id="navcover">          
                     <div id="nav_tab">  <!-- <div id="nav_tab" onclick="SUDEffect('nav_area')"> -->
-     		            <p>WEB EXTRAS</p>
+     		            <a href="#intern5"><p>WEB EXTRAS</p></a>
      	            </div>
      	            <ul>
                      <li><a href="#intern1"><img src="<?php bloginfo('template_url'); ?>/assets/img/fall11/btn-1.png" alt="Anita"></a></li>

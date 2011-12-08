@@ -5,11 +5,11 @@
 			<div id="footer-feature">
 				
 				<div id="footer-left">
-					<p><a href="/archive/spring-2011-volume-8-number-2/">Table of Contents</a> | 
-					<a href="/2011/11/editors-note-spring2011/">Editor's Note</a> | 
-					<a href="/category/exclusive/">Web Exclusives</a> | 
-					<a href="/archive/">Archive</a> | <a href="/letters/">Letters to the Editor</a> | 
-					<a href="/contact/">Contact</a><br>&copy; <a href="http://www.jhu.edu">Johns Hopkins University</a>. All rights reserved.</p>					
+					<p><a href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/">Table of Contents</a> | 
+					<a href="<?php echo get_home_url(); ?>/2011/11/editors-note-spring2011/">Editor's Note</a> | 
+					<a href="<?php echo get_home_url(); ?>/category/exclusive/">Web Exclusives</a> | 
+					<a href="<?php echo get_home_url(); ?>/archive/">Archive</a> | <a href="<?php echo get_home_url(); ?>/letters/">Letters to the Editor</a> | 
+					<a href="<?php echo get_home_url(); ?>/contact/">Contact</a><br>&copy; <a href="http://www.jhu.edu">Johns Hopkins University</a>. All rights reserved.</p>					
 					<img src="<?php bloginfo('template_url'); ?>/assets/img/footlogo.png" alt="Johns Hopkins University" />
 				</div>
 				
@@ -17,7 +17,7 @@
 						<ul id="social-media">
 							<a href="http://www.facebook.com/JHUKSAS"><li class="facebook"><span>Facebook</span></li></a>
 							<a href="http://vimeo.com/jhuksas"><li class="vimeo"><span>Vimeo</span></li></a>
-							<a href="/feed/"><li class="rss"><span>RSS</span></li></a>
+							<a href="<?php echo get_home_url(); ?>/feed/"><li class="rss"><span>RSS</span></li></a>
 						</ul>
 				
 				</div>

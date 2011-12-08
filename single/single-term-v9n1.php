@@ -4,7 +4,6 @@
 <!--Pulled the taxonomy template-->
 	<div id="container-mid">
 	<div id="content">
-	    
 	    <div id="article">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 	<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
@@ -35,7 +34,7 @@
 	
 	
 	<div id="article-right">
-	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article'); ?> | <?php next_post_link('%link', 'next article &raquo;'); ?></p></div>
+	<div class="storynav"><p><?php next_post_link('%link', '&laquo; previous article'); ?> | <?php previous_post_link('%link', 'next article &raquo;'); ?></p></div>
 	
 	<div class="otherstories">
 		<h4>Other Stories in this Section</h4>

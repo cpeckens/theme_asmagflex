@@ -65,6 +65,7 @@
 						<?php $asmag_v9n1_query = new WP_Query(array(
 							'post_type' => 'post',
 							'volume' => 'v9n1',
+							'orderby' => 'menu_order',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>
 		
@@ -77,6 +78,9 @@
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" />
 	    			    <?php	} ?>
 	    			    <h4><span class="dim">
+	    			    	<?php if ( in_category( 'exclusive' )) : ?>Web Exclusive<?php endif; ?>
+	    			    	<?php if ( in_category( 'editors-note' )) : ?>Editor's Note<?php endif; ?>
+	    			    	<?php if ( in_category( 'dean' )) : ?>From the Dean<?php endif; ?>
 	    			    	<?php if ( in_category( 'news' )) : ?>News<?php endif; ?>
 	    					<?php if ( in_category( 'insights' )) : ?>Insights<?php endif; ?>
 	    					<?php if ( in_category( 'alumni' )) : ?>Alumni<?php endif; ?>

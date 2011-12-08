@@ -40,13 +40,14 @@
 					<div class="toc">
 						<a href="#" title="Table of Contents">
 						<img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" class="tocbutton" /></a>
-						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight">Fall 2011</span></a> <span class="articlename"><?php wp_title(); ?></span></h3>
+						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight">Archive &raquo; Spring 2011</span></a> <span class="articlename"><?php wp_title(); ?></span></h3>
 					</div>
 					<ul class="menu_options">
 				<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
 						'volume' => 'v8n2',
-						'order' => 'ASC',
+		'orderby' => 'date',
+		'order' => 'DESC',
 						'posts_per_page' => '-1')); ?>
 		
 						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
@@ -65,6 +66,7 @@
 						<?php $asmag_v8n2_query = new WP_Query(array(
 							'post_type' => 'post',
 							'volume' => 'v8n2',
+							'orderby' => 'menu_order',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>
 		
@@ -77,6 +79,8 @@
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" />
 	    			    <?php	} ?>
 	    			    <h4><span class="dim">
+	    			    	<?php if ( in_category( 'editors-note' )) : ?>Editor's Note<?php endif; ?>
+	    			    	<?php if ( in_category( 'dean' )) : ?>From the Dean<?php endif; ?>
 	    			    	<?php if ( in_category( 'news' )) : ?>News<?php endif; ?>
 	    					<?php if ( in_category( 'insights' )) : ?>Insights<?php endif; ?>
 	    					<?php if ( in_category( 'alumni' )) : ?>Alumni<?php endif; ?>
