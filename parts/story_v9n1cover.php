@@ -1,5 +1,5 @@
 	<style>
-	<?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style> <!--Add features custom CSS-->
+	<?php echo get_post_meta($post->ID, 'ecpt_asmag_css', true); ?></style> <!--Add features custom CSS-->
 	
 	
 <div id="intern1">

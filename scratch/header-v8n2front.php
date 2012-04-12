@@ -31,7 +31,7 @@
 
 <body>
 <!--Pulled the subheader template file-->
-<body class="spring2011sub">
+<body class="spring2011">
 <div class="helpbarcontainer">
 	<div class="helpbar">
 		<div class="helpbarleft">
@@ -46,8 +46,8 @@
 				<?php $features_query = new WP_Query(array(
 						'post_type' => 'page',
 						'volume' => 'v8n2',
-		'orderby' => 'date',
-		'order' => 'DESC',
+						'orderby' => 'date',
+						'order' => 'DESC',
 						'posts_per_page' => '-1')); ?>
 		
 						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
@@ -66,7 +66,6 @@
 						<?php $asmag_v8n2_query = new WP_Query(array(
 							'post_type' => 'post',
 							'volume' => 'v8n2',
-							'orderby' => 'menu_order',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>
 		
@@ -115,7 +114,7 @@
 			
 				<div id="subheader-right">									
 					<div id="nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'v8n2-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'subpage-menu' ) ); ?>
 					</div> <!--End nav -->
 				</div><!-- End header-right -->
 						<div class="clearboth"></div> <!--to have background work properly -->

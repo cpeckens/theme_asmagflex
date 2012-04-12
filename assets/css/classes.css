@@ -215,7 +215,8 @@ img a {
 
 #nav ul li {
 	margin-right: 0.625em; /* 35px / 960px */
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	letter-spacing: -5;
 	text-transform: uppercase;
 
@@ -319,7 +320,7 @@ ___________________________________________________________*/
 #homepage p
  {
 	font-size: 0.625em; /*10px*/
-	line-height:1;
+	line-height:1.3em;
 	margin:0;
 
 }
@@ -342,7 +343,7 @@ ___________________________________________________________*/
 	zoom:1;
 	}
 
-.title-wrapper h4 {
+ {
 	padding-top:6px;
 }
 
@@ -359,7 +360,8 @@ ___________________________________________________________*/
 	padding-right:0.938em;
 }
 
-.web-wrapper h5 {
+.web-wrapper h5,
+.title-wrapper h4 {
 	padding-top:6px;
 	}
 
@@ -387,7 +389,8 @@ ___________________________________________________________*/
 .extranames {
 	padding-top:2px;
 	font-size: 0.625em;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	margin-left: 65px;
 	}
 
@@ -512,7 +515,8 @@ ___________________________________________________________*/
 	margin:0;
 	color: #ccc;
 	font-size: 0.875em;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	padding: 7px 7px;
 }
 
@@ -628,7 +632,8 @@ ul.dropdown a:hover {
 	background: rgba(51, 51, 51, 0.9);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6333333', endColorstr='#e6333333',GradientType=0 );
 	zoom: 1;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
     display: none; 
     left: 0; 
     top:0; 
@@ -708,15 +713,16 @@ ul.dropdown a:hover {
 }
 
 p.author {
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	letter-spacing: .3em;
 	text-transform: uppercase;
 	margin-bottom: 3px;
 	}
 
 p.othercredits {
-	font-family: Helvetica W01 Cn, sans serif;
-	font-style:italic;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	font-style:italic;
 }
 
 .postmaterial img {
@@ -764,8 +770,21 @@ p.othercredits {
 
 }
 
+.imageblockrightsmall {
+	float:right;
+	width: 30%;
+	background: #f5f4f1;
+	margin-left: 1em;
+	margin-bottom: 5px;
+	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.64);
+	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.64);
+	box-shadow:         1px 1px 3px rgba(50, 50, 50, 0.64);
+
+}
+
 .imageblockleft img,
-.imageblockright img {
+.imageblockright img,
+.imageblockrightsmall img {
 	max-width:100%;
 	background: none;
 	-webkit-box-shadow: none;
@@ -812,7 +831,8 @@ p.photocredit {
 }
 
 .explore {
-	font-family:  Helvetica W01 Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;
 	}
 .explore ul {
 	margin-left: 1.1em;
@@ -835,7 +855,8 @@ p.photocredit {
 .storynav p {
 	text-align: right;
 	font-size: 0.625em;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 }
 
 .otherstories,
@@ -846,7 +867,8 @@ p.photocredit {
 
 .otherstories h4 {
 	font-size: 1.125em;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	margin-bottom:0.938em;
 	}
 #article-right h5,
@@ -857,6 +879,9 @@ p.photocredit {
 	line-height: 1.6em;
 }
 
+#article-right .web-wrapper h5 {
+	line-height: 1.2em;
+}
 #article-right p {
 	font-size: 0.625em;
 	line-height: 1.6em;
@@ -902,7 +927,8 @@ ul.tabs li a {
     margin: 0;
     background: #09C;
     font-size: 1em;
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
     color:#fff; }
     
 ul.tabs li a.active {

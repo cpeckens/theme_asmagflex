@@ -1,38 +1,13 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		
-		<title><?php if ( is_front_page() ) { ?><? bloginfo('name'); ?> - <?php bloginfo('description'); } else { wp_title(''); } ?></title>
-
-		<!-- Meta tags -->
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
-
-		<!-- CSS -->
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
-		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
-		<?php if (is_front_page() || is_page_template( 'front-v9n1.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
-		<!--[if lt IE 9]>		
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
-		<![endif]-->
-		<!--Wordpress Neccessities -->
-		<?php wp_enqueue_script('jquery'); ?> 
-		<?php wp_head(); ?>
-		<!-- JavaScript -->
-		<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-
-<body>
-<!--Pulled the subheader template file-->
-<body class="fall2011sub">
 <div class="helpbarcontainer">
+<?php global $wp_query;
+	foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
+	$volume = $term->slug;
+	$issue = $term->name;
+	if ($volume == null) { 
+	$volume = 'v9n1'; } //change this to current issue
+	if ($issue == null) { 
+	$issue = 'Arts & Sciences Magazine'; }
+ ?>
 	<div class="helpbar">
 		<div class="helpbarleft">
 		<div class="home"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/home.png" alt="Home" /></a></div>
@@ -40,16 +15,29 @@
 					<div class="toc">
 						<a href="#" title="Table of Contents">
 						<img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" class="tocbutton" /></a>
-						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight">Fall 2011</span></a> <span class="articlename"><?php wp_title(); ?></span></h3>
+						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight"><?php echo $issue;?></span></a> <span class="articlename"><?php wp_title(); ?></span></h3>
 					</div>
 					<ul class="menu_options">
-				<?php $features_query = new WP_Query(array(
+				<?php 
+					 
+					
+					if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
+        			// It wasn't there, so regenerate the data and save the transient
+
+				$features_query = new WP_Query(array(
 						'post_type' => 'page',
-						'volume' => 'v9n1',
+						'tax_query' => array ( 
+						'relation' => 'AND',array (
+							'taxonomy' => 'volume',
+							'terms' => array( $volume, 'feature' ),
+							'field' => 'slug',
+							'include_children' => false,
+							'operator' => 'AND')),
 						'order' => 'ASC',
-						'posts_per_page' => '-1')); ?>
-		
-						<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
+						'posts_per_page' => '-1')); 
+				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); }
+				
+				 while ($features_query->have_posts()) : $features_query->the_post(); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail()) { ?> 
@@ -62,14 +50,19 @@
 						</div></li>									
 						<?php endwhile; //End loop ?>
 
-						<?php $asmag_v9n1_query = new WP_Query(array(
+						<?php 
+						if ( false === ( $toc_dropdown_query = get_transient( 'toc_dropdown' . $volume . '_query' ) ) ) { 
+        				// It wasn't there, so regenerate the data and save the transient
+
+						$toc_dropdown_query = new WP_Query(array(
 							'post_type' => 'post',
-							'volume' => 'v9n1',
+							'volume' => $volume,
 							'orderby' => 'menu_order',
 							'order' => 'ASC',
-							'posts_per_page' => '-1')); ?>
-		
-						<?php while ($asmag_v9n1_query->have_posts()) : $asmag_v9n1_query->the_post(); ?>
+							'posts_per_page' => '-1')); 
+				set_transient( 'toc_dropdown' . $volume . '_query', $toc_dropdown_query, 86400 ); }
+	
+				 while ($toc_dropdown_query->have_posts()) : $toc_dropdown_query->the_post(); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail()) { ?> 
@@ -108,21 +101,17 @@
 		<div id="container-head">
 			
 			<div id="header">
-				
+	
 				<div id="subheader-left">
 				<div id="logosub"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="subheader-right">									
 					<div id="nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'v8n2-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'subpage-menu' ) ); ?>
 					</div> <!--End nav -->
 				</div><!-- End header-right -->
-						<div class="clearboth"></div> <!--to have background work properly -->
-			
-			
+<div class="clearboth"></div> <!--to have background work properly -->
 			</div> <!-- End header -->
-			
 		</div> <!-- End container-head-->
-		
-		<div id="nav-break"></div>
+<div id="nav-break"></div>

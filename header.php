@@ -11,17 +11,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
-
+		<?php 
+			global $wp_query;
+			foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
+			$volume = $term->slug;
+			$asmag_option = asmag_get_global_options();
+			if ($volume == null) { 
+			$volume = $asmag_option['asmag_current_issue']; } 
+		?>
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/<?php echo $volume; ?>.css" />
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
+		<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
 		<!--[if lt IE 9]>		
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<![endif]-->
-	<?php if (is_front_page()) { ?>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
-	<?php } ?>
 		<!--Wordpress Neccessities -->
 		<?php wp_enqueue_script('jquery'); ?> 
 		<?php wp_head(); ?>
@@ -31,34 +36,17 @@
 		<![endif]-->
 	</head>
 
-<body class="fall2011">
-		<div id="container-head">
-			
-			<div id="header">
-				
-				<div id="header-left">
-				<div id="logo"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
-				</div> <!-- End header-left -->
-			
-				<div id="header-right">
-									
-					<div class="searchbar">
-					<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-						<div>
-						<input type="text" size="put_a_size_here" name="s" id="s" value="Search this site" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
-						<input type="submit" id="searchsubmit" value="Search" class="btn" />
-						</div>
-					</form>
-					</div>
-					<div id="nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-					</div> <!--End nav -->
-				</div><!-- End header-right -->
-						<div class="clearboth"></div> <!--to have background work properly -->
-			
-			
-			</div> <!-- End header -->
-			
-		</div> <!-- End container-head-->
-		
-		<div id="nav-break"></div>
+<!--Set the appropropriate body class based on volume and page template-->
+<?php if (get_post_meta($post->ID, 'ecpt_feature_background', true)) : ?>
+<body style="background: url('<?php echo get_post_meta($post->ID, 'ecpt_feature_background', true); ?>') top left repeat;">
+<?php else : ?>
+<body class="<?php if (is_page_template( 'template-tableofcontents.php' )) { echo $volume; } 
+					else echo $volume . 'sub'; endif; ?>">
+
+<!--Do not display helpbar on table of content pages-->
+<?php if (is_page_template( 'template-tableofcontents.php' )) : 
+locate_template('parts/header_toc.php', true, false);
+ else : locate_template('parts/header_subpage.php', true, false);
+?>
+
+<?php endif; // End if tableofcontents page conditional ?>

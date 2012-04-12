@@ -1,9 +1,9 @@
 <?php
 /*
-Template Name: Vol 8 No 2 Homepage
+Template Name: Vol 9 No 1 Homepage
 */
 ?>	
-<?php get_template_part( 'header', 'v8n2front' ); ?>
+<?php get_header(); ?>
 	
 	<script type="text/javascript"> //Setup accordion
 		var $j = jQuery.noConflict();
@@ -14,51 +14,51 @@ Template Name: Vol 8 No 2 Homepage
 	<div id="accordion-container-wrapper">
 	<div id="accordion-container">
         <div id="as10" class="slide">
-        	<a id="slideimg10" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/green-horizons/">
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1.jpg">
+        	<a id="slideimg10" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/interns-make-an-impact/">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature1.jpg">
         	
         	<div class="text-back"></div>
         	<div class="text">
-        		<h3>Green Horizons</h3>
-        		<p>A dozen reasons to find hope at Hopkins for a more sustainable future.</p>
+        		<h3>Toward a Better Baltimore</h3>
+        		<p>Last summer, 25 student interns made their mark in the city's neediest neighborhoods.</p>
         	</div></a>
-        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature1strip.jpg">
+        		<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature1strip.jpg">
         </div>
         
         <div id="as11" class="slide">
-        		<a id="slideimg11" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/real-science/">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2.jpg">
+        		<a id="slideimg11" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/thanks-for-the-memories/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature2.jpg">
         		
         		<div class="text-back"></div>
         		<div class="text">
-        		<h3>Real Science</h3>
-        		<p>Up-ending the "cookbook" approach to teaching&mdash;and learning.</p>
+        		<h3>Thanks for the Memories</h3>
+        		<p>Mike Yassa is making great strides in memory research, and taking his students along with him.</p>
         		</div></a>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature2strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature2strip.jpg">
         	</div>
         	
         	<div id="as12" class="slide">
-        		<a id="slideimg12" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/teach-for-america/">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3.jpg">
+        		<a id="slideimg12" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/the-great-wall-of-waverly/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature3.jpg">
         		
         		<div class="text-back"></div>
         		<div class="text">
-        			<h3>Teachers for Tomorrow</h3>
-        			<p>This spring's Teach for America grads are all over the map.</p>
+        			<h3>The Great Wall of Waverly</h3>
+        			<p>Hopkins artists, led by Tom Chalkley, have created a striking tribute to a vibrant community.</p>
         		</div></a>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature3strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature3strip.jpg">
         	</div>
         	
         	<div id="as13" class="slide">
-        		<a id="slideimg13" class="image async-img" href="<?php echo get_home_url(); ?>/archive/spring-2011-volume-8-number-2/spanish-civil-war/">
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4.jpg">
+        		<a id="slideimg13" class="image async-img" href="<?php echo get_home_url(); ?>/fall-2011/a-poem-lovely-as-a-smartphone/">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature4.jpg">
         		
         		<div class="text-back"></div>
         		<div class="text" >
-        			<h3>Spanish Civil War</h3>
-        			<p>Hopkins professor's tragic disappearance left a hole in the hearts of many.</p>
+        			<h3>A poem lovely as &hellip; a smartphone?</h3>
+        			<p>Is there a place for poetry in today's high-tech world? Absolutely, says Mary Jo Salter.</p>
         		</div></a>
-        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/spring11/feature4strip.jpg">
+        			<img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/fall11/feature4strip.jpg">
         	</div>
         </div> <!-- accordion-container -->
 	</div> <!-- accordion-container-wrapper --> 
@@ -71,9 +71,9 @@ Template Name: Vol 8 No 2 Homepage
   			<div class="title-wrapper"><h4><span class="title">NEWS: The latest from the school of Arts and Sciences</span></h4></div>
 	<?php $asmag_news_query = new WP_Query(array(
 		'cat' => '4',
-		'volume' => 'v8n2',
-		'orderby' => 'date',
-		'order' => 'DESC',
+		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_news_query->have_posts()) : $asmag_news_query->the_post(); ?>
@@ -87,7 +87,8 @@ Template Name: Vol 8 No 2 Homepage
 	    			    <?php	} ?>
 	    			    <?php the_tags( '<h6>', ', ', '</h6>' ); ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
@@ -103,9 +104,9 @@ Template Name: Vol 8 No 2 Homepage
 	<div class="title-wrapper"><h4><span class="title">INSIGHTS: From the classroom to the laboratory</span></h4></div>
 	<?php $asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
-		'volume' => 'v8n2',
-		'orderby' => 'date',
-		'order' => 'DESC',
+		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_insights_query->have_posts()) : $asmag_insights_query->the_post(); ?>
@@ -119,7 +120,7 @@ Template Name: Vol 8 No 2 Homepage
 	    			    <?php	} ?>
 	    			    <?php the_tags( '<h6>', ', ', '</h6>' ); ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
@@ -137,9 +138,9 @@ Template Name: Vol 8 No 2 Homepage
 	<div class="title-wrapper"><h4><span class="title">ALUMNI: Arts and Sciences grads on the move</span></h4></div>
 	<?php $asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
-		'volume' => 'v8n2',
-		'orderby' => 'date',
-		'order' => 'DESC',
+		'volume' => 'v9n1',
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
 		'posts_per_page' => '-1')); ?>
 		
 		<?php while ($asmag_alumni_query->have_posts()) : $asmag_alumni_query->the_post(); ?>
@@ -152,7 +153,7 @@ Template Name: Vol 8 No 2 Homepage
 	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    				 <div class="extranames">
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
@@ -170,8 +171,8 @@ Template Name: Vol 8 No 2 Homepage
 	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'orderby' => 'date',
-		'order' => 'DESC',
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
 		'posts_per_page' => '5')); ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
@@ -184,7 +185,7 @@ Template Name: Vol 8 No 2 Homepage
 	    			    						echo $image_url[0];  ?>" class="webthumb" /></a>
 	    			    <?php	} ?>
 	    			    <div class="webtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a></div>
 	    			
 	    			</div><!--End snippet -->
@@ -197,12 +198,12 @@ Template Name: Vol 8 No 2 Homepage
 
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 	    		<div class="dean">
-	    		<a href="http://magazine.krieger.dev/?p=644"><img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
-	    	<div class="deantext"><h5>Professors and Students Pursue Paths to Accomplishment</h5></a>
+	    		<a href="<?php echo get_home_url(); ?>/2011/10/baltimore-engaging-a-city/"><img alt="" src="<?php bloginfo('template_url'); ?>/assets/img/dean.png">
+	    	<div class="deantext"><h5>Baltimore: Engaging a City</h5></a>
 	    	<!-- <p>Pellentesque habitant morbi tristique</p> --></div>
 	    	</div>
 	    	</div> <!--End homepage -->
 	    		
 		</div> <!--End container-mid -->
 
-<?php get_footer('v8n2'); ?>
+<?php get_footer('v9n1'); ?>

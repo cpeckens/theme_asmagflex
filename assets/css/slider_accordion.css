@@ -73,15 +73,15 @@ img {
 
 #accordion-container .slide h3 {
 	font-family: Georgia, serif;
-	font-size: 3em;
+	font-size: 2.4em;
 	font-weight: normal;
     margin-top:8px;
     margin-bottom:4px;
 }
 
 #accordion-container .slide .text {
-	font-family: Helvetica W01 Cn, sans serif;
-}
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;}
 
 #accordion-container .slide .text h3 a,
 #accordion-container .slide .text h3 a:visited,

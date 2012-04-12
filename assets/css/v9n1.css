@@ -1,11 +1,11 @@
 /* 1.0 Background Images
 ___________________________________________________________*/
-body.spring2011 {
-	background: url(../img/clouds_bg.jpg) repeat 0 0 ;
+body.v9n1 {
+	background: url(../img/brick_bg.jpg) repeat 0 0 ;
 }
 
-body.spring2011sub {
-	background: #dbeded url(../img/clouds_sub.jpg) repeat-x 0 0;
+body.v9n1sub {
+	background: #A6CBDF url(../img/fall11/brick_fade.png) repeat-x 0 0;
 }
 
 #container-foot {
@@ -13,7 +13,7 @@ body.spring2011sub {
 }
 
 #footer {
-	background: #0069a1 url('../img/footer_bg.png') no-repeat center bottom;
+	background: #0069a1;
 }
 
 /* 2.0 Font Colors
@@ -167,10 +167,15 @@ margin-bottom: 1em;
 
 .featurelisting p {
 	color: #333;
-	font-family:  Helvetica W01 Roman, sans serif;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
 	font-size: 0.625em; /*10px*/
-	line-height:1;	
+	line-height:1.3em;	
 	}
+
+.featurelisting p img {
+	display:none;
+}
 
 .headerbreak {
 	position: relative;
@@ -181,4 +186,12 @@ margin-bottom: 1em;
 	z-index:10;
 	zoom:1;
 	}
+
+#accordion-container .slide .text {
+	width:80%;
+}
+
+#accordion-container .slide h3 {
+	font-size:2.4em;
+}
 

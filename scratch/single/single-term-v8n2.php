@@ -1,34 +1,32 @@
-
-<?php get_template_part( 'header', 'v9n1' ); ?>
+<?php get_template_part( 'header', 'v8n2' ); ?>
 
 <!--Pulled the taxonomy template-->
 	<div id="container-mid">
 	<div id="content">
 	    <div id="article">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	<?php if ( get_post_meta($post->ID, 'asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+	<?php if ( get_post_meta($post->ID, 'ecpt_asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'ecpt_asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
 
 		<div class="postmaterial">
 		<h3><?php the_title(); ?></h3>
 		<p class="author">By&nbsp;<?php the_author(); ?></p>
-		<p class="othercredits"><?php if ( get_post_meta($post->ID, 'other_credits', true) ) : ?>  <?php echo get_post_meta($post->ID, 'other_credits', true); ?><?php endif; ?></p>
+		<p class="othercredits"><?php if ( get_post_meta($post->ID, 'ecpt_other_credits', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_other_credits', true); ?><?php endif; ?></p>
 
 		<?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
 		<div class="topimage"><img src="<?php echo $image; ?>" class="floatleft"></div>
 		<?php the_content(); ?>
 		
 		</div><!--End postmaterial -->
-		<div class="share">
-	<span class="st_twitter_large" st_url="<?php the_permalink(); ?>" st_title="<?php the_title(); ?>" st_image="<?php echo $image; ?>" st_summary="<?php the_excerpt(); ?>"></span>
-	<span class="st_facebook_large" st_url="<?php the_permalink(); ?>" st_title="<?php the_title(); ?>" st_image="<?php echo $image; ?>" st_summary="<?php the_excerpt(); ?>"></span>
-	<span class="st_email_large"></span>
-	<span class="st_sharethis_large"></span>
-	<span class="st_fblike_vcount"></span>
-	</div>
+	
 	<?php endwhile; ?>
 
 	<?php endif; ?>
-
+	<div class="share">
+	<span  class="st_twitter_large"></span>
+	<span  class="st_facebook_large"></span>
+	<span  class="st_email_large"></span>
+	<span  class="st_sharethis_large"></span>
+	</div>
 	<?php comments_template( '/comments.php' ); ?> 
 	</div> <!--article -->
 	
@@ -46,7 +44,7 @@
 <?php query_posts('showposts=3&orderby=rand&cat=' . $thiscat); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	    		<div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
 	    				<div class="extranames">
@@ -78,7 +76,7 @@
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
 	    			    <?php	} ?>
 	    			    <div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'tagline', true); ?></p>
+	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a></div>
 	    			
 	    			</div><!--End subarticle -->
@@ -92,4 +90,4 @@
 	    		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-mid -->
 
-<?php get_footer('v9n1'); ?>
+<?php get_footer('v8n2'); ?>

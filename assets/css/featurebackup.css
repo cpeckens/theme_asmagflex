@@ -684,7 +684,8 @@ h3.floatright {
 
 .pullquote ul li a {
 	color: #ffcc33;
-	font-family: 'Helvetica W01 Cn', sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;
 }
 
 h4.tagline,
@@ -711,8 +712,8 @@ p.othercredits {
 }
 
 .postmaterial p {
-	font-family: Helvetica W01 Cn, sans serif;
-	color:#ffffff;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	color:#ffffff;
 	font-size: 1.125em;
 	line-height: 1.875em;
 }
@@ -771,7 +772,8 @@ h3.large {
 h4.tagline,
 p.credit,
 p.othercredits {
-	font-family:  Helvetica W01 Bd Cn, sans serif;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 700;
 	color:#ffff66;
 	margin-left:60%;
 	text-shadow: 0px 0px 6px #333;
@@ -800,8 +802,8 @@ h4.tagline {
 }
 
 .dropcap {
-	font-family: Helvetica W01 Cn, sans serif;
-	-webkit-border-radius: 90px;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	-webkit-border-radius: 90px;
 	-moz-border-radius: 90px;
 	border-radius: 90px;
 	background: #ffff66;
@@ -812,8 +814,8 @@ h4.tagline {
 }
 
 p.opener {
-	font-family: Helvetica W01 Cn, sans serif;
-	font-size: 1.5em;
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	font-size: 1.5em;
 	line-height: 2.5em;
 	margin-top:-25px;
 	position: relative;

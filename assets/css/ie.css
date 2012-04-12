@@ -8,7 +8,8 @@ p.author,
 .otherstories h4,
 ul.tabs li a
  {
-	font-family: 'Helvetica W01 Cn', Arial sans serif;	
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;
 }
 
 img.tocbutton,

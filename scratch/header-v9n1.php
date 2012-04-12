@@ -15,7 +15,6 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fall2011.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/v8n2feature.css" />		
 		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
 		<?php if (is_front_page() || is_page_template( 'front-v9n1.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
 		<!--[if lt IE 9]>		
@@ -32,7 +31,7 @@
 
 <body>
 <!--Pulled the subheader template file-->
-<body style="background: url('<?php echo get_post_meta($post->ID, 'feature_background', true); ?>') top left repeat;">
+<body class="fall2011sub">
 <div class="helpbarcontainer">
 	<div class="helpbar">
 		<div class="helpbarleft">
@@ -63,14 +62,14 @@
 						</div></li>									
 						<?php endwhile; //End loop ?>
 
-						<?php $asmag_v8n2_query = new WP_Query(array(
+						<?php $asmag_v9n1_query = new WP_Query(array(
 							'post_type' => 'post',
 							'volume' => 'v9n1',
 							'orderby' => 'menu_order',
 							'order' => 'ASC',
 							'posts_per_page' => '-1')); ?>
 		
-						<?php while ($asmag_v8n2_query->have_posts()) : $asmag_v8n2_query->the_post(); ?>
+						<?php while ($asmag_v9n1_query->have_posts()) : $asmag_v9n1_query->the_post(); ?>
 						<li><div class="snippet">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail()) { ?> 
@@ -116,7 +115,7 @@
 			
 				<div id="subheader-right">									
 					<div id="nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'v8n2-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'subpage-menu' ) ); ?>
 					</div> <!--End nav -->
 				</div><!-- End header-right -->
 						<div class="clearboth"></div> <!--to have background work properly -->

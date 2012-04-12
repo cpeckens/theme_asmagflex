@@ -2,7 +2,8 @@ body, button, input, select, textarea,
 p.othercredits,
 .explore
  {
-	font-family: Helvetica W01 Cn, sans serif;	
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	
 }
 
 
@@ -16,5 +17,6 @@ p.author,
 .otherstories h4,
 ul.tabs li a
  {
-	font-family: Helvetica W01 Cn, sans serif;	
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	
 }

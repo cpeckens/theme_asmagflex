@@ -214,6 +214,7 @@ p.author,
 .storynav p,
 .otherstories h4,
 ul.tabs li a {
-	font-family: Helvetica W01 Cn, sans serif;	
+	font-family: 'Cabin Condensed', sans-serif;
+	font-weight: 400;	
 	}
 }

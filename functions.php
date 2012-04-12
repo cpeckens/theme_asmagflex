@@ -6,7 +6,7 @@
 //register menus
 	function asmag_register_my_menus() {
   		register_nav_menus(
-    		array( 'header-menu' => __( 'Header Menu' ),'v8n2-menu' => __( 'V8N2 Menu' ), 'mobile-menu' => __( 'Mobile Menu' ))
+    		array( 'header-menu' => __( 'Homepage Menu' ),'subpage-menu' => __( 'Subpage Menu' ))
   		);
 	}
 	
@@ -73,6 +73,21 @@ function complete_version_removal() {
 
 add_filter('the_generator', 'complete_version_removal');
 
+//Add Theme Options Page
+	if(is_admin()){	
+		require_once('assets/functions/asmag-theme-settings-basic.php');
+	}
+	
+	//Collect current theme option values
+		function asmag_get_global_options(){
+			$asmag_option = array();
+			$asmag_option 	= get_option('asmag_options');
+		return $asmag_option;
+		}
+	
+	//Function to call theme options in theme files 
+		$asmag_option = asmag_get_global_options();
+		
 //Change Excerpt Length -- Add to functions.php
 function asmag_new_excerpt_length($length) {
 	return 10; //Change word count
@@ -115,40 +130,29 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 
 //Add Volume/Issue Taxonomy
 function create_my_taxonomies() {
-	register_taxonomy('volume', array( 'post', 'page' ), array( 'hierarchical' => true, 'label' => 'Volume/Issue', 'query_var' => true, 'rewrite' => true));
+	register_taxonomy('volume', array( 'post', 'page', 'accordion' ), array( 'hierarchical' => true, 'label' => 'Volume/Issue', 'query_var' => true, 'rewrite' => true));
 } 
 
 add_action('init', 'create_my_taxonomies', 0);
 
-//Find Templates for each volume
-/**
-* Define a constant path to our single template folder
-*/
-
-/**
-* Filter the single_template with our custom function
-*/
-add_filter('single_template', 'my_single_template');
-
-/**
-* Single template function which will choose our template
-*/
-function my_single_template($single) {
-global $wp_query, $post;
-
-/**
-* Checks for single template by term
-* Check by term slug and ID
-*/
-foreach((array)get_the_terms($post->ID, 'volume') as $term) :
-
-if(file_exists(TEMPLATEPATH . '/single/single-term-' . $term->slug . '.php'))
-return TEMPLATEPATH . '/single/single-term-' . $term->slug . '.php';
-
-elseif(file_exists(TEMPLATEPATH . '/single/single-term-' . $term->term_id . '.php'))
-return TEMPLATEPATH . '/single/single-term-' . $term->term_id . '.php';
-
-endforeach; }
+//Conditional for Taxonomy
+	function asmag_in_taxonomy($tax, $term, $_post = NULL) {
+		// if neither tax nor term are specified, return false
+		if ( !$tax || !$term ) { return FALSE; }
+		// if post parameter is given, get it, otherwise use $GLOBALS to get post
+		if ( $_post ) {
+		$_post = get_post( $_post );
+		} else {
+		$_post =& $GLOBALS['post'];
+		}
+		// if no post return false
+		if ( !$_post ) { return FALSE; }
+		// check whether post matches term belongin to tax
+		$return = is_object_in_term( $_post->ID, $tax, $term );
+		// if error returned, then return false
+		if ( is_wp_error( $return ) ) { return FALSE; }
+	return $return;
+	}
 
 //Custom comment display
 function asmag_comment($comment, $args, $depth) {
@@ -169,6 +173,6 @@ function asmag_comment($comment, $args, $depth) {
 <?php
 }
 
-include_once (TEMPLATEPATH . '/assets/functions/metaboxes.php');
-
+include_once (TEMPLATEPATH . '/assets/functions/asmag-metabox.php');
+include_once (TEMPLATEPATH . '/assets/functions/asmag-accordion.php');
 ?>
