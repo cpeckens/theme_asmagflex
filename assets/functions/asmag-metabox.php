@@ -78,35 +78,35 @@ function ecpt_show_storyextras_1_box()	{
 		$meta = get_post_meta($post->ID, $field['id'], true);
 		
 		echo '<tr>',
-				'<th style="width:20%"><label for="', $field['id'], '">', stripslashes($field['name']), '</label></th>',
+				'<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
 				'<td class="ecpt_field_type_' . str_replace(' ', '_', $field['type']) . '">';
 		switch ($field['type']) {
 			case 'text':
-				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', stripslashes($field['desc']);
+				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
 				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . stripslashes($field['desc']);
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
-				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', stripslashes($field['desc']);
+				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload" /><br/>', '', $field['desc'];
 				break;
 			case 'textarea':
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
 						if(!post_type_supports($post->post_type, 'editor')) {
 							$editor = wp_tiny_mce(true, array('editor_selector' => $field['class'], 'remove_linebreaks' => false) );
 						}
-						$field_html = '<div style="width: 97%; border: 1px solid #DFDFDF;"><textarea name="' . $field['id'] . '" class="' . $field['class'] . '" id="' . $field['id'] . '" cols="60" rows="8" style="width:100%">'. $meta . '</textarea></div><br/>' . __(stripslashes($field['desc']));
+						$field_html = '<div style="width: 97%; border: 1px solid #DFDFDF;"><textarea name="' . $field['id'] . '" class="' . $field['class'] . '" id="' . $field['id'] . '" cols="60" rows="8" style="width:100%">'. $meta . '</textarea></div><br/>' . __($field['desc']);
 						echo $editor . $field_html;
 					}
 				} else {
-					echo '<div style="width: 100%;"><textarea name="', $field['id'], '" class="', $field['class'], '" id="', $field['id'], '" cols="60" rows="8" style="width:97%">', $meta ? $meta : $field['std'], '</textarea></div>', '', stripslashes($field['desc']);				
+					echo '<div style="width: 100%;"><textarea name="', $field['id'], '" class="', $field['class'], '" id="', $field['id'], '" cols="60" rows="8" style="width:97%">', $meta ? $meta : $field['std'], '</textarea></div>', '', $field['desc'];				
 				}
 				
 				break;
@@ -115,22 +115,22 @@ function ecpt_show_storyextras_1_box()	{
 				foreach ($field['options'] as $option) {
 					echo '<option value="' . $option . '"', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
 				}
-				echo '</select>', '', stripslashes($field['desc']);
+				echo '</select>', '', $field['desc'];
 				break;
 			case 'radio':
 				foreach ($field['options'] as $option) {
 					echo '<input type="radio" name="', $field['id'], '" value="', $option, '"', $meta == $option ? ' checked="checked"' : '', ' />&nbsp;', $option;
 				}
-				echo '<br/>' . stripslashes($field['desc']);
+				echo '<br/>' . $field['desc'];
 				break;
 			case 'checkbox':
 				echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />&nbsp;';
-				echo stripslashes($field['desc']);
+				echo $field['desc'];
 				break;
 			case 'slider':
 				echo '<input type="text" rel="' . $field['max'] . '" name="' . $field['id'] . '" id="' . $field['id'] . '" value="' . $meta . '" size="1" style="float: left; margin-right: 5px" />';
 				echo '<div class="ecpt-slider" rel="' . $field['id'] . '" style="float: left; width: 60%; margin: 5px 0 0 0;"></div>';		
-				echo '<div style="width: 100%; clear: both;">' . stripslashes($field['desc']) . '</div>';
+				echo '<div style="width: 100%; clear: both;">' . $field['desc'] . '</div>';
 				break;
 			case 'repeatable' :
 				
@@ -182,6 +182,7 @@ function ecpt_show_storyextras_1_box()	{
 	
 	echo '</table>';
 }	
+	
 
 add_action('save_post', 'ecpt_storyextras_1_save');
 
@@ -219,9 +220,6 @@ function ecpt_storyextras_1_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($new);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -291,35 +289,35 @@ function ecpt_show_featureuploads_2_box()	{
 		$meta = get_post_meta($post->ID, $field['id'], true);
 		
 		echo '<tr>',
-				'<th style="width:20%"><label for="', $field['id'], '">', stripslashes($field['name']), '</label></th>',
+				'<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
 				'<td class="ecpt_field_type_' . str_replace(' ', '_', $field['type']) . '">';
 		switch ($field['type']) {
 			case 'text':
-				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', stripslashes($field['desc']);
+				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
 				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . stripslashes($field['desc']);
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
-				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', stripslashes($field['desc']);
+				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload" /><br/>', '', $field['desc'];
 				break;
 			case 'textarea':
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
 						if(!post_type_supports($post->post_type, 'editor')) {
 							$editor = wp_tiny_mce(true, array('editor_selector' => $field['class'], 'remove_linebreaks' => false) );
 						}
-						$field_html = '<div style="width: 97%; border: 1px solid #DFDFDF;"><textarea name="' . $field['id'] . '" class="' . $field['class'] . '" id="' . $field['id'] . '" cols="60" rows="8" style="width:100%">'. $meta . '</textarea></div><br/>' . __(stripslashes($field['desc']));
+						$field_html = '<div style="width: 97%; border: 1px solid #DFDFDF;"><textarea name="' . $field['id'] . '" class="' . $field['class'] . '" id="' . $field['id'] . '" cols="60" rows="8" style="width:100%">'. $meta . '</textarea></div><br/>' . __($field['desc']);
 						echo $editor . $field_html;
 					}
 				} else {
-					echo '<div style="width: 100%;"><textarea name="', $field['id'], '" class="', $field['class'], '" id="', $field['id'], '" cols="60" rows="8" style="width:97%">', $meta ? $meta : $field['std'], '</textarea></div>', '', stripslashes($field['desc']);				
+					echo '<div style="width: 100%;"><textarea name="', $field['id'], '" class="', $field['class'], '" id="', $field['id'], '" cols="60" rows="8" style="width:97%">', $meta ? $meta : $field['std'], '</textarea></div>', '', $field['desc'];				
 				}
 				
 				break;
@@ -328,22 +326,22 @@ function ecpt_show_featureuploads_2_box()	{
 				foreach ($field['options'] as $option) {
 					echo '<option value="' . $option . '"', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
 				}
-				echo '</select>', '', stripslashes($field['desc']);
+				echo '</select>', '', $field['desc'];
 				break;
 			case 'radio':
 				foreach ($field['options'] as $option) {
 					echo '<input type="radio" name="', $field['id'], '" value="', $option, '"', $meta == $option ? ' checked="checked"' : '', ' />&nbsp;', $option;
 				}
-				echo '<br/>' . stripslashes($field['desc']);
+				echo '<br/>' . $field['desc'];
 				break;
 			case 'checkbox':
 				echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />&nbsp;';
-				echo stripslashes($field['desc']);
+				echo $field['desc'];
 				break;
 			case 'slider':
 				echo '<input type="text" rel="' . $field['max'] . '" name="' . $field['id'] . '" id="' . $field['id'] . '" value="' . $meta . '" size="1" style="float: left; margin-right: 5px" />';
 				echo '<div class="ecpt-slider" rel="' . $field['id'] . '" style="float: left; width: 60%; margin: 5px 0 0 0;"></div>';		
-				echo '<div style="width: 100%; clear: both;">' . stripslashes($field['desc']) . '</div>';
+				echo '<div style="width: 100%; clear: both;">' . $field['desc'] . '</div>';
 				break;
 			case 'repeatable' :
 				
@@ -396,6 +394,7 @@ function ecpt_show_featureuploads_2_box()	{
 	echo '</table>';
 }	
 
+
 add_action('save_post', 'ecpt_featureuploads_2_save');
 
 // Save data from meta box
@@ -432,9 +431,6 @@ function ecpt_featureuploads_2_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($new);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				

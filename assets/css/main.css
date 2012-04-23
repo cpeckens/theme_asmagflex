@@ -7,7 +7,36 @@
 	* Selectors beggining with an underscore (_selector: property) target only IE6
 	* Selectors beggining with an asterisk (*selector: property) target only IE6 and IE7
 */
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=45b7db8e-5721-4859-baeb-a0cd73eb2a76");
+@font-face{
+font-family:"Helvetica W01 Roman";
+src:url("../fonts/ea95b44a-eab7-4bd1-861c-e73535e7f652.eot?iefix") format("eot");}
 
+@font-face{
+font-family:"Helvetica W01 Roman";
+src:url("../fonts/ea95b44a-eab7-4bd1-861c-e73535e7f652.eot?iefix");
+src:url("../fonts/4021a3b9-f782-438b-aeb4-c008109a8b64.woff") format("woff"),url("../fonts/669f79ed-002c-4ff6-965c-9da453968504.ttf") format("truetype"),url("../fonts/d17bc040-9e8b-4397-8356-8153f4a64edf.svg#d17bc040-9e8b-4397-8356-8153f4a64edf") format("svg");
+}
+
+@font-face{
+font-family:"Helvetica W01 Bd Cn";
+src:url("../fonts/72ae056e-143c-461e-a4f7-b0b68075fd0c.eot?iefix") format("eot");}
+
+@font-face{
+font-family:"Helvetica W01 Bd Cn";
+src:url("../fonts/72ae056e-143c-461e-a4f7-b0b68075fd0c.eot?iefix");
+src:url("../fonts/428b0dae-6521-4437-8f8a-f87cedc1c112.woff") format("woff"),url("../fonts/3bb7d03b-5952-4f9b-93dd-ba887a00683e.ttf") format("truetype"),url("../fonts/9273bdb1-e866-4965-9464-761fb8bdfb9d.svg#9273bdb1-e866-4965-9464-761fb8bdfb9d") format("svg");
+}
+
+@font-face{
+font-family:"Helvetica W01 Cn";
+src:url("../fonts/71feed05-d183-48da-9b1d-031a48855ec9.eot?iefix") format("eot");}
+
+@font-face{
+font-family:"Helvetica W01 Cn";
+src:url("../fonts/71feed05-d183-48da-9b1d-031a48855ec9.eot?iefix");
+src:url("../fonts/2d11ffef-dbb3-406b-b83b-d62925fa2391.woff") format("woff"),url("../fonts/9312efda-f401-4c27-9fb0-fee0c796c399.ttf") format("truetype"),url("../fonts/01a8ea06-dc25-48dc-8e52-3dbef305398a.svg#01a8ea06-dc25-48dc-8e52-3dbef305398a") format("svg");
+}
 /* HTML5 display definitions
 ---------------------------------------- */
 
@@ -56,7 +85,7 @@ body {
 
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
-	font: 1em/1.5  'Cabin', sans serif;
+	font: 1em/1.5  'Helvetica W01 Roman', sans serif;
 	font-weight: 400;
 	color: #333; /* Full black on white is too much contrast, #222 is a better default */
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -81,8 +110,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Cabin Condensed', sans-serif;
-	font-weight: 700;
+font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	font-size: 1em;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	font-smooth:always;
@@ -249,7 +277,7 @@ tr:nth-child(even) {
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: 21px;
-	  font-family: 'Cabin', sans-serif; }
+	  font-family: 'Helvetica W01 Roman', sans-serif; }
 	  
 	a.button:hover, 
 	button:hover,

@@ -48,23 +48,11 @@
 
 	</body>
 		<!-- JavaScript -->
-		<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/production/respond.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/production/asmag_custom.min.js"></script>
-
-		<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/production/asmag_front.min.js"></script>
-		<?php } ?>
-		
-		<!-- ShareThis javascript -->
+		<script src="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/js/respond.min.js,wp-content/themes/asmagflex/assets/js/asmag_custom.js,wp-content/themes/asmagflex/assets/js/jquery.scroll.js<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/js/asmag_front.js<?php } ?><?php if (is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-fancytitle.php' )|| is_page_template( 'feature-complex.php' )) { ?>,wp-content/themes/asmagflex/assets/js/asmag_feature.js&debug<?php } ?>"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/jquery.scroll.js"></script>
+		<!--
 		<script type="text/javascript">var switchTo5x=false;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'b7fa1cfa-1d01-4da1-8de7-ae74dea18d43'});</script>
-		
-		<?php if (is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-fancytitle.php' )|| is_page_template( 'feature-complex.php' )) { ?>
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/production/asmag_feature.min.js"></script>
-		
-		<?php } ?>
+-->	
 <?php echo $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
 </html>

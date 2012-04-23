@@ -12,7 +12,7 @@ $t(function(){
              $list = $container.find("ul"),
              $anchor = $container.find(".toc"),
              height = $list.height() * 1.1,       // make sure there is enough room at the bottom
-             multiplier = height / maxHeight;     // needs to move faster if list is taller
+             multiplier = 1.1;     // needs to move faster if list is taller
 
         // need to save height here so it can revert on mouseout
         $container.data("origHeight", $container.height());

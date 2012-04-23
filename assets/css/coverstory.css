@@ -10,7 +10,7 @@
 h3.thin {
 	font-size: 4.875em;
 	color:#fff;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	padding-top:40px;
 	margin-bottom:0;
@@ -22,7 +22,7 @@ h3.impact {
 	color:#fc0;
 	margin-top:0;
 	margin-bottom:20px;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	font-weight: bold;
 	line-height: .65em;
@@ -33,7 +33,7 @@ h3.impact {
 p.credit,
 p.othercredits {
 	color:#FFF;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	text-align: justify;
 	font-weight: bold;
@@ -162,7 +162,7 @@ margin-top: 5px;
 	margin-left:15px;
 	width: 75%;
 	font-size: 1em;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	line-height: 1.5em;
 }
@@ -177,8 +177,7 @@ margin-top: 5px;
 }
 
 .sidequote p {
-	font-family: 'Cabin Condensed', sans-serif;
-	font-weight: 700;
+font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	color: #003366;
 	border-left: 15px solid #fc0;
 	padding:15px;
@@ -187,8 +186,7 @@ margin-top: 5px;
 }
 
 .sidequote ul {
-	font-family: 'Cabin Condensed', sans-serif;
-	font-weight: 700;
+font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	color: #003366;
 	border-left: 15px solid #fc0;
 	padding:15px;
@@ -280,8 +278,7 @@ margin-top: 5px;
 .footmaterial {
 	padding-top: 20px;
 	padding-bottom:30px;
-	font-family: 'Cabin Condensed', sans-serif;
-	font-weight: 700;
+font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	margin: 0 auto;
 }
 
@@ -332,7 +329,7 @@ margin-top: 5px;
 }
 
 #intern5 p {
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	font-size: 0.875em;
 }
@@ -354,7 +351,7 @@ margin-top: 5px;
 	font-size: 8.5em;
 	color: rgba(0, 0, 0, 0.25);
 	letter-spacing: -30px;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400; 
 	line-height: 1;
 	}
@@ -387,7 +384,7 @@ p.question {
 }
 
 .sidequote h3 {
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Helvetica W01 Roman', sans-serif;
 	font-weight: 400;
 	font-size: 1.5em;
 	color: #003366;

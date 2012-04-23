@@ -1,0 +1,33 @@
+@font-face{
+font-family:"Museo Slab W01 300";
+src:url("../fonts/39a8c847-6d65-44ec-92e6-46e2aa8db834.eot?iefix") format("eot");}
+@font-face{
+font-family:"Museo Slab W01 300";
+src:url("../fonts/39a8c847-6d65-44ec-92e6-46e2aa8db834.eot?iefix");
+src:url("../fonts/4548ac88-af2c-4b63-ac2b-94e9ef6cd1b9.woff") format("woff"),url("../fonts/380327b2-8e54-40b1-a569-eb17e46f7e17.ttf") format("truetype"),url("../fonts/dedfb9ca-341f-404d-b76e-d781f9ee375f.svg#dedfb9ca-341f-404d-b76e-d781f9ee375f") format("svg");
+}
+
+@font-face{
+font-family:"Museo Slab W01 500";
+src:url("../fonts/2656a5f2-9367-4d1d-af19-8cd9f9028d08.eot?iefix") format("eot");}
+@font-face{
+font-family:"Museo Slab W01 500";
+src:url("../fonts/2656a5f2-9367-4d1d-af19-8cd9f9028d08.eot?iefix");
+src:url("../fonts/3cf54835-9705-474e-9afa-46f2d59589e7.woff") format("woff"),url("../fonts/1bc72f40-8f25-47dd-874e-a829e7e992f6.ttf") format("truetype"),url("../fonts/5329032e-48ad-4e1a-9b4c-6b847641304c.svg#5329032e-48ad-4e1a-9b4c-6b847641304c") format("svg");
+}
+@font-face{
+font-family:"Museo Slab W01 700";
+src:url("../fonts/59736019-b384-44ba-b36e-3b03dcdc8e6c.eot?iefix") format("eot");}
+@font-face{
+font-family:"Museo Slab W01 700";
+src:url("../fonts/59736019-b384-44ba-b36e-3b03dcdc8e6c.eot?iefix");
+src:url("../fonts/2ac411c9-defd-4f5a-90b0-7179cafd27f4.woff") format("woff"),url("../fonts/0c52b397-59d0-4df4-aa7c-06ac915a9f66.ttf") format("truetype"),url("../fonts/dcaa3c19-252a-407d-945c-4b770dd32417.svg#dcaa3c19-252a-407d-945c-4b770dd32417") format("svg");
+}
+@font-face{
+font-family:"Museo Slab W01 900";
+src:url("../fonts/4824d682-e9e8-48d6-ac97-cd910b99f8db.eot?iefix") format("eot");}
+@font-face{
+font-family:"Museo Slab W01 900";
+src:url("../fonts/4824d682-e9e8-48d6-ac97-cd910b99f8db.eot?iefix");
+src:url("../fonts/74b16f9a-f072-46c7-bbac-2e0aedcebe5c.woff") format("woff"),url("../fonts/475a50bf-f749-4afc-a286-574701965b4e.ttf") format("truetype"),url("../fonts/c0debb99-9a17-4a76-a658-7a62420cb353.svg#c0debb99-9a17-4a76-a658-7a62420cb353") format("svg");
+}

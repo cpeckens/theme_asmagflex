@@ -20,18 +20,14 @@
 			$volume = $asmag_option['asmag_current_issue']; } 
 		?>
 		<!-- CSS -->
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/<?php echo $volume; ?>.css" />
-		<link href="http://fast.fonts.com/cssapi/45b7db8e-5721-4859-baeb-a0cd73eb2a76.css" rel="stylesheet" type="text/css" />
-		<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/slider_accordion.css" /><?php } ?>
-		<!--[if lt IE 9]>		
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
-		<![endif]-->
-		<!--Wordpress Neccessities -->
-		<?php wp_enqueue_script('jquery'); ?> 
+		<link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/css/main.css,wp-content/themes/asmagflex/assets/css/classes.css,wp-content/themes/asmagflex/assets/css/media.css,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>.css<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/slider_accordion.css<?php } ?><?php if ( is_page_template( 'feature-complex.php' ) || is_page_template( 'feature-fancytitle.php' ) || is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-slides.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>fonts.css<?php } ?>" />
+		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false) { ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/firefox.css" /> <?php }?>
+		<?php wp_enqueue_script('jquery'); ?>
+		<?php if (is_page_template('feature-slides.php')) { ?><script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/sequence.js"></script> <?php } ?>
 		<?php wp_head(); ?>
-		<!-- JavaScript -->
+		<!-- IE Stipulations -->
 		<!--[if lt IE 9]>
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
@@ -46,7 +42,7 @@
 <!--Do not display helpbar on table of content pages-->
 <?php if (is_page_template( 'template-tableofcontents.php' )) : 
 locate_template('parts/header_toc.php', true, false);
- else : locate_template('parts/header_subpage.php', true, false);
+else : locate_template('parts/header_subpage.php', true, false);
 ?>
 
 <?php endif; // End if tableofcontents page conditional ?>
