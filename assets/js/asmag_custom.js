@@ -11,8 +11,17 @@ addComment={moveForm:function(d,f,i,c){var m=this,a,h=m.I(d),b=m.I(i),l=m.I("can
 //Figure out height of user's window
  var $t = jQuery.noConflict();
  var viewportwidth = window.innerWidth;
- var maxHeight = window.innerHeight;
- 
+ var maxHeight = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    maxHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    maxHeight = document.documentElement.clientHeight;
+    }
+    
 $t(function(){
 
     $t(".dropdown").hover(function() {
@@ -20,7 +29,7 @@ $t(function(){
          var $container = $t(this),
              $list = $container.find("ul"),
              $anchor = $container.find(".toc"),
-             height = $list.height();       // make sure there is enough room at the bottom
+             height = maxHeight;       // make sure there is enough room at the bottom
 
         // need to save height here so it can revert on mouseout
         $container.data("origHeight", $container.height());
@@ -49,7 +58,6 @@ $t('ul.menu_options').scrollbar();
         $el
             .height($t(this).data("origHeight"))
             .find("ul")
-            .css({ top: 0 })
             .hide()
             .end()
             .find("a")

@@ -61,6 +61,12 @@ img a {
 	font-size:90%;
 }
 
+.postmaterial img.noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 /* 2.0 Containers
 ----------------------------------- */
 /* 2.1 Header Container
@@ -444,6 +450,7 @@ font-family: 'Helvetica W01 Bd Cn', sans-serif;
 .webarticle {
 	margin: 4.17%;
 	background: #333333;
+	max-width:220px;
 }
 
 .webthumb {
@@ -522,8 +529,10 @@ font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	margin:0;
 	color: #ccc;
 	font-size: 0.875em;
-font-family: 'Helvetica W01 Bd Cn', sans-serif;
+	font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	padding: 7px 7px;
+	white-space: nowrap;
+	text-overflow: clip;
 }
 
 .highlight {
@@ -626,19 +635,6 @@ ul.menu_options li a {
 	margin-bottom:30px;
 	z-index: 1000; 
 
-}
-
-.tocdrop { 
-	position: relative; 
-	float: left; 
-}
-
-.tocdrop select {
-	margin-right:10px;
-}
-
-ul.dropdown a:hover { 
-	color: #000; 
 }
 
 .dropdown ul {
@@ -755,7 +751,7 @@ font-family: 'Helvetica W01 Bd Cn', sans-serif;
 }
 
 .postmaterial h4 {
-	font-size: 1.125em;
+	font-size: 1.4em;
 }
 
 p.author {
@@ -778,8 +774,15 @@ p.othercredits {
 	max-width: 55%;
 }
 
-.postmaterial img.floatleft {
+.postmaterial img.floatleft,
+.postmaterial img.alignleft {
 	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.postmaterial img.floatright,
+.postmaterial img.alignright {
+	margin-left: 10px;
 	margin-bottom: 10px;
 }
 
@@ -787,6 +790,9 @@ p.othercredits {
 	max-width:100%;
 }
 
+.postmaterial .gallery img {
+	max-width: none;
+}
 .fullbleedcaption {
 	margin-bottom:50px;
 }
@@ -815,6 +821,18 @@ p.othercredits {
 
 }
 
+.imageblockfull {
+	float:none;
+	width: 95%;
+	background: #f5f4f1;
+	margin-bottom: 5px;
+	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.64);
+	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.64);
+	box-shadow:         1px 1px 3px rgba(50, 50, 50, 0.64);
+	padding-bottom: 10px;
+
+}
+
 .imageblockrightsmall {
 	float:right;
 	width: 30%;
@@ -829,12 +847,20 @@ p.othercredits {
 
 .imageblockleft img,
 .imageblockright img,
-.imageblockrightsmall img {
+.imageblockrightsmall img,
+.imageblockfull img {
 	max-width:100%;
 	background: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+}
+
+.imageblockleft p,
+.imageblockright p,
+.imageblockrightsmall p,
+.imageblockfull p {
+	margin-bottom:10px;
 }
 
 p.caption {
@@ -853,9 +879,9 @@ p.quote {
 	
 p.photocredit {
 	float:right;
-	font-size: 0.8em;
+	font-size: 0.6em;
 	font-style: italic;
-	padding-left: 10px;
+	padding-right: 10px;
 	margin:0;
 	}
 	
@@ -913,6 +939,7 @@ font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	font-size: 1.125em;
 font-family: 'Helvetica W01 Bd Cn', sans-serif;
 	margin-bottom:0.938em;
+	text-transform: capitalize;
 	}
 #article-right h5,
 #article-right h6,

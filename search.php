@@ -19,6 +19,7 @@
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    				 <div class="extranames">
+	    				 	<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
@@ -62,6 +63,7 @@
 	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
 	    				<div class="extranames">
+	    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
@@ -78,7 +80,7 @@
 	<?php $asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
 		'order' => 'ASC',
-		'posts_per_page' => '-1')); ?>
+		'posts_per_page' => '5')); ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
 			

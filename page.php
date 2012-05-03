@@ -27,12 +27,20 @@
 				$features_query = new WP_Query(array(
 						'post_type' => 'page',
 						'tax_query' => array ( 
-						'relation' => 'AND',array (
+						'relation' => 'AND',
+						array (
 							'taxonomy' => 'volume',
-							'terms' => array( $volume, 'feature' ),
+							'terms' => array( $volume ),
 							'field' => 'slug',
 							'include_children' => false,
-							'operator' => 'AND')),
+							'operator' => 'IN'),
+						array (
+							'taxonomy' => 'volume',
+							'terms' => array( 'feature' ),
+							'field' => 'slug',
+							'include_children' => false,
+							'operator' => 'IN'),	
+							),
 						'order' => 'ASC',
 						'posts_per_page' => '-1')); 
 				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); }
@@ -44,6 +52,7 @@
 	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
 	    				<div class="extranames">
+	    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
@@ -61,8 +70,8 @@
 			if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
 			$asmag_exclusives_query = new WP_Query(array(
 				'cat' => '31',
-				'order' => 'ASC',
-				'posts_per_page' => '-1'));
+				'order' => 'DESC',
+				'posts_per_page' => '6'));
 			set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	
 			 while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
 			

@@ -49,13 +49,12 @@ Template Name: Issue Table of Contents
 	    
 	    <div id="issue">
 <!--*************************** News Section ********************************************* --> 
-  			<div class="title-wrapper"><h4><span class="title">NEWS: The latest from the school of Arts and Sciences</span></h4></div>
+  			<div class="title-wrapper"><h4><span class="title">NEWS<span class="mobile">: The latest from the school of Arts and Sciences</span></span></h4></div>
 	<?php  	    	if ( false === ( $asmag_news_query = get_transient( 'asmag_news' . $volume . '_query' ) ) ) { 
         	// It wasn't there, so regenerate the data and save the transient
         	$asmag_news_query = new WP_Query(array(
 		'cat' => '4',
 		'volume' => $volume,
-		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1')); 
         	set_transient( 'asmag_news' . $volume . '_query', $asmag_news_query, 86400 );
@@ -76,6 +75,7 @@ Template Name: Issue Table of Contents
 	    			    <?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
+	    			    <?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?></div>
@@ -86,13 +86,12 @@ Template Name: Issue Table of Contents
 <!--*************************** Insights Section ********************************************* --> 	    			
 <div class="clearboth"></div> <!--to have background work properly -->
 
-	<div class="title-wrapper"><h4><span class="title">INSIGHTS: From the classroom to the laboratory</span></h4></div>
+	<div class="title-wrapper"><h4><span class="title">INSIGHTS<span class="mobile">: From the classroom to the laboratory</span></span></h4></div>
 	<?php  	    	if ( false === ( $asmag_insights_query = get_transient( 'asmag_insights' . $volume . '_query' ) ) ) { 
         	// It wasn't there, so regenerate the data and save the transient
         	$asmag_insights_query = new WP_Query(array(
 		'cat' => '27',
 		'volume' => $volume,
-		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1'));
         	set_transient( 'asmag_insights' . $volume . '_query', $asmag_insights_query, 86400 );
@@ -112,6 +111,7 @@ Template Name: Issue Table of Contents
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    			    <div class="extranames">
+	    			    	<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
@@ -124,13 +124,12 @@ Template Name: Issue Table of Contents
 	    			
 <!--*************************** Alumni Section ********************************************* --> 	    	
 <div class="clearboth"></div> <!--to have background work properly -->
-	<div class="title-wrapper"><h4><span class="title">ALUMNI: Arts and Sciences grads on the move</span></h4></div>
+	<div class="title-wrapper"><h4><span class="title">ALUMNI<span class="mobile">: Arts and Sciences grads on the move</span></span></h4></div>
 	<?php  	    	if ( false === ( $asmag_alumni_query = get_transient( 'asmag_alumni' . $volume . '_query' ) ) ) { 
         	// It wasn't there, so regenerate the data and save the transient
         	$asmag_alumni_query = new WP_Query(array(
 		'cat' => '28',
 		'volume' => $volume,
-		'orderby' => 'menu_order',
 		'order' => 'ASC',
 		'posts_per_page' => '-1'));
         	set_transient( 'asmag_alumni' . $volume . '_query', $asmag_alumni_query, 86400 );
@@ -149,6 +148,7 @@ Template Name: Issue Table of Contents
 	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
 	    			    <?php else : the_excerpt(); endif; ?></a>
 	    				 <div class="extranames">
+	    				 	<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
@@ -165,8 +165,8 @@ Template Name: Issue Table of Contents
 	<?php	if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
 	$asmag_exclusives_query = new WP_Query(array(
 		'cat' => '31',
-		'order' => 'ASC',
-		'posts_per_page' => '-1'));
+		'order' => 'DESC',
+		'posts_per_page' => '5'));
 	set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	 ?>
 		
 		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>

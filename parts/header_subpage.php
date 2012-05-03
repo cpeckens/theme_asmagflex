@@ -1,7 +1,7 @@
 <div class="helpbarcontainer">
 
 	<div class="helpbar">
-		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) : 
+		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false) : //Check if browser is IE or mobile
 		 locate_template('parts/helpbar_ie.php', true, false);
 		 else :
 		 locate_template('parts/helpbar_all.php', true, false);

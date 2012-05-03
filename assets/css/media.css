@@ -74,7 +74,13 @@ top:0;
 }
 @media only screen and (max-width: 630px) {
 	#sidebar-right {
-		display:none;
+		float:left;
+		width: 100%;
+		}
+	.webarticle {
+		float:left;
+		width:40%;
+		height:220px;
 		}
 	.dean {
 		display:none;
@@ -96,6 +102,7 @@ top:0;
 	padding-left:0.438em;
 	padding-right:0.438em;
 	}
+	
 }
 
 @media only screen and (max-width: 500px) {
@@ -106,16 +113,15 @@ top:0;
 	#article {
 		width:100%; 
 	}
-	
+	.articlename {display:none;}
 	.searchbar {
-		display: none;
+		width: 100px;
 	}
-	
 	.helpbarleft {
 		width:100%;
 		}
-	.helpbar-right {
-		width:0;
+	.helpbarright {
+		width:auto;
 	}
 	
 		.homearticle {
@@ -135,11 +141,11 @@ top:0;
 		padding-top: 8px; }
 	
 	.title {
-		padding-top:12px;
-		padding-bottom: 8px;
-		margin-left:38px;
+		padding-top:9px;
+		padding-bottom: 6px;
+		margin-left:40px;
 		}
-		
+	.mobile {display:none;}
 
 }
 

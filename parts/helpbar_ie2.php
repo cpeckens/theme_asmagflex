@@ -10,11 +10,11 @@
 		<div class="helpbarleft">
 		
 		<div class="home"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/home.png" alt="Home" /></a></div>
-				<div class="dropdown">
+				<div class="dropdown" width="50%">
 					<div class="toc">
 						<a href="#" title="Table of Contents">
 						<img src="<?php bloginfo('template_url'); ?>/assets/img/toc.png" alt="Table of Contents" style="float:left;" class="tocbutton" /></a>
-						<h3><a href="<?php echo get_home_url(); ?>"><span class="highlight"><?php echo $issue;?></span></a> <span class="articlename mobile"><?php wp_title(); ?></span></h3>
+						<h3><span class="highlight"><?php echo $issue;?></span></h3>
 					</div>
 					<ul class="menu_options">
 				<?php 
@@ -70,6 +70,7 @@
 	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" />
 	    			    <?php	} ?>
 	    			    <h4><span class="dim">
+	    			    	<?php if ( in_category( 'exclusive' )) : ?>Web Exclusive<?php endif; ?>
 	    			    	<?php if ( in_category( 'editors-note' )) : ?>Editor's Note<?php endif; ?>
 	    			    	<?php if ( in_category( 'dean' )) : ?>From the Dean<?php endif; ?>
 	    			    	<?php if ( in_category( 'news' )) : ?>News<?php endif; ?>
@@ -81,5 +82,6 @@
 						<?php endwhile; //End loop ?>
 					</ul>
 					</div><!-- End dropdown -->
-			
+			<h3><span class="articlename"><?php wp_title(); ?></span></h3>
+
 		 	</div> <!-- End helpbarleft -->

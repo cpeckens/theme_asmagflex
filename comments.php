@@ -45,6 +45,7 @@ $ksascomments = array(
 			    	<?php comment_form($ksascomments); ?>
 			    </li>
 			</ul>
+			<small>View our <a href="<?php echo site_url(); ?>/comments-policy">comments policy</a></small>
 		</div>
 
 

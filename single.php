@@ -27,13 +27,15 @@
 	</div> <!--article -->
 		
 	<div id="article-right">
-	<div class="storynav"><p><?php next_post_link('%link', '&laquo; previous article'); ?> | <?php previous_post_link('%link', 'next article &raquo;'); ?></p></div>
+	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article', FALSE, '56 and 31'); ?> | <?php next_post_link('%link', 'next article &raquo;', FALSE, '56 and 31'); ?></p></div>
 	<div class="otherstories">
-		<h4>Other Stories in this Section</h4>
-			<?php global $post;
+				<?php global $post;
 				$categories = get_the_category();
 				$thiscat = $categories[0]->cat_ID;
+				$catname = $categories[0]->name;
 				 query_posts('showposts=3&orderby=rand&cat=' . $thiscat); ?>
+				 
+		<h4>Other <?php echo $catname; ?> articles</h4>
 	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	    		<div class="subtext">
@@ -44,6 +46,7 @@
 		    			<?php else : the_excerpt(); endif; ?></a>	    			    
 		    			<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
 		    				<div class="extranames">
+		    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 		    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 		    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 		    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>

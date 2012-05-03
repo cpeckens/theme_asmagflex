@@ -14,7 +14,7 @@ Template Name: Letters to the Editor
 				<?php $letters_query = new WP_Query(array(
 						'post_type' => 'post',
 						'cat' => '56',
-						'order' => 'ASC',
+						'order' => 'DESC',
 						'posts_per_page' => '-1')); ?>
 		
 						<?php while ($letters_query->have_posts()) : $letters_query->the_post(); ?>
@@ -48,6 +48,7 @@ Template Name: Letters to the Editor
 	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
 	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
 	    				<div class="extranames">
+	    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
 	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
 	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
 	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>

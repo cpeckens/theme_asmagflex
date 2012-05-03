@@ -49,17 +49,17 @@
 				set_transient( 'toc_dropdown' . $volume . '_query', $toc_dropdown_query, 86400 ); }
 	
 				 while ($toc_dropdown_query->have_posts()) : $toc_dropdown_query->the_post(); ?>
-						<option value="<?php the_permalink() ?>"><?php the_title(); ?> : 
-						<span class="dim">
+						<option value="<?php the_permalink() ?>"><span class="dim"><strong>
 	    			    	<?php if ( in_category( 'exclusive' )) : ?>Web Exclusive<?php endif; ?>
 	    			    	<?php if ( in_category( 'editors-note' )) : ?>Editor's Note<?php endif; ?>
 	    			    	<?php if ( in_category( 'dean' )) : ?>From the Dean<?php endif; ?>
 	    			    	<?php if ( in_category( 'news' )) : ?>News<?php endif; ?>
 	    					<?php if ( in_category( 'insights' )) : ?>Insights<?php endif; ?>
-	    					<?php if ( in_category( 'alumni' )) : ?>Alumni<?php endif; ?></span>
+	    					<?php if ( in_category( 'alumni' )) : ?>Alumni<?php endif; ?>:</strong></span>&nbsp;<?php the_title(); ?> 
+						
 	    				</option>	
 						<?php endwhile; //End loop ?>
 					</select>
 					</form>
-					<h3><span class="articlename"><?php wp_title(); ?></span></h3>
+					<h3 class="articlename mobile"><?php wp_title(); ?></h3>
 						 	</div> <!-- End helpbarleft -->
