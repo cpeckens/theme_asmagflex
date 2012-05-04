@@ -26,8 +26,13 @@
 	    				</div><!--End extranames -->
 	    			</div><!--End snippet -->
 	
-	<?php endwhile; ?>
-
+	<?php endwhile; else :?>
+	<p>Sorry, there were no results for your query. Please try another search term.</p>
+	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+				    <div><input type="text" size="put_a_size_here" name="s" id="s" value="" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+				    <input type="submit" id="searchsubmit" value="Search" class="btn">
+				    </div>
+				</form>
 	<?php endif; ?>
 	</div>
 	</div> <!--article -->

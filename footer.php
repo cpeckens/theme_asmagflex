@@ -45,7 +45,7 @@
 			<div class="clearboth"></div> <!--to have background work properly -->
 		
 		</div> <!--End container-foot -->
-
+	<?php wp_footer(); ?>
 	</body>
 		<!-- JavaScript -->
 		<script src="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/js/respond.min.js,wp-content/themes/asmagflex/assets/js/asmag_custom.js,wp-content/themes/asmagflex/assets/js/jquery.scroll.js<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/js/asmag_front.js<?php } ?><?php if (is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-fancytitle.php' )|| is_page_template( 'feature-complex.php' )) { ?>,wp-content/themes/asmagflex/assets/js/asmag_feature.js<?php } ?>&debug"></script>

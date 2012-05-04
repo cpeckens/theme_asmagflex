@@ -14,7 +14,8 @@ Template Name: Issue Table of Contents
         	// It wasn't there, so regenerate the data and save the transient
         	$my_accordion_query = new WP_Query(array(
 			'post_type' => 'accordion',
-			'volume' => $volume)); 
+			'volume' => $volume,
+			'order' => 'ASC')); 
         	set_transient( 'ksas_accordion' . $volume . '_query', $my_accordion_query, 86400 );
 	    	}  ?>
 		
