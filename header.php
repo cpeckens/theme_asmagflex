@@ -20,10 +20,9 @@
 			$volume = $asmag_option['asmag_current_issue']; } 
 		?>
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/css/main.css,wp-content/themes/asmagflex/assets/css/classes.css,wp-content/themes/asmagflex/assets/css/media.css,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>.css<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/slider_accordion.css<?php } ?><?php if ( is_page_template( 'feature-complex.php' ) || is_page_template( 'feature-fancytitle.php' ) || is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-slides.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>fonts.css<?php } ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/css/main.css,wp-content/themes/asmagflex/assets/css/classes.css,wp-content/themes/asmagflex/assets/css/media.css,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>.css<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/slider_accordion.css<?php } ?><?php if ( is_page_template( 'feature-complex.php' ) || is_page_template( 'feature-fancytitle.php' ) || is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-slides.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>fonts.css<?php } ?><?php if (is_page('on-display')) { ?>,wp-content/themes/asmagflex/assets/css/v9n2cover.css<?php } ?>&9" />
 		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false) { ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/firefox.css" /> <?php }?>
 		<?php wp_enqueue_script('jquery'); ?>
-		<?php if (is_page_template('feature-slides.php')) { ?><script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/sequence.js"></script> <?php } ?>
 		<?php wp_head(); ?>
 		<!-- IE Stipulations -->
 		<!--[if lt IE 9]>

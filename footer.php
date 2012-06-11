@@ -48,7 +48,7 @@
 	<?php wp_footer(); ?>
 	</body>
 		<!-- JavaScript -->
-		<script src="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/js/respond.min.js,wp-content/themes/asmagflex/assets/js/asmag_custom.js,wp-content/themes/asmagflex/assets/js/jquery.scroll.js<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/js/asmag_front.js<?php } ?><?php if (is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-fancytitle.php' )|| is_page_template( 'feature-complex.php' )) { ?>,wp-content/themes/asmagflex/assets/js/asmag_feature.js<?php } ?>&debug"></script>
+		<script src="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/js/respond.min.js,wp-content/themes/asmagflex/assets/js/asmag_custom.js,wp-content/themes/asmagflex/assets/js/jquery.scroll.js<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/js/asmag_front.js<?php } ?><?php if (is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-fancytitle.php' )|| is_page_template( 'feature-complex.php' ) || is_page_template( 'feature-slides.php' )) { ?>,wp-content/themes/asmagflex/assets/js/asmag_feature.js<?php } ?>&1"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/jquery.scroll.js"></script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'b7fa1cfa-1d01-4da1-8de7-ae74dea18d43'});</script>
 </html>

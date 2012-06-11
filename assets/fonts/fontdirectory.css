@@ -41,7 +41,17 @@ src:url("Fonts/fd479df2-01b0-4e3a-a411-915c477f1352.eot?iefix");
 src:url("Fonts/b252d464-65cb-4950-88f7-ac0a1bf79b75.woff") format("woff"),url("Fonts/b3d18117-6517-4d3f-afc1-774086ff5fc1.ttf") format("truetype"),url("Fonts/b9bed509-0816-43d8-b14b-7525a21f4bde.svg#b9bed509-0816-43d8-b14b-7525a21f4bde") format("svg");
 }
 
+@font-face {
+    font-family: 'MuseoSans500Regular';
+    src: url('Fonts/MuseoSans_500-webfont.eot');
+    src: url('Fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Fonts/MuseoSans_500-webfont.woff') format('woff'),
+         url('Fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('Fonts/MuseoSans_500-webfont.svg#MuseoSans500Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 @font-face{
 font-family:"Museo Sans W01 900";

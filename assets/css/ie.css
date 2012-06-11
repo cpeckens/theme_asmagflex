@@ -12,13 +12,15 @@ ul.tabs li a
 	font-weight: 700;
 }
 
-.fall2011 .dean {
+.v9n1 .dean {
 	margin-top:0;
 	bottom:75px;
 
 }
 
-.spring2011 .dean {
+.v8n2 .dean,
+.v9n2 .dean {
+	margin-top:0;
 	bottom:60px;
 }
 

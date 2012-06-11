@@ -415,4 +415,3 @@ $j(document).ready(function() {
 				});
 
 });
-

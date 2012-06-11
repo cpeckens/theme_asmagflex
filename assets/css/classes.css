@@ -766,7 +766,8 @@ p.othercredits {
 	font-weight: 400;	font-style:italic;
 }
 
-.postmaterial img {
+.postmaterial img,
+.feature-copy img {
 	margin: 0;
 	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.64);
 	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.64);
@@ -775,18 +776,23 @@ p.othercredits {
 }
 
 .postmaterial img.floatleft,
-.postmaterial img.alignleft {
+.postmaterial img.alignleft,
+.feature-copy img.floatleft,
+.feature-copy img.alignleft {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
 .postmaterial img.floatright,
-.postmaterial img.alignright {
+.postmaterial img.alignright,
+.feature-copy img.floatright,
+.feature-copy img.alignright {
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
 
-.postmaterial img.fullbleed {
+.postmaterial img.fullbleed,
+.feature-copy img.fullbleed {
 	max-width:100%;
 }
 
@@ -1144,6 +1150,7 @@ h4.letters {
 }
 
 .subtext p img,
-.catarticle p img {
+.catarticle p img,
+.featurelisting p img {
 	display:none;
 }
