@@ -10,38 +10,38 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
-		<?php 
-			global $wp_query;
-			foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
-			$volume = $term->slug;
-			$asmag_option = asmag_get_global_options();
-			if ($volume == null) { 
-			$volume = $asmag_option['asmag_current_issue']; } 
-		?>
+		<?php $volume = get_the_volume($post); ?>
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/asmagflex/assets/css/main.css,wp-content/themes/asmagflex/assets/css/classes.css,wp-content/themes/asmagflex/assets/css/media.css,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>.css<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/slider_accordion.css<?php } ?><?php if ( is_page_template( 'feature-complex.php' ) || is_page_template( 'feature-fancytitle.php' ) || is_page_template( 'feature-generic.php' ) || is_page_template( 'feature-slides.php' ) ){ ?>,wp-content/themes/asmagflex/assets/css/<?php echo $volume; ?>fonts.css<?php } ?><?php if (is_page('on-display')) { ?>,wp-content/themes/asmagflex/assets/css/v9n2cover.css<?php } ?>&9" />
-		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false) { ?><link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/firefox.css" /> <?php }?>
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/foundation.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/magazine.css">
+		<script async type="text/javascript" src="http://fast.fonts.net/jsapi/1db25190-910a-4ab7-bd9b-5582bf1b2833.js"></script>
+		
+		<?php if (is_page('on-display')) { ?>
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/stylesheets/features/on-display.css">
+		<?php } ?>
+		
+		<?php if (is_page_template( 'lifespan-adult.php' ) || is_page_template( 'lifespan-baby.php' ) || is_page_template( 'lifespan-elder.php' ) || is_page_template( 'lifespan-expert.php' ) || is_page_template( 'lifespan-home.php' ) || is_page_template( 'lifespan-teen.php' ) ){ ?><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/stylesheets/features/learning-along-the-lifespan.css"> <?php } ?>
+		
+		<?php if(is_page() && is_page_template('template-tableofcontents.php') == false) { ?>
+			<script async type="text/javascript" src="http://fast.fonts.net/jsapi/a5273dfb-2de2-4945-99ec-e9d381669740.js"></script>		
+		<?php } ?>
+		
 		<?php wp_enqueue_script('jquery'); ?>
+		<script src="<?php echo get_template_directory_uri() ?>/assets/javascripts/modernizr.foundation.js"></script>
 		<?php wp_head(); ?>
-		<!-- IE Stipulations -->
-		<!--[if lt IE 9]>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+		
+  <!-- Make IE a modern browser -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/assets/javascripts/lte-ie7.js"></script>
+  <![endif]-->
 	</head>
 
-<!--Set the appropropriate body class based on volume and page template-->
-<?php if (get_post_meta($post->ID, 'ecpt_feature_background', true)) : ?>
-<body style="background: url('<?php echo get_post_meta($post->ID, 'ecpt_feature_background', true); ?>') top left repeat;">
-<?php else : ?>
-<body class="<?php if (is_page_template( 'template-tableofcontents.php' )) { echo $volume; } 
-					else echo $volume . 'sub'; endif; ?>">
+<body <?php body_class($volume); ?>>
 
-<!--Do not display helpbar on table of content pages-->
-<?php if (is_page_template( 'template-tableofcontents.php' )) : 
-locate_template('parts/header_toc.php', true, false);
-else : locate_template('parts/header_subpage.php', true, false);
-?>
+	<header>
+		<?php if (is_page_template('template-tableofcontents.php')) {locate_template('/parts/header_homepage.php', true, false);} 
+		else { locate_template('/parts/header_subpage.php', true, false); } ?>
+	</header>
 
-<?php endif; // End if tableofcontents page conditional ?>

@@ -1,39 +1,64 @@
-<div class="helpbarcontainer">
+		<div class="row show-for-small black_bg">
+				<div class="toc_nav mobile">
+				<a href="<?php echo site_url(); ?>"><span class="icon-home"></span><span class="hide">Home</span></a>
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');"><span class="icon-toc"></span><span class="hide">Table of Contents</span>
+				<span class="issue"><?php $volume_name = get_the_volume_name($post); echo $volume_name; ?></span></a>
+			</div>
 
-	<div class="helpbar">
-		<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false) : //Check if browser is IE or mobile
-		 locate_template('parts/helpbar_ie.php', true, false);
-		 else :
-		 locate_template('parts/helpbar_all.php', true, false);
-		 endif;
-		 ?>
-		 	<div class="helpbarright">
-			<div class="searchbar">
-				<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-				    <div><input type="text" size="put_a_size_here" name="s" id="s" value="" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
-				    <input type="submit" id="searchsubmit" value="Search" class="btn">
-				    </div>
-				</form>
-			</div> <!--End searchbar-->
+			<div class="four columns centered">
+			<div class="mobile-logo centered">
+				<li class="logo"><a href="<?php echo site_url(); ?>" title="Krieger School of Arts & Sciences"><span class="hide">Arts & Sciences</span></a>
+				<select class="bright_blue_bg issue" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+				<?php $volume_name = get_the_volume_name($post); ?>
+				<option><?php echo $volume_name; ?></option>
+				<?php wp_nav_menu( array( 
+					'theme_location' => 'issue-menu', 
+					'menu_class' => '', 
+					'fallback_cb' => 'foundation_page_menu', 
+					'container' => '',
+					'depth' => 1,
+					'walker'=> new mobile_select_menu,
+					'items_wrap' => '%3$s', )); ?>
+					</select>
+				<span class="logo-sub">Magazine</span></li>
+			</div>
+		</div>
+		</div>
+		<div class="row hide-for-print hide-for-small">
+			<div id="search-bar" class="offset-by-five seven mobile-four columns">
+				<div class="row">
+				<?php if (is_page_template('template-tableofcontents.php')) {$menu = 'header-menu';} else { $menu = 'subpage-menu'; }
+				wp_nav_menu( array( 
+							'theme_location' => $menu, 
+							'menu_class' => '', 
+							'fallback_cb' => 'foundation_page_menu', 
+							'container' => 'div',
+							'container_id' => 'search_links', 
+							'container_class' => 'eight columns links mobile-two inline hide-for-mobile',
+							'depth' => 1,
+							'items_wrap' => '%3$s', )); ?> 
+					<div class="four columns mobile-two">
+					<form method="GET" action="<?php echo site_url('/search'); ?>">
+						<input type="text" name="q" placeholder="Search this site" />
+						<input type="submit" class="icon-search" value="&#xe810;" />
+						<input type="hidden" name="site" value="ksas_magazine" />
+					</form>
+					</div>
+				</div>	
+			</div>	<!-- End #search-bar	 -->
+		</div>		
+		
+		<div class="row hide-for-small">
+			<div class="toc_nav">
+				<a href="<?php echo site_url(); ?>"><span class="icon-home"></span><span class="hide">Home</span></a>
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');"><span class="icon-toc"></span><span class="hide">Table of Contents</span>
+				<span class="issue"><?php $volume_name = get_the_volume_name($post); echo $volume_name; ?></span></a>
+			</div>
+			<div class="twelve columns sub-page" id="logo_nav">
 
-			</div> <!--End helpbarright--> 
-			
-	</div> <!--End helpbar-->
-</div> <!--End helpbarcontainer-->
-		<div id="container-head">
-			
-			<div id="header">
-	
-				<div id="subheader-left">
-				<div id="logosub"><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/subpage_logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences Magazine" /></a></div>
-				</div> <!-- End header-left -->
-			
-				<div id="subheader-right">									
-					<div id="nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'subpage-menu' ) ); ?>
-					</div> <!--End nav -->
-				</div><!-- End header-right -->
-<div class="clearboth"></div> <!--to have background work properly -->
-			</div> <!-- End header -->
-		</div> <!-- End container-head-->
-<div id="nav-break"></div>
+				<li class="logo"><a href="<?php echo site_url(); ?>" title="Krieger School of Arts & Sciences"><span class="hide">Arts & Sciences</span></a>
+								<div class="spacer"></div><span class="logo-sub">Magazine</span></li>
+
+			</div>
+		</div>
+	</div>

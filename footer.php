@@ -22,7 +22,7 @@
 			</div>
 		</div>
   </footer>
-  
- <?php locate_template('parts-script-initiators.php', true, false); wp_footer();?>
+
+ <?php locate_template('/parts/scripts-initiators.php', true, false); wp_footer();?>
 </body>
 </html>		
