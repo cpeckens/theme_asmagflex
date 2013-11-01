@@ -1,4 +1,42 @@
 <?php
+/*****************1.0 SECURITY AND PERFORMANCE FUNCTIONS*****************************/
+	// 1.1 Prevent login errors - attacker prevention
+		add_filter('login_errors', create_function('$a', "return null;"));
+	
+	// 1.2 Block malicious queries - Based on http://perishablepress.com/press/2009/12/22/protect-wordpress-against-malicious-url-requests/
+		global $user_ID;
+		
+		if($user_ID) {
+		  if(!current_user_can('level_10')) {
+		    if (strlen($_SERVER['REQUEST_URI']) > 255 ||
+		      strpos($_SERVER['REQUEST_URI'], "eval(") ||
+		      strpos($_SERVER['REQUEST_URI'], "CONCAT") ||
+		      strpos($_SERVER['REQUEST_URI'], "UNION+SELECT") ||
+		      strpos($_SERVER['REQUEST_URI'], "base64")) {
+		        @header("HTTP/1.1 414 Request-URI Too Long");
+			@header("Status: 414 Request-URI Too Long");
+			@header("Connection: Close");
+			@exit;
+		    }
+		  }
+		}
+	// 1.3 remove junk from head
+		remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wp_generator');
+		remove_action('wp_head', 'feed_links', 2);
+		remove_action('wp_head', 'index_rel_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'feed_links_extra', 3);
+		remove_action('wp_head', 'start_post_rel_link', 10, 0);
+		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+	
+		//remove version info from head and feeds
+		    function complete_version_removal() {
+		    	return '';
+		    }
+		    add_filter('the_generator', 'complete_version_removal');
+			
 
 //add menu support
 	add_theme_support( 'menus' );
@@ -6,7 +44,7 @@
 //register menus
 	function asmag_register_my_menus() {
   		register_nav_menus(
-    		array( 'header-menu' => __( 'Homepage Menu' ),'subpage-menu' => __( 'Subpage Menu' ))
+    		array( 'header-menu' => __( 'Homepage Menu' ),'subpage-menu' => __( 'Subpage Menu' ), 'footer-menu' => __('Footer Menu'), 'issue-menu'=> __('Issue Menu'))
   		);
 	}
 	
@@ -20,6 +58,7 @@
 	add_image_size( 'exclusive', 220, 110, true );
 	add_image_size( 'homethumb', 60, 70, true );
 	add_image_size( 'alumni', 150, 130, true );
+	add_image_size( 'filterthumb', 235, 195, true);
 
 //pagination function
 	function asmag_pagination($prev = 'Ç', $next = 'È') {
@@ -54,25 +93,6 @@
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' 
 			));	
-
-// remove junk from head
-	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wp_generator');
-	remove_action('wp_head', 'feed_links', 2);
-	remove_action('wp_head', 'index_rel_link');
-	remove_action('wp_head', 'wlwmanifest_link');
-	remove_action('wp_head', 'feed_links_extra', 3);
-	remove_action('wp_head', 'start_post_rel_link', 10, 0);
-	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-
-// remove version info from head and feeds
-function complete_version_removal() {
-    return '';
-}
-
-add_filter('the_generator', 'complete_version_removal');
-
 //Add Theme Options Page
 	if(is_admin()){	
 		require_once('assets/functions/asmag-theme-settings-basic.php');
@@ -185,24 +205,140 @@ function myprefix_image_downsize( $value = false, $id, $size ) {
 add_filter( 'image_downsize', 'myprefix_image_downsize', 1, 3 );
 
 
-//Custom comment display
-function asmag_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-?>
-	<div <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-		<div id="comment-<?php comment_ID(); ?>">
-			<div class="comment-author">
-				<?php printf(__('%1$s'), get_comment_date()) ?><?php printf(__(' by <cite class="fn">%s</cite>'), get_comment_author_link()) ?>
-			</div>
 
-			<?php comment_text() ?>
-
-			<div class="reply">
-				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-			</div>
-		</div>
-<?php
+function get_the_volume($post) {
+			wp_reset_query();
+			$post = get_queried_object_id();
+			$terms = get_the_terms($post, 'volume');
+			$asmag_option = asmag_get_global_options();
+			if(is_array($terms)) {
+				$term_slugs = array();
+				foreach( $terms as $term) {
+					if($term->slug != 'feature') {
+						$term_slugs[] = $term->slug;
+					}
+					$volume = implode('', $term_slugs); } 
+				} else { $volume = $terms->slug; }
+			
+			if ($volume == null) { 
+			$volume = $asmag_option['asmag_current_issue']; } 
+	return $volume;
 }
+
+function get_the_volume_name($post) {
+	$post = get_queried_object_id();
+	$terms = get_the_terms($post, 'volume');
+	$asmag_option = asmag_get_global_options();
+	
+		if(is_array($terms)) {
+			$term_names = array();
+			foreach( $terms as $term) { 
+				if($term->name != 'Feature') {
+					$term_names[] = $term->name;
+				}
+			 } 
+			 $volume_name = implode('', $term_names);
+		} 
+		
+		else { $volume_name = $terms->name; }
+		
+		if ($volume_name == null) { 
+			$new_volume = $asmag_option['asmag_current_issue']; 
+			$new_volume_data = get_term_by('slug', $new_volume, 'volume');
+			$volume_name = $new_volume_data->name;
+		} 
+	
+	return $volume_name;
+}
+	//***9.1 Menu Walker to add Foundation CSS classes
+		class foundation_navigation extends Walker_Nav_Menu
+		{
+		      function start_el(&$output, $item, $depth, $args)
+		      {
+					global $wp_query;
+					$indent = ( $depth ) ? str_repeat( "", $depth ) : '';
+					
+					$class_names = $value = '';
+					
+					// If the item has children, add the dropdown class for bootstrap
+					if ( $args->has_children ) {
+						$class_names = "has-flyout ";
+					}
+					$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+					
+					$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+					$class_names = ' class="'. esc_attr( $class_names ) . ' page-id-' . esc_attr( $item->object_id ) .'"';
+		           
+					$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+		           
+		
+		           	$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		           	$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		           	$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		           	$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		           	// if the item has children add these two attributes to the anchor tag
+		           	if ( $args->has_children ) {
+						$attributes .= 'data-toggle="dropdown"';
+					}
+		
+		            $item_output = $args->before;
+		            $item_output .= '<a'. $attributes .'>';
+		            $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
+		            $item_output .= $args->link_after;
+		            $item_output .= '</a>';
+		            $item_output .= $args->after;
+		
+		            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		            }
+		            
+		function start_lvl(&$output, $depth) {
+			$output .= "\n<ul class=\"flyout up\">\n";
+		}
+		            
+		      	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output )
+		      	    {
+		      	        $id_field = $this->db_fields['id'];
+		      	        if ( is_object( $args[0] ) ) {
+		      	            $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
+		      	        }
+		      	        return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+		      	    }
+		      	
+		            
+		}
+		
+		// Add a class to the wp_page_menu fallback
+		function foundation_page_menu_class($ulclass) {
+			return preg_replace('/<ul>/', '<ul class="nav-bar">', $ulclass, 1);
+		}
+		
+		add_filter('wp_page_menu','foundation_page_menu_class');
+
+	//***9.2 Menu Walker to create a dropdown menu for mobile devices	
+		class mobile_select_menu extends Walker_Nav_Menu{
+		    function start_lvl(&$output, $depth){
+		      $indent = str_repeat("\t", $depth); // don't output children opening tag (`<ul>`)
+		    }
+		
+		    function end_lvl(&$output, $depth){
+		      $indent = str_repeat("\t", $depth); // don't output children closing tag
+		    }
+		
+		    function start_el(&$output, $item, $depth, $args){
+		      // add spacing to the title based on the depth
+		      $item->title = str_repeat("&nbsp;", $depth * 4).$item->title;
+		
+		      parent::start_el(&$output, $item, $depth, $args);
+		
+		      // no point redefining this method too, we just replace the li tag...
+		      $output = str_replace('<li', '<option value="'. esc_attr( $item->url        ) .'"', $output);
+		    }
+		
+		    function end_el(&$output, $item, $depth){
+		      $output .= "</option>\n"; // replace closing </li> with the option tag
+		    }
+		}
+
 
 include_once (TEMPLATEPATH . '/assets/functions/asmag-metabox.php');
 include_once (TEMPLATEPATH . '/assets/functions/asmag-accordion.php');
