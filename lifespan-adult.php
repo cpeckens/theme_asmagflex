@@ -5,11 +5,6 @@ Template Name: Lifespan - Adult
 ?>
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	<style>
-		<?php echo get_post_meta($post->ID, 'ecpt_asmag_css', true); ?>
-	</style> <!--Add features custom CSS-->
-	<?php if ( get_post_meta($post->ID, 'javascript', true) ) : ?><?php echo get_post_meta($post->ID, 'javascript', true); ?><?php endif; ?>
-
 <div id="lifespan_adult" class="lifespan">
 <div class="row">
 
