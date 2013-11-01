@@ -1,27 +1,24 @@
-	<?php if (is_page_template( 'feature-complex.php' ) == false) : ?>
-	<div class="share">
-		<span  class="st_twitter_large"></span>
-		<span  class="st_facebook_large"></span>
-		<span  class="st_email_large"></span>
-		<span  class="st_sharethis_large"></span>
-	</div><!--end share-->
-	
-	<?php comments_template( '/comments.php' ); ?> 
+<?php if (is_page_template( 'feature-complex.php' ) == false) : ?>
+	<div class="row">
+		<div class="twelve columns">	
+			<?php comments_template( '/comments.php' ); ?> 
+		</div>
+	</div>
 	</div> <!--end feature -->
-	
-	
-	    		<div class="clearboth"></div> <!--to have background work properly -->
-		</div> <!--End container-mid -->
-		<?php endif;?>
+		
+</div> <!--End container-mid -->
+<?php endif; $volume = get_the_volume($post); $volume_name = get_the_volume_name($post);?>
 			<div id="footer-top">
-			<div class="featurelisting">
-				<div class="title-wrapper"><h4><span class="title">MORE FEATURE STORIES</span></h4></div>
+			<div class="featurelisting row">
+			
+			<div class="twelve columns table">
+				<h4><?php echo $volume_name; ?> Feature Stories<span class="spacer"></span></h4>
+			</div>
 
-					<?php 
-					global $wp_query;
-					foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
-					$volume = $term->slug; 
-					
+		<?php 
+						
+				
+				
 				if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
 
 				$features_query = new WP_Query(array(
@@ -39,7 +36,7 @@
 				
 				while ($features_query->have_posts()) : $features_query->the_post(); ?>
 		
-	    			<div class="alumarticle">
+	    			<div class="three columns">
 	    			    <?php if ( has_post_thumbnail()) { ?> 
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
@@ -47,10 +44,9 @@
 	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
 	    			    <?php	} ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?><p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p> <?php endif; ?>
+			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
 	    			</div><!--End snippet -->
 	    			<?php endwhile; //End loop ?>
-						<div class="clearboth"></div> <!--to have background work properly -->
 
 			</div>
 

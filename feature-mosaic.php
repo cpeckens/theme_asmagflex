@@ -3,15 +3,14 @@
 Template Name: Feature - Mosaic */
 ?>
 <?php get_header(); ?>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	<style>
-	#feature-head {
-		background-image: url(<?php echo get_post_meta($post->ID, 'ecpt_header_background', true); ?>);
-		}
-	<?php echo get_post_meta($post->ID, 'ecpt_asmag_css', true); ?></style> <!--Add features custom CSS-->
-	<?php if ( get_post_meta($post->ID, 'javascript', true) ) : ?><?php echo get_post_meta($post->ID, 'javascript', true); ?><?php endif; ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+		$page = get_queried_object();
+		$page_name = $page->post_name; 
+		 ?>
+	
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/stylesheets/features/<?php echo $page_name; ?>.css">
 	<div id="feature-head">
-		<div class="intro-container">
+		<div class="intro-container row">
 		<div class="feature-intro">
 		<?php if(has_post_thumbnail()): ?>
 		<div class="nonbackground"><?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
@@ -59,7 +58,7 @@ Template Name: Feature - Mosaic */
 		                } ?>
 
 		</ul><!--End #mosaic -->
-	<div id="feature">
+	<div id="feature" class="row">
 	    
 		<div class="postmaterial">
 			
@@ -69,7 +68,7 @@ Template Name: Feature - Mosaic */
 	
 	<?php endwhile; ?> <?php endif; ?>
 			
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/jquery.photomosaic.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/javascripts/jquery.photomosaic.js"></script>
 			<script>
     var $q = jQuery.noConflict();
 			$q(function(){
