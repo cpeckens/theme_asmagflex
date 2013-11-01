@@ -5,19 +5,13 @@ Template Name: Feature - Complex
 ?>
 <?php get_header(); ?>
 <?php if(is_page('interns-make-an-impact')) : ?>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/coverstory.css" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/stylesheets/features/interns-make-an-impact.css" />
 <?php endif; ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	<style>
-	#feature-head {
-		background-image: url(<?php echo get_post_meta($post->ID, 'ecpt_header_background', true); ?>);
-		}
-	</style> <!--Add features custom CSS-->
-	<?php if ( get_post_meta($post->ID, 'javascript', true) ) : ?><?php echo get_post_meta($post->ID, 'javascript', true); ?><?php endif; ?>
 	
 	<div id="feature-head">
-		<div class="intro-container">
+		<div class="intro-container row">
 		<div class="feature-intro">
 			<div class="textblock">
 				<?php if ( get_post_meta($post->ID, 'fancy_title', true) ) : ?><div class="fancytitle"><?php echo get_post_meta($post->ID, 'fancy_title', true); ?></div><?php endif; ?>
@@ -31,7 +25,7 @@ Template Name: Feature - Complex
 		<?php endwhile; ?> <?php endif; ?>
 		<?php 
 		if(is_page('interns-make-an-impact')) : 
-			locate_template('parts/story_v9n1cover.php', true, false);
+			locate_template('parts/interns-make-an-impact.php', true, false);
 		endif;
 		
 		locate_template('parts/footer_feature.php', true, false);				
