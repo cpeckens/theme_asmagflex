@@ -1477,39 +1477,6 @@ function getParameterByName(name)
 }(jQuery, this));
 
 
-//*************************Tabs**************************//
-
-var $j = jQuery.noConflict();
-
-$j(document).ready(function() {
-
-	var tabs = $j('ul.tabs');
-
-	tabs.each(function(i) {
-
-		//Get all tabs
-		var tab = $j(this).find('> li > a');
-		tab.click(function(e) {
-
-			//Get Location of tab's content
-			var contentLocation = $j(this).attr('href');
-
-			//Let go if not a hashed one
-			if(contentLocation.charAt(0)=="#") {
-
-				e.preventDefault();
-
-				//Make Tab Active
-				tab.removeClass('active');
-				$j(this).addClass('active');
-
-				//Show Tab Content & add active class
-				$j(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
-
-			}
-		});
-	});
-});
 
 //*************************Read More/Read **************************//
 $j(document).ready(function() {
