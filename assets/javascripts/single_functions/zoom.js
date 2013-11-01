@@ -36,7 +36,7 @@ var $z = jQuery.noConflict();
       'largeImage'    : '',
       'magnification' : 1.0,
       'hideCursor'    : true,
-      'blankCursor'   : 'http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/js/blank.png',
+      'blankCursor'   : 'http://magazine.krieger.dev/wp-content/themes/asmagflex/assets/javascripts/blank.png',
       'debug'         : false
     };
     options = $z.extend(defaults, options);
