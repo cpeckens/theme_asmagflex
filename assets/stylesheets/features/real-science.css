@@ -1,0 +1,115 @@
+.row {
+	width: 820px;
+}
+body {
+	background: url('../../images/features/bg-fea2-genome1.jpg') repeat !important;
+}
+
+#footer-top {
+	background: #000;
+}
+#feature {
+	background: rgba(241, 248, 248, 0.65);
+}
+
+#container-mid {
+	background: none;
+}
+#footer-top,
+#footer-top h5, #footer-top h5 a,
+#sidebar .table h4, #footer-top .table h4 {
+	color: #FFF !important;
+}
+
+#sidebar .table .spacer, #footer-top .table .spacer {
+	background: #FFF;
+}
+.nonbackground {
+	float:left; 
+	padding-right: 1em;
+	width: 64%;
+}
+
+p.credit {
+	font-size: 1.125em;
+	margin-bottom: 1em;
+	}
+
+p.othercredits {
+	font-size: 0.875em;
+	margin-bottom: 0.625em
+	
+	}
+	
+.pullquote {
+	padding:1em;
+	font-size:1em;
+	line-height: 1.5em;
+	font-weight: bold;
+	}
+
+.dropcap {
+	color:#efbd53;
+	float: left; 
+	font-size: 4.5em; 
+	line-height: 60px; 
+	padding-top: 0; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+}
+
+h4.tagline {
+	display:none;
+}
+
+#feature-head {
+	height:519px;
+	background: #000;
+}
+
+.feature-intro {
+	color: #ffffff;
+	background: none;
+	width: 100%;
+	max-width: 820px;
+	float:right;
+}
+
+.feature-intro h3 {
+	font-family: 'Museo Slab W01 300', Georgia, serif;
+	font-size: 2em;
+	margin-bottom: 0;
+	margin-top:2em;
+	color: #efbd53;
+}
+
+
+
+.aside {
+	margin: 10px auto;
+	width:70%;
+	padding:1em;
+	background: rgba(239, 189, 83, 0.1);
+}
+
+.aside h3 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	color: #efbd53;
+}
+
+.wysiwyg-read-more-link {
+	font-family: 'Museo Slab W01 300', Georgia, serif;
+}
+
+.imageblockleft {
+	background: rgba(239, 189, 83, 0.1);
+}
+
+.imageblockright {
+	background: rgba(239, 189, 83, 0.1);
+}
+
+p.quote {
+	color:#efbd53;
+	}

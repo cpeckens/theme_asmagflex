@@ -1,0 +1,143 @@
+body,
+#container-mid {
+	background: url('../../images/features/tile-salter.jpg') repeat !important;
+}
+.nonbackground,
+h3.featuretitle,
+.headerbreak {
+	display: none;
+}
+
+.postmaterial {
+line-height: 1.7em;
+}
+#feature-head {
+	background-image:url('../../images/features/salter-header3.gif');
+	height:1082px;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.textblock {
+	width: 73%;
+	float:right;
+}
+
+h3.italic {
+	font-family: Palatino, serif;
+	font-style: italic;
+	color: #ffffff;
+	margin-bottom: 0;
+	font-size: 3em;
+	margin-top:30px;
+
+}
+
+h3.large {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	color: #f5f073;
+	font-size: 4.5em;
+	float: right;
+}
+
+h4.tagline,
+p.credit,
+p.othercredits {
+	font-family:  Myriad W01 SmBd Cnd, Slab serif;
+	color:#ffff66;
+	margin-left:60%;
+	text-shadow: 0px 0px 6px #333;
+}
+
+h4.tagline,
+p.credit {
+	font-size: 1.375em;
+	line-height: 1.35em;
+}
+
+p.othercredits {
+	font-size: 1.125em;
+}
+
+h4.tagline {
+	margin-bottom: 100px;
+}
+
+#feature {
+	background: none;
+	background-color:#bfe3d4;
+	position:relative;
+	margin-top:-210px;
+	zoom:1;
+}
+
+.dropcap {
+	font-family: Myriad W01 SmBd Cnd, Slab serif;
+	-webkit-border-radius: 90px;
+	-moz-border-radius: 90px;
+	border-radius: 90px;
+	background: #ffff66;
+	padding:19px;
+	margin-right:-24px;
+	margin-top:-38px;
+	zoom: 1;
+}
+
+p.opener {
+	font-family: Myriad W01 SmBd Cnd, Slab serif;
+	font-size: 2.5em;
+	line-height: 2.5em;
+	margin-top:-25px;
+	position: relative;
+	zoom: 1;
+}
+
+p.question {
+	font-weight: bold;
+	margin-bottom:0;
+}
+
+
+.imageblockleft {
+	background:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	margin-left: -15%;
+	position: relative;
+	zoom: 1;
+	margin-right:40px;
+}
+
+.imageblockleft .caption {
+	color: #381577; 
+	width:75%;
+	padding-left:30px;
+	padding-top: 15px;
+	background: url('../../images/quote-mark.png') no-repeat left top;
+	font-size: 1.063em;
+	line-height: 2em;
+	font-weight:bold;
+	float:right;
+	margin-bottom: -80px;
+	position: relative;
+	zoom:1;
+	}
+
+
+@media only screen and (max-width: 700px) {
+	.feature-intro {
+		width:75%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	.feature-intro {
+		width:100%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.textblock {
+		font-size:90%;
+	}

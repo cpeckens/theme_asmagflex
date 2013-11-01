@@ -1,0 +1,115 @@
+body, #footer-top {
+	background: #3c4b60 !important;
+}
+#footer-top,
+#footer-top h5, #footer-top h5 a,
+#sidebar .table h4, #footer-top .table h4 {
+	color: #FFF !important;
+}
+
+#sidebar .table .spacer, #footer-top .table .spacer {
+	background: #FFF;
+}
+.row {
+	width: 820px;
+}
+#feature {
+	background: -moz-linear-gradient(top,  rgba(241,248,248,1) 0%, rgba(241,248,248,1) 70%, rgba(241,248,248,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,248,248,1)), color-stop(70%,rgba(241,248,248,1)), color-stop(100%,rgba(241,248,248,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(241,248,248,1) 0%,rgba(241,248,248,1) 70%,rgba(241,248,248,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f8f8', endColorstr='#00f1f8f8',GradientType=0 ); /* IE6-9 */
+}
+
+#feature-head {
+	height:740px;
+background-position: top;
+background-image: url('../../images/features/feature1header.jpg');
+}
+
+.feature-intro {
+	color: #ffffff;
+	background: none;
+	width: 68%;
+	max-width: 560px;
+	float:right;
+}
+
+.feature-intro h3 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 4em;
+	margin-top:0.8em;
+	margin-bottom: 0;
+	color: #fff;
+}
+
+.feature-intro h4 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 1.25em;
+	margin-bottom: 0; 
+	color: #FFF;
+}
+
+.introcopy {
+	background: rgba(0,0,0, 0.6);
+	padding-bottom:1em;
+}
+
+p.credit {
+	font-size: 1.125em;
+	margin-bottom: 1em;
+}
+
+p.othercredits {
+	font-size: 0.875em;
+	margin-bottom: 0.625em
+}
+	
+.pullquote {
+	padding:1em;
+	font-size:1em;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+
+.pullquote p {
+	font-size: 18px;
+}
+
+.dropcap {
+	float: left; 
+	font-size: 4.5em; 
+	line-height: 60px; 
+	padding-top: 0; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+}
+
+#feature h2 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size:1.875em;
+	font-weight:bold;
+	margin-bottom:1em;
+}
+
+.nonbackground {
+	display: none;
+}
+
+#feature .postmaterial img.floatleft {
+	margin-left:-8%;
+}
+	
+#feature .postmaterial img.floatright {
+	margin-right:-10%;
+}
+
+#feature .postmaterial img {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}

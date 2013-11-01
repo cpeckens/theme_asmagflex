@@ -1,0 +1,137 @@
+body {
+	background: url('../../images/features/dirt-tile.jpg') repeat !important;
+}
+
+#footer-top {
+	background: #000;
+}
+#footer-top,
+#footer-top h5, #footer-top h5 a,
+#sidebar .table h4, #footer-top .table h4 {
+	color: #FFF !important;
+}
+
+#sidebar .table .spacer, #footer-top .table .spacer {
+	background: #FFF;
+}
+#container-mid {
+	background: none;
+}
+.postmaterial img {
+	max-width:none; 
+}
+#mosaic {
+	margin: 0 auto; 
+	max-width:1000px; 
+	clear: right;
+}
+#feature-head {
+	-webkit-box-shadow: 0px 45px 75px rgba(0, 0, 0, 1);
+	-moz-box-shadow:    0px 45px 75px rgba(0, 0, 0, 1);
+	box-shadow:         0px 45px 75px rgba(0, 0, 0, 1); 
+}
+.featuretitle,
+.headerbreak,
+h4.tagline,
+.nonbackground {
+	display:none;
+}
+.intro-container {
+	max-width: 1000px; 
+	background: rgba(47,28,13,0.5); 
+}
+.feature-intro { 
+	color: #ffe4b1; 
+}
+p.credit, 
+p.othercredits {
+	font-variant: small-caps;
+	font-family: 'Museo Sans W01 500', sans-serif;
+}
+
+.feature-intro {
+	margin:0px 100px;
+	padding: 25px 0px;
+	font-family: 'Museo Sans W01 500', sans-serif;
+	font-size: 1.5em;
+}
+
+.fancytitle h3 {
+	font-size: 9.5em;
+	font-family: 'Museo Sans W01 900', sans-serif;
+	margin-bottom: .3em;
+	color: #ffe4b1
+
+}
+
+.pullquote p,
+.textblock p {
+	font-size: 24px;
+}
+.un {
+	font-family: Palatino, serif;
+	font-style: italic;
+}
+
+
+p.credit {
+	margin-bottom: 0px;
+}
+
+p.othercredits {
+	font-weight: normal;
+	font-style: normal;
+}
+wysiwyg-more-less {
+	margin-bottom: 25px;
+}
+.wysiwyg-read-more-link,
+a.video {
+	font-size: 18px;
+	float: right;
+	width: auto;
+	font-family: 'Museo Sans W01 900' sans-serif;
+	text-transform: uppercase;
+	color: #ff6700;
+	height:20px;
+	background: url('../../images/readMore.png') no-repeat;
+	background-position: 0px 0px;
+	clear:none;
+}
+
+a.video {
+	background: url('../../images/play.png') no-repeat;
+	background-position: 100% 0px;
+	margin-left: 20px;
+padding-right:25px;
+}
+
+.wysiwyg-read-more-link:hover,
+.wysiwyg-read-more-link:visited,
+a.video:hover,
+a.video:visited {
+	color: #ff6700
+}
+
+#feature, .featurelisting {
+	max-width: 1000px;
+}
+
+#feature {
+	background: none;
+}
+
+
+
+#disqus_thread {
+	color: #ffe4b1;
+}
+
+#disqus_thread a {
+	color: #ff6700
+}
+
+.fancybox-title-float-wrap .child {
+white-space:normal;
+max-width:800px;
+}

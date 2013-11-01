@@ -1,0 +1,90 @@
+body {
+	background: #6b94ca !important;
+}
+#feature-head {
+	background-image: url('../../images/features/UTL.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #6b94ca;
+	min-height: 1652px;
+	padding-top:40px;
+}
+
+.intro-container {
+	background: rgba(255,255,255,.25);
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+.intro-container,
+#feature,
+.featurelisting {
+	max-width: 1000px;
+}
+
+.headerbreak,
+.nonbackground {
+	display: none;
+}
+
+.feature-intro {
+	padding-bottom: 10px;
+}
+
+.textblock,
+h3.featuretitle
+.pullquote {
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+
+h3.featuretitle {
+	font-size:6em;
+	color:#FFF;
+	margin-bottom: 0;
+	text-align: center;
+	margin-top:10px
+}
+
+h4.tagline {
+	font-size: 2em;
+	font-family: 'Museo Sans W01 500', sans-serif;
+	text-align: center;
+	color: #f5b519;
+	margin-bottom: 15px;
+}
+
+p.credit,
+p.othercredits {
+		display:none;
+}
+
+
+.pullquote {
+	margin: 0 100px;
+	font-size: 1.1em;
+	line-height: 1.2em;
+	text-align: left;
+	color: #FFF;
+}
+
+#feature {
+	background:#fff;
+	color: #000;
+}
+
+
+#feature h4 {
+	font-family: 'Museo Sans W01 900', sans-serif;
+	color: #005a53;
+	font-size: 1.875em;
+}
+
+/*************Comments and Feature Listing************/
+.featurelisting p {
+	color: #ffF;
+}
+
+#disqus_thread a {
+	 color: #005a53;
+}
+

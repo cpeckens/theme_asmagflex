@@ -1,0 +1,261 @@
+body, #footer-top {
+	background: url('../../images/features/bg_yassa.png') repeat;
+}
+#feature-head {
+	background-image: url('../../images/features/yassa-1b.jpg');
+	height:703px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #090514;
+	border-bottom: #333366 15px solid;
+}
+
+.feature-intro {
+	width: 60%;
+	height:615px;
+	float:right;
+	background: rgba(35,46,55,0.5);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F232E37,endColorstr=#7F232E37)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F232E37,endColorstr=#7F232E37);   /* IE6 & 7 */
+	}
+
+.textblock {
+	margin: 1.5em 25% 1.5em 3%;
+	color:#FFFFFF;
+	}
+
+.textblock h3 {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 4.5em;
+	line-height: .83em;
+	margin-bottom:.5em;
+	color: #FFF;
+	}
+
+h4.tagline {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 1.125em;
+	line-height: 1.67em;
+	margin-bottom:10px;
+	font-weight: normal;
+	color: #FFF;
+}
+
+p.credit {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.5em;
+	font-variant: small-caps;
+	margin-bottom:0;
+}
+
+
+p.othercredits {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 0.875em;
+	text-transform: uppercase;
+	margin-bottom:0;
+	font-style: normal;
+}
+
+.pullquote	{
+	float:right;
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	text-transform: uppercase;
+	margin-right:15px;
+	margin-top:40px;
+}
+
+.pullquote a {
+	color: #FFF;
+	font-size: 16px;
+}
+.pullquote a img {
+	padding-right:10px;
+}
+
+.postmaterial p.opener {
+	font-size: 1.5em;
+	line-height: 2em;
+	margin-top: 75px;
+	}
+
+.postmaterial p {
+	font-size: 16px;
+}
+.dropcap {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	color:#06c;
+	font-size:5.5em;
+	margin-top:10px;
+}
+
+#feature {
+	background: none;
+}
+
+#feature .postmaterial {
+	border-top: #06c 15px solid;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(20%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 )"; /* IE6-9 */
+	position:relative;
+	margin-top:-140px;
+	zoom:1;
+	line-height:1.5em;
+	}
+
+#feature .postmaterial h3 {
+	color:#06c;
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.5em;
+	margin: 0;
+}
+
+#feature .postmaterial img {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	max-width: none;
+padding:0;
+}
+
+#feature .postmaterial img.floatleft {
+	margin-bottom:0;
+}
+
+.imagesection1,
+.imagesection2 {
+	position:relative;
+	width:112%
+}
+
+.imagesection2 {
+margin-bottom:15px;
+}
+.imagesection2 .imageholder,
+.imagesection3 {
+	position:relative;
+	width:300%;
+	background-color:#c1c9d1;
+	margin-left:-150%;
+	zoom:1;
+}
+
+.imagesection3 .listen {
+	width:33%;
+	margin-left:50%;
+}
+
+.imagesection3 .listen .left {
+	float:left;
+	width: 35%;
+}
+
+.imagesection3 .listen .right {
+	float:right;
+	width:62%;
+}
+
+#feature .postmaterial .imagesection3 .listen .right h3 {
+	font-family: Georgia, serif;
+	font-size: 1.5em;
+	color:#333;
+	margin-top:20px;
+}
+
+.right p {
+	font-family:'Myriad W01 Regular';
+}
+
+.left h4 {
+	margin-top:20px;
+	color: #06c;
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+.imagesection1 img {
+	position:relative;
+	max-width: none;
+	width:195%;
+	margin-left:-50%;
+	zoom:1;
+}
+
+.imagesection2 img {
+	position:relative;
+	max-width: none;
+	width:39%;
+	margin-left:44%;
+	padding: 0;
+}
+
+.imagesection1 .caption {
+	position: relative;
+	background-color: #636;
+	width:250px;
+	float:right;
+	margin-top:-36px;
+	zoom:1;
+	margin-left:15px;
+	}
+	
+.imagesection2 .caption {
+	position: relative;
+	background-color: #636;
+	width:250px;
+	float:right;
+	margin-top:0px;
+	zoom:1;
+	margin-left:15px;
+	}
+	
+.imagesection1 .caption p,
+.imagesection2 .caption p {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.125em;
+	line-height:2em;
+	color: #fff;
+	margin:15px;
+}
+
+.nonbackground,
+.headerbreak {
+	display:none;
+}
+
+.tagline img {
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+.mejs-container {
+margin: 15px 0;
+background:none;
+}
+
+@media only screen and (max-width: 700px) {
+	.feature-intro {
+		width:75%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	.feature-intro {
+		width:100%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.textblock {
+		font-size:90%;
+	}
+
+}

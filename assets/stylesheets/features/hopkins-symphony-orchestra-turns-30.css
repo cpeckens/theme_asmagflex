@@ -1,0 +1,134 @@
+body,
+#container-mid,
+#footer-top {
+	background: #000 !important;
+}
+
+#footer-top,
+#footer-top h5, #footer-top h5 a,
+#sidebar .table h4, #footer-top .table h4 {
+	color: #FFF !important;
+}
+
+#sidebar .table .spacer, #footer-top .table .spacer {
+	background: #FFF;
+}
+
+#feature-head {
+	background-image: url('../../images/features/harp-large.jpg');
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	min-height:925px;
+}
+
+.feature-intro {
+	width: 100%;
+	float:left;
+	margin-top: 100px;
+	}
+
+.textblock {
+	color:#FFFFFF;
+	margin-left:20px;
+	}
+
+.textblock h3 {
+	font-family: 'Museo Sans W01 500', sans-serif;
+	font-size: 2.5em;
+	line-height: 1.25em;
+	margin-bottom:.5em;
+	color: #fff;
+	}
+
+.introcopy {
+	width:35%;
+	font-family: 'Museo Sans W01 500', sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	margin-bottom:10px;
+	font-weight: normal;
+	color: #FFF;
+	margin-left: 20px;
+	margin-top: -30px;
+	zoom: 1;
+	
+}
+
+p.credit {
+	display: none
+	}
+
+
+p.othercredits {
+	font-family: 'Museo Sans W01 500', sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+.pullquote p {
+	font-size: 19px;
+	font-family: 'Museo Sans W01 500', sans-serif;
+}
+
+#feature {
+	background: none;
+}
+#feature .postmaterial h3 {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.5em;
+}
+.galleryholder {
+	position:relative;
+	width:400%;
+	background-color:#333;
+	margin-left:-150%;
+	zoom:1;
+	margin-bottom:40px;
+}
+
+.gallerycenter {
+	margin: 0 auto;
+	max-width: 30%;
+}
+
+#feature .postmaterial .gallerycenter h3 {
+	padding-top:20px;
+	color: #FFF;
+}
+
+.nonbackground,
+.headerbreak,
+.tagline {
+	display:none;
+}
+
+.introcopy img {
+	margin-top:-150px;
+	margin-left: -100px;
+	zoom:1;
+}
+
+ul[data-clearing] li {
+	float: left;
+	margin-right: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+	h4.tagline {
+		width:50%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	h4.tagline {
+		width:75%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.textblock {
+		font-size:90%;
+	}

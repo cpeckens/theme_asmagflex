@@ -1,0 +1,118 @@
+.row {
+	width: 820px;
+}
+body,
+#footer-top {
+	background: #000 !important;
+}
+
+#container-mid {background: none;}
+#feature {
+background: #c5c0b4;
+}
+#footer-top,
+#footer-top h5, #footer-top h5 a,
+#sidebar .table h4, #footer-top .table h4 {
+	color: #FFF !important;
+}
+
+#sidebar .table .spacer, #footer-top .table .spacer {
+	background: #FFF;
+}
+.nonbackground {
+	display:none;
+}
+
+.intro-container {
+	max-width:100%;
+	bottom:0;
+	}
+#feature-head {
+	height:725px;
+	position: relative;
+	background: url('../../images/features/feature-graphic-12.jpg');
+	}
+
+.feature-intro {
+	width:820px;
+	margin: 550px auto 0 auto;
+	background: rgba(0, 0, 0, 0.7);
+	}
+	
+.feature-intro h3 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 4em;
+	line-height:1.313em;
+	margin-left:5%;
+	margin-right: 18.292682926829268%;
+	margin-bottom: 0;
+	color: #e5b82c;
+	font-variant: small-caps;
+}
+
+.feature-intro h4 {
+	margin-left:5%;
+	margin-right: 28%;
+	color:#f3e7e7;
+	font-size: 1.875em;
+	margin-bottom: 10px;
+}
+p.credit {
+	display:none;
+}
+
+.creditbox {
+	font-style:normal;
+	padding:8px;
+	background-color:#e5b82c;
+	margin-left:5%;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top:1em;
+	margin-bottom:15px;
+}
+
+p.othercredits {
+	margin-bottom: .5em;
+}
+
+.headerbreak {
+	display: none;
+}
+
+.dropcap {
+	color: #493210; 
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+}
+
+.postmaterial {
+	padding: 3em 5%;
+}
+
+.letters {
+	background: #897d68;
+	max-height: 560px;
+	width:111.5%;
+	margin-left:-5.75%;
+	margin-bottom:100px;
+	margin-top:90px;
+	}
+	
+.letters img {
+	padding:0;
+	background:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	max-width:130%;
+	margin-left:-12%;
+	margin-top:-200px;
+	position:relative;
+	zoom:1;
+}
+
+.letters p {
+	width:25%;
+	margin-left:5%;
+	padding-top: 20px;
+}

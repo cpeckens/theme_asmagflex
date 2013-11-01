@@ -1,0 +1,178 @@
+body {
+	background: url('../../images/features/bg-clouds.jpg') top left repeat !important;
+}
+#feature-head {
+	background-image: url('../../images/features/eps_fea_top.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+.intro-container {
+	padding-top:600px;
+}
+.intro-container,
+#feature,
+.featurelisting {
+	max-width: 1000px;
+}
+
+.feature-intro {
+	background: rgba(56,77,92,0.9);
+}
+
+.sidebar {
+	background: #0190de; 
+	margin-bottom: 30px;
+}
+.headerbreak,
+.nonbackground {
+	display: none;
+}
+
+.feature-intro {
+	padding-bottom: 10px;
+}
+
+.textblock,
+h3.featuretitle
+.pullquote {
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+.textblock,
+.pullquote {
+	color: #FFF;
+	text-align: center;
+}
+
+h3.featuretitle {
+	font-size:9.750em;
+	color:#FFF;
+	margin-bottom: 0;
+}
+
+h4.tagline {
+	font-size: 2em;
+	font-family: 'Museo Sans W01 300', sans-serif;
+	width: 65%;
+	margin: 0 auto 15px;;
+	text-align: left;
+}
+
+p.credit,
+p.othercredits {
+		font-family: 'Museo Sans W01 300', sans-serif;
+}
+
+p.credit {
+	font-size: 1.5em;
+	margin-bottom: 0;
+}
+
+p.othercredit {
+	font-size:1em;
+	margin-bottom:30px;
+}
+
+.pullquote {
+	margin: 0 100px;
+	font-size: 1.875em;
+	line-height: 1.2em;
+}
+.pullquote p.creditalt,
+.pullquote p.othercreditsalt
+ {
+	 font-size: .75em;
+	 margin-bottom: 0;
+}
+
+#feature {
+	background:#fff;
+	color: #000;
+}
+
+.postmaterial {
+	font-family: 'Museo Sans W01 300', sans-serif;
+	font-size: 1.125em;
+	line-height: 1.333em;
+}
+
+#feature p {
+	width: 65%;
+}
+
+#feature p.lead {
+	font-size: 1.5em;
+	line-height: 1.5em;
+	width: 100%;
+}
+
+
+#feature h4 {
+	font-family: 'Museo Sans W01 900', sans-serif;
+	color: #005a53;
+	font-size: 1.875em;
+}
+
+#feature .callout {
+	float: right;
+	width: 24%;
+}
+
+#feature .callout img {
+	max-width: 100%;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+#feature .sidebar p {
+	width: 95%;
+	margin-left: 25px;
+	color: #000;
+}
+
+.full {
+	width: 105%;
+	margin-left:-2.3%;
+	zoom: 1;
+	line-height: .1em;
+}
+
+.full img {
+	width:100%;
+	max-width: 100%;
+}
+.sidebar {
+	width: 105%;
+	margin-left:-2.3%;
+	zoom: 1;
+	padding: 40px 0px;
+	
+}
+
+#feature .sidebar h4.subhead {
+	font-size: 80%;
+	margin-bottom: 20px;
+}
+
+#feature .sidebar h4 {
+	color: #FFF;
+	margin-left: 25px;
+	margin-bottom:0;
+}
+
+.wysiwyg-read-more-link {
+	color: #FFF !important;
+}
+
+/*************Comments and Feature Listing************/
+
+#disqus_thread a {
+	 color: #005a53;
+}
+
+#footer-top {
+	background: #f7f7f7;
+	background: rgba(247,247,247, .9);
+	padding-bottom: 100px;
+}

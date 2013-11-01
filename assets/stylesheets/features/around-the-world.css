@@ -1,0 +1,189 @@
+body {
+	background: url('../../images/features/bg-map.png') repeat top center !important;
+}
+#feature-head {
+	background-image: url('../../images/features/plane-photo-gradient.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	height:952px;
+}
+
+.feature-intro {
+	width: 60%;
+	float:right;
+	background: rgba(37,118,194,0.86);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#db2576c2', endColorstr='#db2576c2',GradientType=0)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db2576c2', endColorstr='#db2576c2',GradientType=0);   /* IE6 & 7 */
+	}
+	
+.textblock {
+	margin: 1.5em 10% 1.5em 3%;
+	color:#FFFFFF;
+	}
+
+.textblock h3 {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 4.3em;
+	line-height: 1.25em;
+	margin-bottom:.5em;
+	color: #FFF;
+	}
+
+h4.tagline {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	font-size: 2em;
+	line-height: 1.5em;
+	margin-bottom:10px;
+	font-weight: normal;
+	color: #FFF;
+}
+
+p.credit {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.875em;
+	font-variant: small-caps;
+	margin-bottom:0;
+}
+
+
+p.othercredits {
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 0.875em;
+	text-transform: uppercase;
+	margin-bottom:0;
+	font-style: normal;
+}
+
+p.opener { }
+
+.airplane {
+	background: url('http://magazine.dev/wp-content/uploads/2012/05/plane-lineart-screened.png') no-repeat top center;
+	min-height: 554px;
+}
+
+.dropcap {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	color:#06c;
+	font-size:5.5em;
+	margin-top:10px;
+}
+
+#feature {
+background: rgba(255,255,255,0.9);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
+		margin-top:-335px;
+	zoom:1;
+}
+
+#feature .postmaterial {
+	position:relative;
+	line-height:1.5em;
+	padding-top: 50px;
+	}
+	
+#container-mid {
+	background: none;
+}
+
+#feature .postmaterial h3 {
+	color:#0066cc;
+	font-family: 'Museo Slab W01 500', Georgia, serif;
+	font-size: 1.5em;
+}
+
+#feature .postmaterial p {
+	font-family: 'MuseoSans500Regular', sans-serif;
+	font-size: 1.2em;
+	line-height: 1.7em;
+}
+
+p.opener {
+	font-size: 1.125em;
+	line-height: 1.7em;
+}
+
+#feature .postmaterial img {
+	max-width: none;
+}
+
+#feature .postmaterial img.floatleft {
+	margin-bottom:0;
+}
+
+
+.galleryholder {
+	position:relative;
+	width:400%;
+	background-color:#336699;
+	margin-left:-150%;
+	zoom:1;
+	margin-bottom:40px;
+}
+
+.gallerycenter {
+	margin: 0 auto;
+	max-width: 30%;
+}
+
+#feature .postmaterial .gallerycenter h3 {
+	padding-top:20px;
+	color: #FFF;
+}
+.blogcaption {
+	position: relative;
+	background-color: #cc6600;
+	width:250px;
+	float:right;
+	margin-left:15px;
+}
+	
+.blogcaption p {
+	font-family: 'MuseoSans500Regular', sans-serif;
+	font-size: 0.875em;
+	line-height:1.7em;
+	color: #000;
+	margin:15px;
+}
+
+.blogcaption a {
+	color: #000;
+}
+
+.nonbackground,
+.headerbreak {
+	display:none;
+}
+
+.tagline img {
+	margin-top:-30px;
+	margin-bottom:0px;
+	zoom:1;
+}
+
+.subhead {
+	color:#0066cc;
+	font-family: "Museo Sans W01 900", sans-serif;
+
+}
+
+ul[data-clearing] li {
+	float: left;
+	margin-right: 10px;
+}
+@media only screen and (max-width: 700px) {
+	.feature-intro {
+		width:75%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	.feature-intro {
+		width:100%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.textblock {
+		font-size:90%;
+	}

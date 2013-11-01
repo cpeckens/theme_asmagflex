@@ -1,0 +1,200 @@
+body {
+	background: #384d5c url('../../images/features/top-illo.jpg') fixed no-repeat !important;
+}
+
+.intro-container,
+#feature,
+.featurelisting {
+	max-width: 1000px;
+}
+
+#container-mid {
+	background: none;
+}
+
+.feature-intro,
+.featurelisting,
+.sidebar  {
+	background: rgba(56,77,92,0.9);
+}
+
+p.credit,
+p.othercredits,
+.headerbreak,
+.nonbackground {
+	display: none;
+}
+
+.feature-intro {
+	margin-top: 775px;
+	padding-bottom: 10px;
+}
+
+.textblock,
+h3.featuretitle
+p.creditalt,
+p.othercreditsalt,
+.pullquote {
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+.textblock,
+.pullquote {
+	color: #FFF;
+	text-align: center;
+}
+
+h3.featuretitle {
+	font-size:9.750em;
+	letter-spacing: -0.05;
+	color:#FFF;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+h4.tagline,
+h4.tagline p {
+	font-size: 2em;
+	margin-bottom: 0;
+	color: #FFF;
+	margin-top: 0;
+}
+
+.pullquote p {
+	margin: 0 100px;
+	font-size: 2em;
+	line-height: 1.2em;
+}
+.pullquote p.creditalt,
+.pullquote p.othercreditsalt
+ {
+	 font-size: 1.5em;
+	 margin-bottom: 0;
+}
+
+#feature {
+	background:#fff;
+	color: #000;
+}
+
+.postmaterial {
+	font-family: 'Museo Sans W01 300', sans-serif;
+	font-size: 1.125em;
+	line-height: 1.333em;
+}
+
+#feature p {
+	width: 65%;
+}
+
+#feature p.lead {
+	font-size: 1.5em;
+	line-height: 1.5em;
+	width: 100%;
+}
+
+
+#feature h4 {
+	font-family: 'Museo Sans W01 900', sans-serif;
+	color: #005a53;
+	font-size: 1.875em;
+}
+
+#feature .callout {
+	float: right;
+	width: 24%;
+}
+
+#feature .callout img {
+	max-width: 100%;
+}
+
+#feature .callout p {
+	width: 80%;
+	color: #005a53;
+	font-size: 15px;
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+
+#feature .sidebar p {
+	width: 95%;
+	margin-left: 25px;
+	color: #FFF;
+}
+
+.sidebar {
+	padding: 100px 0px;
+	
+}
+
+#feature .sidebar h4 {
+	color: #ffcc99;
+	margin-left: 25px;
+}
+
+
+/*************Comments and Feature Listing************/
+.featurelisting p {
+	color: #ffF;
+}
+
+#disqus_thread a {
+	 color: #005a53;
+}
+
+/**************Sticky Nav*********************/
+#sticky.fixed{
+    position: fixed;
+    margin: 0px auto 0 auto;
+    top: 0;
+    box-shadow: 0 4px 8px -6px #000;
+    z-index:2000;
+    max-width: none;
+}
+
+#sticky.fixed + * {
+	padding-top: 70px;
+}
+
+#sticky {
+	max-width: 1000px;
+	width: 100%;
+	background: rgb(56,77,92);
+	height: 50px;
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+	color: #fff;
+	font-size: 1em;
+	margin: 0 auto;
+}
+
+#sticky a,
+#sticky:hover,
+#sticky a:visited {
+	color: #fff;
+	z-index:3000;
+	cursor: hand;
+}    
+      
+#sticky ul {
+	margin: 0 auto;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#FFF;
+	padding-top: 10px;
+}
+
+#sticky  li {
+	display:inline;
+	padding:0 15px;
+	border-left:1px solid #555;
+	font-size: 18px;
+}
+
+#sticky ul li:first-child {
+	border-left:0;
+}
+
+
+.home img,
+.toc img,
+.searchbar form {margin-bottom: 0;}

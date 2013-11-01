@@ -1,0 +1,139 @@
+body, #container-mid {
+	background: url('../../images/features/wall_bg.png') repeat !important;
+}
+#feature {
+	background: rgba(51, 51, 51, 0.8);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6333333', endColorstr='#e6333333',GradientType=0 );
+	}
+
+#feature-head {
+	background-image: url('../../images/features/headerbackground31.jpg');
+	height:930px;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.titlesection {
+	position:relative;
+	margin: 15px auto 0;
+	max-width: 820px;
+}
+
+h3.title,
+p.credit {
+	display:none;
+}
+
+.dropcap {
+	color:#ffcc33;
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+}
+
+.fancytitle {
+	opacity: 0.8;
+}
+
+.fancytitle h3 {
+	font-family: 'Museo Slab W01 300', Georgia, serif;
+	padding:0;
+	margin:0;
+	color:#ffffff;
+	font-size: 8.5em;
+	letter-spacing: -10px;
+	line-height:.75;
+}
+
+h3.floatright {
+	float: right;
+}
+.large {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+}
+
+.overlay {
+	font-size: 85px;
+	color:#11376a;
+	font-family: Palatino, serif;
+	font-style: italic;
+	margin-right:-20px;
+	position: relative;
+	zoom:1;
+	z-index: 3;
+
+	}
+
+.introcopy {
+	width:30%;
+	background:rgba(51,51,51,0.82); /* FF3.6+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1333333', endColorstr='#d1333333',GradientType=0 ); /* IE6-9 */
+}
+
+.pullquote {
+	padding:25px;
+	color: #ffcc33;
+}
+
+.pullquote ul {
+	margin-left:10px;
+}
+
+.pullquote li {
+	font-size: 22px;
+}
+
+.pullquote ul li a {
+	color: #ffcc33;
+	font-family: 'Myriad W01 SmBd Cnd', sans serif;
+}
+
+h4.tagline,
+p.othercredits {
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	color: #003366;
+	font-size: 1,2em;
+}
+
+h4.tagline {
+	line-height: 2em;
+	padding-top:1em;
+	padding-right:1em;
+
+}
+
+p.othercredits {
+	float:right;
+	margin-right:40px;
+	line-height: 0;
+	position: relative;
+	margin-top:-35px;
+	zoom: 1;
+}
+
+.postmaterial p {
+	font-family: Myriad W01 SmBd Cnd, sans serif;
+	color:#ffffff;
+	font-size: 1.5em;
+	line-height: 1.875em;
+}
+
+.postmaterial h3 {
+	color:#FC3;
+	font-family: 'Museo Slab W01 900', Georgia, serif;
+	}
+
+.postmaterial img {
+	max-width: none;
+}
+
+
+ul[data-clearing] li {
+	float: left;
+	margin-right:10px;
+}
+
+@media only screen and (max-width: 600px) {
+	.fancytitle {font-size: 80%;}
+	.introcopy {
+		width:60%;
+	}
+}

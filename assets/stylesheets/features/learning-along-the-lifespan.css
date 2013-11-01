@@ -1,0 +1,257 @@
+body.page-template-lifespan-baby-php {
+	background: #f4e1a3;
+}
+
+body.page-template-lifespan-teen-php {
+	background: #edcab4;
+}
+
+body.page-template-lifespan-adult-php {
+	background: #bbd7dc;
+}
+
+body.page-template-lifespan-elder-php {
+	background: #c5d3b2;
+}
+
+body.page-template-lifespan-expert-php {
+	background: #bcdedc;
+}
+
+body.page-template-lifespan-home-php {
+	background: #2d7d92;
+}
+/***********lifespan nav**************/
+ul.accordion > li.active {
+	border-top: none;
+}
+#head.lifespan {
+	background: url('../../images/v10n2/home-top.jpg') no-repeat top center;
+	min-height: 543px;
+	padding-top:0;
+}
+
+#lifespan_home {
+	background: #2d7d92;
+	color: #FFF;
+}
+
+#lifespan_home h3, 
+#lifespan_home h4 {
+	font-family:"Museo Sans W01 300";
+	color: #FFF;
+}
+#lifespan_home h3 {
+	font-size: 54px;
+	margin-top: 30px;
+	margin-bottom: 15px
+}
+
+#lifespan_home h4 {
+	font-size: 18px;
+	font-style: italic;
+}
+
+nav#lifespan ul {
+	list-style: none;
+	border-bottom: none;
+	margin: 0 0 1.625em;
+}
+nav#lifespan li {
+	margin-bottom: 20px;
+	color: #FFF;
+	border-top: none;
+}
+
+nav#lifespan li ul li {
+	margin-bottom: 10px;
+}
+
+nav#lifespan li a {
+	font-family:"Museo Sans W01 900";
+	font-size: 18px;
+	vertical-align: middle;
+	padding: 50px 0 50px 138px;
+	line-height: 1.5em;
+	position: relative;
+	top: 46px;
+	color: #FFF;
+}
+nav#lifespan li ul {
+	position: relative;
+	top:auto;
+	width: 308px;
+	margin: 75px 0 0 0px;
+	padding: 18px 0 15px 55px; 
+	display: block;
+	list-style: square;
+	z-index:2;
+}
+nav#lifespan li ul li a {
+	font-size: 14px;
+	padding: 0;
+	display: block;
+	position: relative;
+	top:auto;
+}
+nav#lifespan li ul {
+	display: none;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-moz-border-radius-bottomleft: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+nav#lifespan li.active ul,
+nav#lifespan li.current-menu-parent ul {
+	display: block;
+}
+
+nav#lifespan li.current-menu-parent ul li.current-menu-item,
+nav#lifespan li.current-menu-parent ul li.current-menu-item a {
+	color: #000;
+}
+nav#lifespan li.trigger {
+	z-index: 5;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-moz-border-radius-bottomleft: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+
+nav#lifespan li.active,
+nav#lifespan li.current-menu-parent {
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-moz-border-radius-bottomleft: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+.baby {
+	background: url('../../images/v10n2/baby.png') no-repeat top left;
+	width: 309px;
+	min-height: 112px;
+}
+
+nav#lifespan li.baby ul {
+	background: #d5b93d;
+	margin: 85px 0 0px 0px;
+}
+
+.teen {
+	background:  url('../../images/v10n2/teen.png') no-repeat top left;
+	width: 309px;
+	min-height: 115px;
+}
+
+nav#lifespan li.teen ul {
+	background: #cf7036;
+	margin: 88px 0 0px 1px;
+}
+
+.adult {
+	background: url('../../images/v10n2/adult.png') no-repeat top left;
+	width: 309px;
+	min-height: 112px;
+}
+
+nav#lifespan li.adult ul {
+	background: #08b8d4;
+	margin: 83px 0 0px 1px;
+}
+
+.elder {
+	background: url('../../images/v10n2/elder.png') no-repeat top left;
+	width: 309px;
+	min-height: 116px;
+}
+
+nav#lifespan li.elder ul {
+	background: #94b66c;
+	margin: 83px 0 0px 1px;
+}
+.expert {
+	background:  url('../../images/v10n2/expert.png') no-repeat top left;
+	width: 309px;
+	min-height: 101px;
+}
+
+nav#lifespan li.expert ul {
+	background: #339c99;
+	margin: 74px 0 0px 1px
+}
+
+.lifespan {
+	padding-top: 125px;
+}
+.lifespan #story {
+	font-family:"Myriad W01 Regular";
+	font-size: 16px;
+	line-height: 24px;
+}
+.lifespan h3,
+.lifespan h4 {
+	font-family:"Myriad W01 SmBd Cnd";
+	color: #315e79
+}
+
+.lifespan h3,
+.lifespan blockquote {
+	font-size: 36px;
+}
+
+.lifespan blockquote,
+.lifespan .dropcap,
+.lifespan p.caption {
+	color: #315e79;
+}
+
+.lifespan p.caption {
+	padding: 10px 4px 10px 7px;
+	font-weight: 700;
+	font-size: 13px;
+	display: inline-block;
+}
+.lifespan .dropcap {
+	font-size: 4.5em;
+}
+.lifespan blockquote .author {
+	font-size: 65%;
+}
+
+#lifespan_baby {
+	padding-top:100px;
+	background: #f4e1a3 url('../../images/v10n2/bg_baby.png') no-repeat center top;
+}
+
+#lifespan_adult { 
+	background: #bbd7dc url('../../images/v10n2/bg_adult.png') no-repeat left top;
+}
+
+#lifespan_teen { 
+	background: #edcab4 url('../../images/v10n2/bg_teen.png') no-repeat center top;
+}
+
+#lifespan_elder { 
+	background: #c5d3b2 url('../../images/v10n2/bg_elder.png') no-repeat center top;
+}
+
+#lifespan_expert { 
+	background: #bcdedc url('../../images/v10n2/bg_expert.png') no-repeat center center;
+}
+
+.lifespan p.question {
+	font-weight: 700;
+	color: #315e79;
+	margin-bottom: 4px;
+}
+#head.expert {
+	background: url('../../images/v10n2/expert_bottom.jpg') no-repeat top center;
+	min-height: 944px;
+	width: 100%;
+}
+
