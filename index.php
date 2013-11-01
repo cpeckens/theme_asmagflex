@@ -36,11 +36,7 @@
 	<div id="article-right">
 	<div class="otherstories">
 		<h4>Current Feature Stories</h4>
-				<?php global $wp_query;
-					foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
-					$volume = $term->slug;
-					if ($volume == null) { 
-			$volume = $asmag_option['asmag_current_issue']; }
+		<?php $volume = get_the_volume($post); 
 
 					
 				if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 

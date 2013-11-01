@@ -1,61 +1,69 @@
 <?php get_header(); ?>
-<!--Pulled the taxonomy template-->
-	<div id="container-mid">
-	<div id="content">
-	    <div id="article">
+<div id="container-mid">
+	<div class="row" id="content">
+	    <article class="eight columns" id="article">
 	    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
-			<?php if ( get_post_meta($post->ID, 'ecpt_asmag_css', true) ) : ?><style><?php echo get_post_meta($post->ID, 'ecpt_asmag_css', true); ?></style><?php endif; ?> <!--Add features custom CSS-->
+			<?php /* add per post custom CSS */ if ( get_post_meta($post->ID, 'ecpt_asmag_css', true) ) { echo '<style>' . get_post_meta($post->ID, 'ecpt_asmag_css', true) . '</style>'; } ?> 
 	
 			<div class="postmaterial">
 				<h3><?php the_title(); ?></h3>
 				<p class="author">By&nbsp;<?php the_author(); ?></p>
-				<p class="othercredits">
-					<?php if ( get_post_meta($post->ID, 'ecpt_other_credits', true) ) : 
-					echo get_post_meta($post->ID, 'ecpt_other_credits', true); 
-					endif; ?></p>
+				<?php if ( get_post_meta($post->ID, 'ecpt_other_credits', true) ) { echo '<p class="othercredits">' . get_post_meta($post->ID, 'ecpt_other_credits', true) . '</p>'; } ?>
 		
-				<?php $image = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
-				<div class="topimage"><img src="<?php echo $image; ?>" class="floatleft"></div>
-				<?php the_content(); ?>
-				<?php endwhile; endif; ?>
+				<?php if(has_post_thumbnail()) { echo '<div class="topimage">'; the_post_thumbnail('full', array('class'=>'floatleft')); echo '</div>'; } the_content(); ?>
+				<?php //Get data for sidebar
+					$categories = get_the_category();
+					$thiscat = $categories[0]->cat_ID;
+					if ($thiscat == 31) { $thiscat = ''; $catname = '';} else {
+					$catname = $categories[0]->name; }
+					
+					//End and reset query
+				$volume = get_the_volume($post); $volume_name = get_the_volume_name($post); endwhile; endif; wp_reset_query();?>
 			</div><!--End postmaterial -->
 		
-		<div class="share">
-			<span  class="st_twitter_large"></span><span  class="st_facebook_large"></span><span  class="st_email_large"></span><span  class="st_sharethis_large"></span>
-		</div>
 		<?php comments_template( '/comments.php' ); ?> 
-	</div> <!--article -->
-		
-	<div id="article-right">
-	<div class="storynav"><p><?php previous_post_link('%link', '&laquo; previous article', FALSE, '56 and 31'); ?> | <?php next_post_link('%link', 'next article &raquo;', FALSE, '56 and 31'); ?></p></div>
-	<div class="otherstories">
-				<?php global $post;
-				$categories = get_the_category();
-				$thiscat = $categories[0]->cat_ID;
-				$catname = $categories[0]->name;
-				 query_posts('showposts=3&orderby=rand&cat=' . $thiscat); ?>
-				 
-		<h4>Other <?php echo $catname; ?> articles</h4>
+		</article> 
 	
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	    		<div class="subtext">
-		    		<h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-		    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-		    			<h6 class="orange"><?php foreach(get_the_terms($wp_query->post->ID, 'volume') as $term); echo $term->name; ?></h6>
-			    		<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-		    			<?php else : the_excerpt(); endif; ?></a>	    			    
-		    			<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
-		    				<div class="extranames">
-		    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
-		    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
-		    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
-		    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
-		    				</div><!-- End extranames -->
+	
+<!-- /**************SIDEBAR***********************/	 -->	
+	<div class="four columns" id="sidebar">
+		<div class="row">
+			<div class="twelve columns table">
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');">	
+					<h4>View <?php echo $volume_name; ?> Contents<span class="spacer"></span></h4>
+				</a>
+			</div>		
+			<?php $sidebar_query = new WP_Query(array(
+				'cat' => $thiscat,
+				'orderby' => 'rand',
+				'posts_per_page' => 3
+			));
+			?>
+		<div class="twelve columns <?php echo $catname; ?>">	 
+			<h4>Other <?php echo $catname; ?> articles<span class="spacer"></span></h4>
+		</div>
+			<?php while ($sidebar_query->have_posts()) : $sidebar_query->the_post();
+				$issues = get_the_terms($post->ID, 'volume');
+				if($issues && !is_wp_error($issues)) :
+				$issue_names = array();
+				foreach($issues as $issue) {
+					$issue_names[] = $issue->name;
+				}
+				$issue_name = join(" ", $issue_names); endif; ?>				
+	    		<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+		    			<h5><?php the_title(); ?><br>
+		    			<span class="<?php echo $catname; ?>"><?php echo $issue_name; ?></h5>
+			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+	    			</a>
 	    		</div><!-- End subtext -->
-   			<?php endwhile; endif; ?>
-	</div> <!--End otherstories -->
+   			<?php endwhile; wp_reset_query() ?>
+	</div> 
 
-	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
+	<div class="row">
+		<div class="twelve columns">
+			<h4>Web Exclusives<span class="spacer"></span></h4>
+		</div>
 	<?php if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
 			$asmag_exclusives_query = new WP_Query(array(
 				'cat' => '31',
@@ -63,21 +71,15 @@
 				'posts_per_page' => '5'));
 		set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	 
 		while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
-	    			<div class="subarticle">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
-	    			    <?php	} ?>
-	    			    <div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a></div>
-	    			</div><!--End subarticle -->
-	    			<?php endwhile; //End loop ?>	    					    		
+	    			<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php if ( has_post_thumbnail()) { the_post_thumbnail('homethumb', array('class'=>'floatleft')); }?> 
+	    			<h5><?php the_title(); ?></h5>
+			    		<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?></a>
+	    			</div>
+	    			<?php endwhile; wp_reset_query(); ?>	    					    		
  </div> <!--End sidebar-right -->
 	    	</div> <!--End content -->
-	    		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-mid -->
 
 <?php get_footer(); ?>
