@@ -1,0 +1,263 @@
+body {
+	background: #384d5c url('../../images/v11n1/margins_body_bg.jpg') top center repeat !important;
+}
+
+.intro-container,
+#feature,
+.featurelisting {
+	max-width: 1000px;
+}
+
+.intro-container {
+	width: 1190px;
+	max-width: 1190px;
+}
+.feature-intro {
+	background: url('../../images/v11n1/margins_head_bg.jpg') top center no-repeat;
+	min-height: 701px;
+}
+#container-mid {
+	background: none;
+}
+
+
+.sidebar  {
+	background: rgba(56,77,92,0.9);
+}
+
+p.credit,
+p.othercredits,
+.headerbreak,
+.nonbackground,
+.featuretitle,
+h4.tagline {
+	display: none;
+}
+
+.feature-intro {
+	padding-bottom: 10px;
+}
+
+.textblock,
+h3.featuretitle
+p.creditalt,
+p.othercreditsalt,
+.pullquote,
+.fancytitle h1 {
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+.textblock,
+.pullquote {
+	color: #FFF;
+	text-align: center;
+}
+
+.fancytitle h1 {
+	color: #2a3349;
+	padding-top: 120px;
+	font-size: 110px;
+	text-transform: uppercase;
+}
+
+.fancytitle h1 .margin {
+	color: #6e0505;
+	font-size: 140px;
+}
+
+.pullquote p.tagline {
+	font-family:'Myriad W01 SmBd';
+	margin: 0 300px 70px 300px;
+	font-size: 30px;
+	line-height: 36px;
+	color: #2a3349;
+}
+.pullquote p.creditalt {
+	font-family:'Myriad W01 SmBd';
+	color: #6e0505;
+	font-size: 24px;
+	margin-bottom: 50px;
+}
+
+.pullquote p.identify {
+	font-family:'Myriad W01 SmBd';
+	margin: 0 235px;
+	font-size: 18px;
+	color: #2a3349;
+}
+
+span.red {
+	color: #6e0505;
+}
+#feature,
+.featurelisting {
+	background:#fff;
+	color: #000;
+}
+
+
+.postmaterial {
+	font-family: 'Myriad W01 Regular', sans-serif;
+}
+
+#feature p {
+	width: 65%;
+	font-size: 18px;
+	line-height: 24px;
+}
+#feature p.full {
+	width: 104%;
+}
+
+#feature p.caption {
+	margin-bottom: 30px;
+}
+#feature p.lead {
+	font-size: 24px;
+	line-height: 30px;
+	width: 100%;
+}
+#feature p.opener {
+	margin-top: 80px;
+}
+.dropcap {
+		font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+	color: #2a3349;
+	margin-top: 15px;
+
+}
+
+#feature h4 {
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+	color: #2a3349;
+	font-size: 24px;
+	margin-bottom: 4px;
+	margin-top: 80px;
+}
+
+#feature .callout {
+	float: right;
+	width: 24%;
+	background: #2a3349;
+}
+
+#feature .callout img {
+	max-width: 100%;
+}
+
+#feature .callout p {
+	width: 80%;
+	color: #FFF;
+	font-size: 16px;
+	padding-left: 20px;
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+}
+
+/*************Comments and Feature Listing************/
+.featurelisting p {
+	color: #ffF;
+}
+
+#disqus_thread a {
+	 color: #005a53;
+}
+
+/**************Sticky Nav*********************/
+#sticky-food.fixed{
+    position: fixed;
+    margin: 0px auto 0 auto;
+    top: 0;
+    box-shadow: 0 4px 8px -6px #000;
+    z-index:2000;
+    max-width: none;
+}
+
+#sticky-food.fixed + * {
+	padding-top: 70px;
+}
+
+#sticky-food {
+	max-width: 1000px;
+	width: 100%;
+	background: #2a3349;
+	height: 50px;
+	font-family: 'Myriad W01 SmBd Cnd', sans-serif;
+	color: #fff;
+	font-size: 1em;
+	margin: -100px auto 0 auto;
+	zoom: 1;
+}
+
+#sticky-food a,
+#sticky-food:hover,
+#sticky-food a:visited {
+	color: #fff;
+	z-index:3000;
+	cursor: hand;
+}    
+      
+#sticky-food ul {
+	margin: 0 auto;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#FFF;
+	padding-top: 10px;
+}
+
+#sticky-food  li {
+	display:inline;
+	padding:0 15px;
+	border-left:1px solid #555;
+	font-size: 18px;
+}
+
+#sticky-food ul li:first-child {
+	border-left:0;
+}
+
+
+.home img,
+.toc img,
+.searchbar form {margin-bottom: 0;}
+
+@media only screen and (max-width: 767px) {
+	.intro-container {
+		width: 100%;
+	}
+	
+	.pullquote p.tagline {
+		margin: 0 40px 70px 40px;
+	}
+	
+	p.identify {
+		display: none;
+	}
+	
+	#sticky-food.fixed {
+		top: 30px;
+		height: 80px;
+	}
+	
+	#feature h4 {
+		margin-top: 110px;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.fancytitle h1 {
+		padding-top: 25px;
+		font-size: 72px;
+	}
+	
+	.fancytitle h1 .margin {
+		font-size: 90px;
+	}
+	
+	#feature .callout {
+		display: none;
+	}
+	
+	#feature p {
+		width: 90%;
+	}
+}
