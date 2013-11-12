@@ -255,3 +255,8 @@ nav#lifespan li.expert ul {
 	width: 100%;
 }
 
+a.publisher-anchor-color,
+.discovery-post a.top-comment,
+.discovery-post ul.meta {
+	color: #FFF;
+}

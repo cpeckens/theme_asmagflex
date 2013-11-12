@@ -1,7 +1,7 @@
 <?php 
 	wp_reset_query();
 	$volume = get_the_volume($post);
-	if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
+	if ( false === ( $features_query = get_transient( 'features_' . $volume . '_query' ) ) ) { 
 	    // It wasn't there, so regenerate the data and save the transient
 
 	$features_query = new WP_Query(array(
@@ -15,9 +15,9 @@
     		'operator' => 'AND')),
     	'order' => 'ASC',
     	'posts_per_page' => '-1')); 
-	set_transient( 'features' . $volume . '_query', $features_query, 86400 ); } 
+	set_transient( 'features_' . $volume . '_query', $features_query, 86400 ); } 
 	
-	if ( false === ( $toc_dropdown_query = get_transient( 'toc_dropdown' . $volume . '_query' ) ) ) { 
+	if ( false === ( $toc_dropdown_query = get_transient( 'toc_dropdown_' . $volume . '_query' ) ) ) { 
 	    	// It wasn't there, so regenerate the data and save the transient
 
 	    	$toc_dropdown_query = new WP_Query(array(
@@ -27,7 +27,7 @@
 	    		'orderby' => 'menu_order',
 	    		'order' => 'ASC',
 	    		'posts_per_page' => '-1')); 
-	set_transient( 'toc_dropdown' . $volume . '_query', $toc_dropdown_query, 86400 ); }	
+	set_transient( 'toc_dropdown_' . $volume . '_query', $toc_dropdown_query, 86400 ); }	
 	
 	if ( false === ( $alumni_query = get_transient( 'alumni' . $volume . '_query' ) ) ) { 
 	    	// It wasn't there, so regenerate the data and save the transient
@@ -39,9 +39,9 @@
 	    		'orderby' => 'menu_order',
 	    		'order' => 'ASC',
 	    		'posts_per_page' => '-1')); 
-	set_transient( 'alumni' . $volume . '_query', $alumni_query, 86400 ); }	
+	set_transient( 'alumni_' . $volume . '_query', $alumni_query, 86400 ); }	
 
-	if ( false === ( $exclusive_query = get_transient( 'exclusvie' . $volume . '_query' ) ) ) { 
+	if ( false === ( $exclusive_query = get_transient( 'exclusive_' . $volume . '_query' ) ) ) { 
 	    	// It wasn't there, so regenerate the data and save the transient
 
 	    	$exclusive_query = new WP_Query(array(
@@ -51,7 +51,7 @@
 	    		'orderby' => 'menu_order',
 	    		'order' => 'ASC',
 	    		'posts_per_page' => '-1')); 
-	set_transient( 'exclusive' . $volume . '_query', $exclusive_query, 86400 ); }	
+	set_transient( 'exclusive_' . $volume . '_query', $exclusive_query, 86400 ); }	
 
 ?>
 
@@ -86,7 +86,15 @@
 				<ul>
 		<?php while ($toc_dropdown_query->have_posts()) : $toc_dropdown_query->the_post(); ?>
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-				<li><?php the_title(); ?></li>
+				<li><?php 
+	    				the_title(); 
+	    				$posttags = get_the_tags();
+	    				if ($posttags) {
+						  foreach($posttags as $tag) {
+	    				    echo '<br><span class="uppercase dim">' . $tag->name . '</span>'; 
+	    				  }
+	    				} ?>
+				</li>
 			</a>
 		<?php endwhile; ?>
 				</ul>
@@ -111,15 +119,35 @@
 
 
 		<!-- JavaScript -->
-		<script src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_custom.js"></script>
+		<script async src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_custom.js"></script>
 		
 		<?php if (is_front_page() || is_page_template( 'template-tableofcontents.php' ) ){ ?>
-			<script src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_front.js"></script>
+			<script async src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_front.js"></script>
 		<?php } ?>
 		
 		<?php if (is_page() && !is_front_page()) { ?>
-			<script src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_feature.js"></script>
+			<script async src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/asmag_feature.js"></script>
 		<?php } ?>
-			
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/jquery.scroll.js"></script>
-		
+		<!--[if lt IE 9]>
+		<script>
+			var head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+			style.type = 'text/css';
+			style.styleSheet.cssText = ':before,:after{content:none !important';
+			head.appendChild(style);
+			setTimeout(function(){
+				head.removeChild(style);
+			}, 0);
+			</script>
+		<![endif]-->
+<?php if (is_page_template( 'lifespan-adult.php' ) || is_page_template( 'lifespan-baby.php' ) || is_page_template( 'lifespan-elder.php' ) || is_page_template( 'lifespan-expert.php' ) || is_page_template( 'lifespan-home.php' ) || is_page_template( 'lifespan-teen.php' ) ){ ?>		
+<script>
+ jQuery(document).ready(function($) {
+	$('#menu-lifespan li.trigger:not(.active)').click(function () {
+          $(this).addClass('active');
+        });
+	$('#menu-lifespan li.active').click(function () {
+          $(this).removeClass('active');
+        }); });          
+        </script>	
+<?php } ?>

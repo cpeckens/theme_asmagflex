@@ -1479,6 +1479,7 @@ function getParameterByName(name)
 
 
 //*************************Read More/Read **************************//
+$j = jQuery.noConflict();
 $j(document).ready(function() {
 					$j(".wysiwyg-read-more-link").toggle(function() {
 					$j(this).text("Read Less").stop();
