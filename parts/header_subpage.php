@@ -27,9 +27,9 @@
 		<div class="row hide-for-print hide-for-small">
 			<div id="search-bar" class="offset-by-five seven mobile-four columns">
 				<div class="row">
-				<?php if (is_page_template('template-tableofcontents.php')) {$menu = 'header-menu';} else { $menu = 'subpage-menu'; }
+				<?php 
 				wp_nav_menu( array( 
-							'theme_location' => $menu, 
+							'theme_location' => 'subpage-menu', 
 							'menu_class' => '', 
 							'fallback_cb' => 'foundation_page_menu', 
 							'container' => 'div',
@@ -40,7 +40,7 @@
 					<div class="four columns mobile-two">
 					<form method="GET" action="<?php echo site_url('/search'); ?>">
 						<input type="text" name="q" placeholder="Search this site" />
-						<input type="submit" class="icon-search" value="&#xe810;" />
+						<input type="submit" class="icon-search" value="&#48;" />
 						<input type="hidden" name="site" value="ksas_magazine" />
 					</form>
 					</div>

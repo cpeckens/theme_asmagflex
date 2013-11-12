@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		
-		<title><?php if ( is_front_page() ) { ?><? bloginfo('name'); ?> - <?php bloginfo('description'); } else { wp_title(''); } ?></title>
+		<title><?php create_page_title(); ?></title>
 
 		<!-- Meta tags -->
 		<meta name="description" content="" />
@@ -13,7 +13,7 @@
 		<?php $volume = get_the_volume($post); ?>
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/foundation.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/magazine.css">
+		<link rel="stylesheet" id="ie-reload" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/magazine.css">
 		<script async type="text/javascript" src="http://fast.fonts.net/jsapi/1db25190-910a-4ab7-bd9b-5582bf1b2833.js"></script>
 		
 		<?php if (is_page('on-display')) { ?>
@@ -27,7 +27,7 @@
 		<?php } ?>
 		
 		<?php wp_enqueue_script('jquery'); ?>
-		<script src="<?php echo get_template_directory_uri() ?>/assets/javascripts/modernizr.foundation.js"></script>
+		<script async src="<?php echo get_template_directory_uri() ?>/assets/javascripts/modernizr.foundation.js"></script>
 		<?php wp_head(); ?>
 		
   <!-- Make IE a modern browser -->
@@ -39,9 +39,10 @@
 	</head>
 
 <body <?php body_class($volume); ?>>
+<?php include_once("analytics.php") ?>	
 
-	<header>
+<header>
 		<?php if (is_page_template('template-tableofcontents.php')) {locate_template('/parts/header_homepage.php', true, false);} 
 		else { locate_template('/parts/header_subpage.php', true, false); } ?>
-	</header>
+</header>
 
