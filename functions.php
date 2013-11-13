@@ -44,7 +44,7 @@
 //register menus
 	function asmag_register_my_menus() {
   		register_nav_menus(
-    		array( 'header-menu' => __( 'Homepage Menu' ),'subpage-menu' => __( 'Subpage Menu' ), 'footer-menu' => __('Footer Menu'), 'issue-menu'=> __('Issue Menu'))
+    		array( 'subpage-menu' => __( 'Subpage Menu' ), 'footer-menu' => __('Footer Menu'), 'issue-menu'=> __('Issue Menu'))
   		);
 	}
 	
@@ -219,7 +219,9 @@ function get_the_volume($post) {
 					}
 					$volume = implode('', $term_slugs); } 
 				} else { $volume = $terms->slug; }
-			
+			if(isset($_GET['volume'])) {
+				$volume = $_GET['volume'];
+			}
 			if ($volume == null) { 
 			$volume = $asmag_option['asmag_current_issue']; } 
 	return $volume;
@@ -242,6 +244,12 @@ function get_the_volume_name($post) {
 		
 		else { $volume_name = $terms->name; }
 		
+		if(isset($_GET['volume'])) {
+			$new_volume = $_GET['volume'];
+			$new_volume_data = get_term_by('slug', $new_volume, 'volume');
+			$volume_name = $new_volume_data->name;
+		}
+
 		if ($volume_name == null) { 
 			$new_volume = $asmag_option['asmag_current_issue']; 
 			$new_volume_data = get_term_by('slug', $new_volume, 'volume');
@@ -338,8 +346,103 @@ function get_the_volume_name($post) {
 		      $output .= "</option>\n"; // replace closing </li> with the option tag
 		    }
 		}
+		
+function delete_magazine_transients($post_id) {
+	global $post;
+	if (isset($_GET['post_type'])) {		
+		$post_type = $_GET['post_type'];
+	}
+	else {
+		$post_type = $post->post_type;
+	}
+		$volumes = get_terms('volume');
+		$issues = array();
+		foreach($volumes as $volume) {
+			$issues[] = $volume->slug;
+		}	
+	switch($post_type) {
 
+		case 'post' :
+		  	foreach ($issues as $issue) { 
+		  		delete_transient('exclusives_' . $issue . '_query');
+		  		delete_transient('alumni_' . $issue . '_query');
+		  		delete_transient('toc_dropdown_' . $issue . '_query');
+		  		delete_transient('front_' . $issue . '_query');
+		  	}
+		  	delete_transient('web_exclusives_query');
+		break;
+				
+		case 'page' :
+		  	foreach ($issues as $issue) { 
+		  		delete_transient('features_' . $issue . '_query');
+		  		delete_transient('front_features_' . $issue . '_query');
+		  	}
+		break;		
+	}
+} 
+add_action('save_post','delete_magazine_transients');
+
+	//***8.8 Create Title for <head> section
+		function create_page_title() {
+			if ( is_front_page() )  { 
+				$page_title = bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+				} 
+			
+			elseif ( is_category() ) { 
+				$page_title = single_cat_title();
+				$page_title .= print(' | ');
+				$page_title .= bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+		 
+				}
+		
+			elseif (is_single() ) { 
+				$page_title = single_post_title(); 
+				$page_title .= print(' | ');
+				$page_title .= bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+				}
+		
+			elseif (is_page() ) { 
+				$page_title = single_post_title();
+				$page_title .= print(' | ');
+				$page_title .= bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+			}
+			elseif (is_404()) {
+				$page_title = print('Page Not Found'); 
+				$page_title .= print(' | ');
+				$page_title .= bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+			}
+
+			else { 
+				$page_title = bloginfo('description');
+				$page_title .= print(' '); 
+				$page_title .= bloginfo('name');
+				$page_title .= print(' | Johns Hopkins University'); 
+				} 
+			return $page_title;
+		}
+
+function add_category_to_pages() {  
+// Add tag metabox to page
+register_taxonomy_for_object_type('post_tag', 'page'); 
+// Add category metabox to page
+register_taxonomy_for_object_type('category', 'page');  
+}
+add_action( 'admin_init', 'add_category_to_pages' );
 
 include_once (TEMPLATEPATH . '/assets/functions/asmag-metabox.php');
-include_once (TEMPLATEPATH . '/assets/functions/asmag-accordion.php');
 ?>
