@@ -1,27 +1,26 @@
 <?php
 /*
-Template Name: Letters to the Editor
+Template Name: Editors Note
 */
 ?>	
-<?php get_header(); ?>
+<?php get_header(); 
+	$issue = $_GET['volume'];
+?>
 <div id="container-mid">
 	<div class="row" id="content">
 	    <article class="eight columns" id="article">
 	    		<div class="postmaterial">
-					<h3 class="letters">Letters to the Editor</h3>
-				<?php $letters_query = new WP_Query(array(
+				<?php $dean_query = new WP_Query(array(
 						'post_type' => 'post',
-						'cat' => '56',
+						'category_name' => 'editors-note',
+						'volume' => $issue,
 						'order' => 'DESC',
-						'posts_per_page' => '-1')); ?>
+						'posts_per_page' => '1')); ?>
 		
-						<?php while ($letters_query->have_posts()) : $letters_query->the_post(); ?>
-						<div class="row">
-						    <div class="twelve columns">
-						    	<h4 class="letters"><?php the_title(); ?></h4>
-						    		<?php the_content(); ?>
-						    </div>
-						</div>
+						<?php while ($dean_query->have_posts()) : $dean_query->the_post(); ?>
+						    	<h3><?php the_title(); ?></h3>
+						    		<?php the_post_thumbnail('full', array('class'=>'floatleft'));
+						    		 the_content(); ?>
 						<?php $volume = get_the_volume($post); $volume_name = get_the_volume_name($post); endwhile; wp_reset_query() ?>
 
 				</div>
