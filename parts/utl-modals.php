@@ -393,6 +393,7 @@
 	<a class="close-reveal-modal">&#215;</a>
 </div>
 <!-- /*************LOADING CALLS**********************/ -->
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/feature.utl.js"></script>
 <script>
 <?php 
 	$embed_vid2 = "[embed]http://vimeo.com/79193058[/embed]"; 
@@ -402,7 +403,7 @@
             $d('a[data-reveal-id="modal_video_two"]').click( function(){
                 $d('<?php echo $post_embed2; ?>').appendTo('#modal_video_two .flex-video');
             });
-	<?php $embed_vid3 = "[embed]http://vimeo.com/73690735[/embed]"; 
+	<?php $embed_vid3 = "[embed]http://vimeo.com/79241720[/embed]"; 
 	$wp_embed3 = new WP_Embed();
 	$post_embed3 = $wp_embed3->run_shortcode($embed_vid3);
 	$mobile_view = get_template_directory_uri() . '/parts/utl-print.html'; ?>
@@ -415,4 +416,5 @@
 		$d(".utl-container").load("<?php echo $mobile_view; ?>");
 		$d("#nav-container").addClass("hide");
 	});
+
 	</script>

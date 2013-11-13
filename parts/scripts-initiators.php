@@ -149,5 +149,16 @@
 	$('#menu-lifespan li.active').click(function () {
           $(this).removeClass('active');
         }); });          
-        </script>	
+</script>	
+<?php } ?>
+
+<?php if (is_page_template('feature-utl.php')) { ?>
+	<script>
+	var $d = jQuery.noConflict();
+	$d(window).load(function() {
+	var filterFromQuerystring = getParameterByName('section');
+	$d('a[data-reveal-id="modal_' + filterFromQuerystring + '"]').click();
+	
+});
+</script>
 <?php } ?>

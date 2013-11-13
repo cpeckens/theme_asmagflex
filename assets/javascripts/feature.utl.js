@@ -1,4 +1,4 @@
- jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
  	//Set Variables
   	$view = $( window ).height();
   	if ($view < 630 ) { 
@@ -137,3 +137,15 @@
     					},
         			});        		
         		});
+        		
+        		function getParameterByName(name)
+{
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}	

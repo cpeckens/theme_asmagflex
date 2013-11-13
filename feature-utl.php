@@ -162,5 +162,5 @@ Template Name: UTL Feature
 <?php } ?> 
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/jquery-scrollspy.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/jquery.scrollTo.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/javascripts/feature.utl.js"></script>
+
 <?php get_footer(); ?>
