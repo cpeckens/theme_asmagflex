@@ -123,3 +123,7 @@ lower-copy a {
 	max-width: 800px;
 	margin: 0 auto;
 }
+
+.discovery-post a.top-comment p {
+	color: #FFF;
+}
