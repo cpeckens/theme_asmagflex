@@ -63,7 +63,7 @@
 						<div class="button fushia"><a href="#" data-filter=".insights" onclick="ga('send', 'event', 'Stories', 'Filter', 'Insights');">Insights</a></div>
 						<div class="button yellow_bg"><a href="#" data-filter=".research" onclick="ga('send', 'event', 'Stories', 'Filter', 'Research');">Research</a></div>
 						<div class="button orange_bg"><a href="#" data-filter=".alumni" onclick="ga('send', 'event', 'Stories', 'Filter', 'Alumni');">Alumni</a></div>
-						<div class="button bright_blue_bg"><a href="#" data-filter=".exclusives, .expanded-story, .video, .slideshow" onclick="ga('send', 'event', 'Stories', 'Filter', 'Web Extras');">Web Extras</a></div>
+						<div class="button bright_blue_bg"><a href="#" data-filter=".exclusive, .expanded-story, .video, .slideshow" onclick="ga('send', 'event', 'Stories', 'Filter', 'Web Extras');">Web Extras</a></div>
 					</div>
 					<div class="two columns offset-gutter">
 						<label for="search" class="hide">Search by keyword:</label>	
