@@ -56,8 +56,7 @@
 			<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
 	    		<div class="twelve columns">
 	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-		    			<h5><?php the_title(); ?><br>
-		    			<span class="<?php echo $catname; ?>"><?php echo $issue_name; ?></h5>
+		    			<h5><?php the_title(); ?></h5>
 			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
 	    			</a>
 	    		</div><!-- End subtext -->

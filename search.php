@@ -1,114 +1,200 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Search Results
+*/
+?>
+<?php
+require_once TEMPLATEPATH . "/assets/functions/GoogleSearch.php";
+get_header(); ?>
+<div id="container-mid">
+	<div class="row" id="content">
+	    <article class="eight columns" id="article">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+				<div class="postmaterial">
+					<h3>Search Results</h3>
+<?php 
+try {
+    $search = new KSAS_GoogleSearch();
+    $resultsPageNum = 1;
+    if (array_key_exists('resultsPageNum', $_REQUEST)) {
+        $resultsPageNum = $_REQUEST['resultsPageNum'];
+    }
+    $resultsPerPage = 10;
+    $baseQueryURL = 'http://search.johnshopkins.edu/search?site=krieger_collection&client=ksas_frontend';
+    $results = $search->query($_REQUEST['q'], $baseQueryURL, $resultsPageNum, $resultsPerPage);
+     
+    $hits = $results->getNumHits();
+    $displayQuery = $results->getDisplayQuery();
+    $docTitle = 'Search Results';
+    $sponsored_result = $results->getSponsoredResult();
+    ?>
 
-<!--Pulled the taxonomy template-->
-	<div id="container-mid">
-	<div id="content">
-	    
-	    <div id="article">
-	    <div class="postmaterial">
-	    <h3>Search Results</h3>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	    			<div class="catarticle">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" class="floatleft" /></a>
-	    			    <?php	} ?>
-	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a>
-	    				 <div class="extranames">
-	    				 	<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
-	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
-	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
-	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
-	    				</div><!--End extranames -->
-	    			</div><!--End snippet -->
+    <?php
+    if ($hits > 0) {
+        ?>
+       <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
+                    <fieldset>
+                        <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
+                        <input type="submit" class="button blue_bg" value="Search Again" />
+                    </fieldset>
+       </form>        
+       <h6>Results <span class="black"><?php echo $results->getFirstResultNum() ?> - <?php echo $results->getLastResultNum() ?></span> of about <span class="black"><?php echo $hits ?></span></h6>
+           
+        <?php if (empty($sponsored_result) == false) { ?>
+	        <div class="panel callout radius10" id="sponsored">
+	        	<h6 class="black">Sponsored Result</h6>
+	        	<a href="<?php echo $sponsored_result['sponsored_url']; ?>"><h3><?php echo $sponsored_result['sponsored_title']; ?><small class="italic">-- <?php echo $sponsored_result['sponsored_url']; ?></small></h3></a>
+	        </div>
+         <?php } ?>   
+            <div id="search-results">
+                <ul>
+           
+        <?php
+        while ($result = $results->getNextResult()) {
+            // note what results are PDFs
+            $pdfNote = '';
+            if (preg_match('{application/pdf}', $result['mimeType'])) {
+                $pdfNote = '<span class="black">[PDF]</span> ';
+            }
+            ?>
+                    <li>
+                        <h5><?php echo $pdfNote ?><a href="<?php echo $result['path'] ?>"><?php echo $result['title'] ?></a></h5>
+            <?php
+            if (array_key_exists('description', $result) && $result['description']) {
+                ?>
+                        <p><?php echo $result['description'] ?></p>
+                <?php
+            }
+            ?>
+                        <div class="url"><?php echo $result['path'] ?> - <?php echo $result['sizeHumanReadable'] ?></div>
+                    </li>
+                    <hr>
+            <?php
+        }
+        ?>
+                </ul>
+            </div>
+             
+            <div class="section">
+        <?php
+            $notices = $results->getNotices();
+            foreach ($notices as $notice) {
+                ?>
+                <p class="notice"><?php echo $notice ?></p>
+                <?php
+            }
+        ?>
+                <div class="pagination">
+                     
+        <?php
+        foreach ($results->getResultsetLinks() as $resultsetLink) {
+            print "$resultsetLink ";
+        }
+        ?>
+                    <?php echo $results->getNextLink() ?> 
+                </div>
+                 
+            </div>
+        <?php
+    } else {
+        // no hits
+        ?>
+            
+             
+        <?php
+            $notices = $results->getNotices();
+            foreach ($notices as $notice) {
+                ?>
+            <p class="notice"><?php echo $notice ?></p>
+                <?php
+            }
+        ?>
+             
+            <p style="font-weight: bold;">There are no pages matching your search.</p>
+                   <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
+                    <fieldset>
+                        <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
+                        <input type="submit" class="button blue_bg" value="Search Again" />
+                    </fieldset>
+       </form>        
+
+        <?php
+    }
+} catch (KSAS_GoogleSearchException $e) {
+    $docTitle = "Search Temporarily Unavailable";
+    ?>
+    <div class="section">
+        <p>We're sorry, the search engine is temporarily unavailable. Please try your search again later.</p>
+    </div>
+    <?php
+} ?>				</div><!--End postmaterial -->
+			<?php $volume = get_the_volume($post); $volume_name = get_the_volume_name($post); endwhile; endif; wp_reset_query();?>
+		</article> <!--article -->
 	
-	<?php endwhile; else :?>
-	<p>Sorry, there were no results for your query. Please try another search term.</p>
-	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-				    <div><input type="text" size="put_a_size_here" name="s" id="s" value="" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
-				    <input type="submit" id="searchsubmit" value="Search" class="btn">
-				    </div>
-				</form>
-	<?php endif; ?>
-	</div>
-	</div> <!--article -->
-	
-	
-	<div id="article-right">
-	
-	<div class="otherstories">
-		<h4>Current Feature Stories</h4>
-				<?php global $wp_query;
-					foreach(get_the_terms($wp_query->post->ID, 'volume') as $term);
-					$volume = $term->slug; 
-					
-				if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
+	<?php if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
 
 				$features_query = new WP_Query(array(
 						'post_type' => 'page',
 						'tax_query' => array ( 
-						'relation' => 'AND',array (
+						'relation' => 'AND',
+						array (
 							'taxonomy' => 'volume',
-							'terms' => array( $volume, 'feature' ),
+							'terms' => array( $volume ),
 							'field' => 'slug',
 							'include_children' => false,
-							'operator' => 'AND')),
+							'operator' => 'IN'),
+						array (
+							'taxonomy' => 'volume',
+							'terms' => array( 'feature' ),
+							'field' => 'slug',
+							'include_children' => false,
+							'operator' => 'IN'),	
+							),
 						'order' => 'ASC',
 						'posts_per_page' => '-1')); 
-				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); }
+				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); } ?>
 				
-				while ($features_query->have_posts()) : $features_query->the_post(); ?>
-
-	    		<div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
-	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
-	    				<div class="extranames">
-	    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
-	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
-	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
-	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
-	    				</div><!-- End extranames -->
-	    				
-	    				</div><!-- End subtext -->
-
-
-   			<?php endwhile; ?>
-	
-	</div> <!--End otherstories -->
-
-	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
-	<?php $asmag_exclusives_query = new WP_Query(array(
-		'cat' => '31',
-		'order' => 'ASC',
-		'posts_per_page' => '5')); ?>
-		
-		<?php while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
+	<div class="four columns" id="sidebar">
+		<div class="row">
+			<div class="twelve columns table">
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');">	
+					<h4>View <?php echo $volume_name; ?> Contents<span class="spacer"></span></h4>
+				</a>
+			</div>		
+			<div class="twelve columns features">
+				<h4>Current Feature Stories<span class="spacer"></span></h4>
+			</div>
 			
-	    			<div class="subarticle">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
-	    			    <?php	} ?>
-	    			    <div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a></div>
-	    			
-	    			</div><!--End subarticle -->
-	    			
-	    				
-	    			<?php endwhile; //End loop ?>	    					    		
-
-	    	
- </div> <!--End sidebar-right -->
-	    	</div> <!--End content -->
-	    		<div class="clearboth"></div> <!--to have background work properly -->
-		</div> <!--End container-mid -->
-
+			<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
+	    		<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+		    			<h5><?php the_title(); ?><br>
+		    			<span class="<?php echo $catname; ?>"><?php echo $issue_name; ?></h5>
+			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+	    			</a>
+	    		</div><!-- End subtext -->
+   			<?php endwhile; wp_reset_query() ?>
+	</div> 
+	
+	<div class="row">
+		<div class="twelve columns">
+			<h4>Web Exclusives<span class="spacer"></span></h4>
+		</div>
+	<?php if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
+			$asmag_exclusives_query = new WP_Query(array(
+				'cat' => '31',
+				'order' => 'ASC',
+				'posts_per_page' => '5'));
+		set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	 
+		while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
+	    			<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php if ( has_post_thumbnail()) { the_post_thumbnail('homethumb', array('class'=>'floatleft')); }?> 
+	    			<h5><?php the_title(); ?></h5>
+			    		<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+	    			</div>
+	    			<?php endwhile; wp_reset_query(); ?>	    					    		
+	</div> <!--End sidebar -->
+	</div> <!--End content -->
+</div> <!--End container-mid -->
 <?php get_footer(); ?>

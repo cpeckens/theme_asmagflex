@@ -29,7 +29,7 @@
 	<div class="four columns" id="sidebar">
 		<div class="row">
 			<div class="twelve columns table">
-				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');">	
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>', 'Sidebar');">	
 					<h4>View <?php echo $volume_name; ?> Contents<span class="spacer"></span></h4>
 				</a>
 			</div>		
@@ -67,7 +67,6 @@
 	<?php if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
 			$asmag_exclusives_query = new WP_Query(array(
 				'cat' => '31',
-				'order' => 'ASC',
 				'posts_per_page' => '5'));
 		set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	 
 		while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>

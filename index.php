@@ -1,45 +1,16 @@
 <?php get_header(); ?>
-
-<!--Pulled the taxonomy template-->
-	<div id="container-mid">
-	<div id="content">
-	    
-	    <div id="article">
-	    <div class="postmaterial">
-	    <h3><?php single_cat_title() ?></h3>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-	    			<div class="catarticle">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" class="floatleft" /></a>
-	    			    <?php	} ?>
-	    			    <h5><?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a>
-	    				 <div class="extranames">
-	    				 	<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
-	    					<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
-	    					<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
-	    					<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
-	    				</div><!--End extranames -->
-	    			</div><!--End snippet -->
+<div id="container-mid">
+	<div class="row" id="content">
+	    <article class="eight columns" id="article">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+				<div class="postmaterial">
+					<h3><?php the_title(); ?></h3>
+					<?php the_content(); ?>
+				</div><!--End postmaterial -->
+			<?php $volume = get_the_volume($post); $volume_name = get_the_volume_name($post); endwhile; endif; wp_reset_query();?>
+		</article> <!--article -->
 	
-	<?php endwhile; ?>
-
-	<?php endif; ?>
-	</div>
-	</div> <!--article -->
-	
-	
-	<div id="article-right">
-	<div class="otherstories">
-		<h4>Current Feature Stories</h4>
-		<?php $volume = get_the_volume($post); 
-
-					
-				if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
+	<?php if ( false === ( $features_query = get_transient( 'features' . $volume . '_query' ) ) ) { 
 
 				$features_query = new WP_Query(array(
 						'post_type' => 'page',
@@ -60,55 +31,48 @@
 							),
 						'order' => 'ASC',
 						'posts_per_page' => '-1')); 
-				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); }
+				set_transient( 'features' . $volume . '_query', $features_query, 86400 ); } ?>
 				
-				while ($features_query->have_posts()) : $features_query->the_post(); ?>
-
-	    		<div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a>	    			    
-	    		<?php if ( in_category( 'web-extra' )) : ?><div class="extra"></div><?php endif; ?>
-	    				<div class="extranames">
-	    				<?php if ( in_category( 'expanded-story' )) : ?>&nbsp;EXPANDED STORY<?php endif; ?>
-	    				<?php if ( in_category( 'audio' )) : ?>&nbsp;AUDIO<?php endif; ?>
-	    				<?php if ( in_category( 'video' )) : ?>&nbsp;VIDEO<?php endif; ?>
-	    				<?php if ( in_category( 'slideshow' )) : ?>&nbsp;SLIDESHOW<?php endif; ?>
-	    				</div><!-- End extranames -->
-	    				
-	    				</div><!-- End subtext -->
-
-
-   			<?php endwhile; ?>
+	<div class="four columns" id="sidebar">
+		<div class="row">
+			<div class="twelve columns table">
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');">	
+					<h4>View <?php echo $volume_name; ?> Contents<span class="spacer"></span></h4>
+				</a>
+			</div>		
+			<div class="twelve columns features">
+				<h4>Current Feature Stories<span class="spacer"></span></h4>
+			</div>
+			
+			<?php while ($features_query->have_posts()) : $features_query->the_post(); ?>
+	    		<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+		    			<h5><?php the_title(); ?><br>
+		    			<span class="<?php echo $catname; ?>"><?php echo $issue_name; ?></h5>
+			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+	    			</a>
+	    		</div><!-- End subtext -->
+   			<?php endwhile; wp_reset_query() ?>
+	</div> 
 	
-	</div> <!--End otherstories -->
-
-	<div class="web-wrapper"><h5><span class="web">WEB EXCLUSIVES</span></h5></div>
-		<?php 
-			if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
+	<div class="row">
+		<div class="twelve columns">
+			<h4>Web Exclusives<span class="spacer"></span></h4>
+		</div>
+	<?php if ( false === ( $asmag_exclusives_query = get_transient( 'web_exclusives_query' ) ) ) {
 			$asmag_exclusives_query = new WP_Query(array(
 				'cat' => '31',
-				'order' => 'DESC',
-				'posts_per_page' => '6'));
-			set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	
-			 while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
-			
-	    			<div class="subarticle">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'homethumb', true);
-	    			    						echo $image_url[0];  ?>" align="left" class="homethumb" /></a>
-	    			    <?php	} ?>
-	    			    <div class="subtext"><h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>" class="blue"><?php the_title(); ?></a></h5>
-	    			    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) : ?> <p><?php echo get_post_meta($post->ID, 'ecpt_tagline', true); ?></p>
-	    			    <?php else : the_excerpt(); endif; ?></a></div>
-	    			
-	    			</div><!--End subarticle -->
-	    			<?php endwhile; //End loop ?>	    					    		
-	    	
- </div> <!--End sidebar-right -->
-	    	</div> <!--End content -->
-	    		<div class="clearboth"></div> <!--to have background work properly -->
-		</div> <!--End container-mid -->
-
+				'posts_per_page' => '5'));
+		set_transient( 'web_exclusives_query', $asmag_exclusives_query, 86400 ); }	 
+		while ($asmag_exclusives_query->have_posts()) : $asmag_exclusives_query->the_post(); ?>
+	    			<div class="twelve columns">
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php if ( has_post_thumbnail()) { the_post_thumbnail('homethumb', array('class'=>'floatleft')); }?> 
+	    			<h5><?php the_title(); ?></h5>
+			    		<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
+	    			</div>
+	    			<?php endwhile; wp_reset_query(); ?>	    					    		
+	</div> <!--End sidebar -->
+	</div> <!--End content -->
+</div> <!--End container-mid -->
 <?php get_footer(); ?>

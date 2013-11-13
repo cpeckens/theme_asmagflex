@@ -1,5 +1,5 @@
 <?php if (is_page_template( 'feature-complex.php' ) == false) : ?>
-	<div class="row">
+	<div class="row" id="comments">
 		<div class="twelve columns">	
 			<?php comments_template( '/comments.php' ); ?> 
 		</div>
@@ -37,12 +37,8 @@
 				while ($features_query->have_posts()) : $features_query->the_post(); ?>
 		
 	    			<div class="three columns">
-	    			    <?php if ( has_post_thumbnail()) { ?> 
-	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,'alumni', true);
-	    			    						echo $image_url[0];  ?>" class="alumthumb" /></a>
-	    			    <?php	} ?>
+	    			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+	    			    <?php the_post_thumbnail('filterthumb'); ?>
 	    			    <h5><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 			    			<?php if ( get_post_meta($post->ID, 'ecpt_tagline', true) ) :  echo get_post_meta($post->ID, 'ecpt_tagline', true); else : echo '<p>' . get_the_excerpt() . '</p>'; endif; ?>
 	    			</div><!--End snippet -->

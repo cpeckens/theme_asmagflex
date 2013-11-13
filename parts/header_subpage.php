@@ -1,7 +1,7 @@
 		<div class="row show-for-small black_bg">
 				<div class="toc_nav mobile">
 				<a href="<?php echo site_url(); ?>"><span class="icon-home"></span><span class="hide">Home</span></a>
-				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>');"><span class="icon-toc"></span><span class="hide">Table of Contents</span>
+				<a href="#" data-reveal-id="modal_toc" onclick="ga('send', 'event', 'Table of Contents', '<?php echo $volume_name ?>', 'Top');"><span class="icon-toc"></span><span class="hide">Table of Contents</span>
 				<span class="issue"><?php $volume_name = get_the_volume_name($post); echo $volume_name; ?></span></a>
 			</div>
 

@@ -22,7 +22,7 @@
 			</div>
 		</div>
   </footer>
-
+ <?php if(is_page_template('feature-utl.php')) {locate_template('/parts/utl-modals.php', true, false); } ?>
  <?php locate_template('/parts/scripts-initiators.php', true, false); wp_footer();?>
 </body>
 </html>		

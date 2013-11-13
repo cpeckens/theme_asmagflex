@@ -5,7 +5,7 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-40512757-15', 'jhu.edu');
-  ga('send', 'pageview');
   ga('create', 'UA-40512757-1', {'name': 'globalKSAS'});
+  ga('send', 'pageview');
   ga('globalKSAS.send', 'pageview');
 </script>
