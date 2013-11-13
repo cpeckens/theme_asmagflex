@@ -75,6 +75,18 @@ Template Name: Feature - Sticky Nav
     						$("#stickygallery").removeClass('fixedgallery');
     					}
         			});
+        		});
+			jQuery(document).ready(function($) {
+        			$('#sticky-food').scrollspy({
+        				min: 800,
+        				max: 30000,
+        				onEnter: function(element, position) {
+    						$("#sticky-food").addClass('fixed');
+    					},
+    					onLeave: function(element, position) {
+    						$("#sticky-food").removeClass('fixed');
+    					}
+        			});
         		});        	
         	</script>
 

@@ -19,6 +19,8 @@ body, #container-mid {
 	max-width: 820px;
 }
 
+#layout {
+color: #fff;}
 h3.title,
 p.credit {
 	display:none;

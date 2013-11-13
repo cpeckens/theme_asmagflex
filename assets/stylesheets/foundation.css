@@ -3,7 +3,7 @@
 
 html { font-size: 62.5%; }
 
-body { background: white; font-family: 'Myriad W01 Regular', Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; font-size: 14px; line-height: 1; color: #222222; position: relative; -webkit-font-smoothing: antialiased; }
+body { background: white; font-family: 'Myriad W01 Regular', Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; font-size: 14px; line-height: 1.6em; color: #222222; position: relative; -webkit-font-smoothing: antialiased; }
 
 /* Links ---------------------- */
 a img { border: none; }
@@ -1470,3 +1470,4 @@ table.show-for-xlarge, table.show-for-large, table.hide-for-small, table.hide-fo
 	margin: 2px;
 	width: auto;
 }
+

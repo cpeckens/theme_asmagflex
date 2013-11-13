@@ -3,8 +3,10 @@ body {
 }
 
 #footer-top {
-	background: #FFF;
-	background: rgba(255,255,255,.9);
+	background: none;}
+	
+.featurelisting {
+	background: #fef9e6;
 }
 #feature-head {
 	background-image: url('../../images/features/rowhouse-fea-home.jpg');
@@ -157,6 +159,7 @@ margin-top: 5px;
 }
 
 .postmaterial {
+	background: #fff;
 	background: rgba(255,255,255,0.9);
 	padding: 50px 0 20px 40px;
 }

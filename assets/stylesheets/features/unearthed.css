@@ -2,7 +2,8 @@ body {
 	background: url('../../images/features/dirt-tile.jpg') repeat !important;
 }
 
-#footer-top {
+#footer-top,
+#comments {
 	background: #000;
 }
 #footer-top,

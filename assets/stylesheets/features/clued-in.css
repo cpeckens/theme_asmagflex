@@ -20,6 +20,10 @@ body {
 	background: rgba(56,77,92,0.9);
 }
 
+.featurelisting {
+	background: #FFF;
+}
+
 .sidebar {
 	background: #0190de; 
 	margin-bottom: 30px;

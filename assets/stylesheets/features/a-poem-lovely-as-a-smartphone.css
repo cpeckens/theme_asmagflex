@@ -11,6 +11,11 @@ h3.featuretitle,
 .postmaterial {
 line-height: 1.7em;
 }
+
+#comments,
+.featurelisting {
+	background: #bfe3d4;
+}
 #feature-head {
 	background-image:url('../../images/features/salter-header3.gif');
 	height:1082px;

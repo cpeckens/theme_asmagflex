@@ -61,6 +61,8 @@ textarea {
 ul { margin: 0; padding: 0; }
 
 p.credit {display: none;}
+
+header, footer {display: none;}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */

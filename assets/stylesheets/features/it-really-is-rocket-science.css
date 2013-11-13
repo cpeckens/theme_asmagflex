@@ -15,9 +15,12 @@ body {
 }
 
 .feature-intro,
-.featurelisting,
 .sidebar  {
 	background: rgba(72,88,95,0.85);
+}
+
+.featurelisting {
+	background: #fff;
 }
 
 p.credit,
@@ -166,10 +169,6 @@ img.quote {
 	zoom: 1;
 }
 /*************Comments and Feature Listing************/
-.featurelisting p,
-.featurelisting h5 a {
-	color: #ffF;
-}
 
 #disqus_thread a {
 	 color: #005a53;

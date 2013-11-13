@@ -7,7 +7,9 @@ body,
 }
 
 #container-mid {background: none;}
-#feature {
+#feature,
+#comments,
+.featurelisting {
 background: #c5c0b4;
 }
 #footer-top,

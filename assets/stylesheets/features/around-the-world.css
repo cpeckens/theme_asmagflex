@@ -164,7 +164,11 @@ p.opener {
 .subhead {
 	color:#0066cc;
 	font-family: "Museo Sans W01 900", sans-serif;
+}
 
+#comments, .featurelisting {
+	background: #FFF;
+	background: rgba(255,255,255,0.9);
 }
 
 ul[data-clearing] li {

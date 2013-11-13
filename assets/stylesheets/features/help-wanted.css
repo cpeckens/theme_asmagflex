@@ -13,9 +13,12 @@ body {
 }
 
 .feature-intro,
-.featurelisting,
 .sidebar  {
 	background: rgba(56,77,92,0.9);
+}
+
+.featurelisting {
+	background: #fff;
 }
 
 p.credit,
@@ -133,9 +136,6 @@ h4.tagline p {
 
 
 /*************Comments and Feature Listing************/
-.featurelisting p {
-	color: #ffF;
-}
 
 #disqus_thread a {
 	 color: #005a53;
